@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.adapter.ButtonItemAdapter;
+import com.example.myapplication.bean.BaseSelectData;
 import com.example.myapplication.bean.CommonTitleBean;
 import com.example.myapplication.bean.DataType;
 import com.example.myapplication.urtils.SelectUtils;
@@ -57,25 +58,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void clickByPosition(final int position) {
 
-        switch (position) {
-
-            case 0:
-
-
-            default:
-                SelectUtils.showTimeSelect(MainActivity.this
-                        , new SelectUtils.TimeSelectCallback() {
-                            @Override
-                            public void onSelectData(Date date) {
-                                Toast.makeText(MainActivity.this, (date).toString(), Toast.LENGTH_SHORT).show();
-                                mList.get(position).setTitle(date.toString());
-                                if (mButtonItemAdapter != null) {
-                                    mButtonItemAdapter.notifyDataSetChanged();
-                                }
+        if (position < 10) {
+            SelectUtils.showTimeUltimateSelect(MainActivity.this
+                    , new SelectUtils.TimeSelectCallback() {
+                        @Override
+                        public void onSelectData(Date date) {
+                            Toast.makeText(MainActivity.this, (date).toString(), Toast.LENGTH_SHORT).show();
+                            mList.get(position).setTitle(date.toString());
+                            if (mButtonItemAdapter != null) {
+                                mButtonItemAdapter.notifyDataSetChanged();
                             }
-                        });
-                break;
+                        }
+                    });
+        } else if(position <20){
+            SelectUtils.showCommonSelect(MainActivity.this, new SelectUtils.CommonMultiPickCallback() {
+                @Override
+                public void onSelectData(List<BaseSelectData> selectData) {
+                    String tx = selectData.get(0).getPickerViewText()
+                            + selectData.get(1).getPickerViewText();
+//                        + options3Items.get(options1).get(option2).get(options3).getPickerViewText();
+                }
+            });
 
+        }else {
+            SelectUtils.showTimeSelect(MainActivity.this
+                    , new SelectUtils.TimeSelectCallback() {
+                        @Override
+                        public void onSelectData(Date date) {
+                            Toast.makeText(MainActivity.this, (date).toString(), Toast.LENGTH_SHORT).show();
+                            mList.get(position).setTitle(date.toString());
+                            if (mButtonItemAdapter != null) {
+                                mButtonItemAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    });
         }
     }
 
