@@ -79,31 +79,7 @@ public class SelectUtils {
         pvTime.show();
     }
 
-    public static void showCommonSelect(final Context context, final CommonMultiPickCallback callback) {
-        final List<BaseSelectData> options1Items = new ArrayList<>();
-        final List<List<BaseSelectData>> options2Items = new ArrayList<>();
-        //选项1
-        options1Items.add(new BaseSelectData("0", "广东"));
-        options1Items.add(new BaseSelectData("1", "湖南"));
-        options1Items.add(new BaseSelectData("2", "广西"));
-
-        //选项2
-        ArrayList<BaseSelectData> options2Items_01 = new ArrayList<>();
-        options2Items_01.add(new BaseSelectData("0", "广州"));
-        options2Items_01.add(new BaseSelectData("1", "佛山"));
-        options2Items_01.add(new BaseSelectData("2", "东莞"));
-        options2Items_01.add(new BaseSelectData("3", "珠海"));
-        ArrayList<BaseSelectData> options2Items_02 = new ArrayList<>();
-        options2Items_02.add(new BaseSelectData("0", "长沙"));
-        options2Items_02.add(new BaseSelectData("1", "岳阳"));
-        options2Items_02.add(new BaseSelectData("2", "株洲"));
-        options2Items_02.add(new BaseSelectData("3", "衡阳"));
-        ArrayList<BaseSelectData> options2Items_03 = new ArrayList<>();
-        options2Items_03.add(new BaseSelectData("0", "桂林"));
-        options2Items_03.add(new BaseSelectData("1", "玉林"));
-        options2Items.add(options2Items_01);
-        options2Items.add(options2Items_02);
-        options2Items.add(options2Items_03);
+    public static void showCommonSelect(final Context context, final List<BaseSelectData> options1Items, final List<List<BaseSelectData>> options2Items, final CommonMultiPickCallback callback) {
 
         final List<BaseSelectData> opList1 = options1Items;
         final List<List<BaseSelectData>> opList2 = options2Items;
@@ -148,6 +124,43 @@ public class SelectUtils {
 
         pvOptions.setPicker(opList1, opList2, null);//添加数据源
         pvOptions.show();
+    }
+
+    public static void showCommonSelect(final Context context, final CommonMultiPickCallback callback) {
+        final List<BaseSelectData> options1Items = getBaseSelectData();
+        final List<List<BaseSelectData>> options2Items = getLists();
+        showCommonSelect(context, options1Items, options2Items, callback);
+    }
+
+
+    private static List<List<BaseSelectData>> getLists() {
+        final List<List<BaseSelectData>> options2Items = new ArrayList<>();
+        ArrayList<BaseSelectData> options2Items_01 = new ArrayList<>();
+        options2Items_01.add(new BaseSelectData("0", "广州"));
+        options2Items_01.add(new BaseSelectData("1", "佛山"));
+        options2Items_01.add(new BaseSelectData("2", "东莞"));
+        options2Items_01.add(new BaseSelectData("3", "珠海"));
+        ArrayList<BaseSelectData> options2Items_02 = new ArrayList<>();
+        options2Items_02.add(new BaseSelectData("0", "长沙"));
+        options2Items_02.add(new BaseSelectData("1", "岳阳"));
+        options2Items_02.add(new BaseSelectData("2", "株洲"));
+        options2Items_02.add(new BaseSelectData("3", "衡阳"));
+        ArrayList<BaseSelectData> options2Items_03 = new ArrayList<>();
+        options2Items_03.add(new BaseSelectData("0", "桂林"));
+        options2Items_03.add(new BaseSelectData("1", "玉林"));
+        options2Items.add(options2Items_01);
+        options2Items.add(options2Items_02);
+        options2Items.add(options2Items_03);
+        return options2Items;
+    }
+
+    private static List<BaseSelectData> getBaseSelectData() {
+        final List<BaseSelectData> options1Items = new ArrayList<>();
+        //选项1
+        options1Items.add(new BaseSelectData("0", "广东"));
+        options1Items.add(new BaseSelectData("1", "湖南"));
+        options1Items.add(new BaseSelectData("2", "广西"));
+        return options1Items;
     }
 
 
