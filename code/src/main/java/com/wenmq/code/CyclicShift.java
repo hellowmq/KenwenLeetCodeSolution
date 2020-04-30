@@ -1,5 +1,6 @@
 package com.wenmq.code;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -29,8 +30,8 @@ public class CyclicShift {
 
 
     static void testCyclicShift() {
-        String a = "12345";
-        String b = "67890";
+        String a = "1234567";
+        String b = "890";
 
         System.out.println("a: " + a);
         System.out.println("b: " + b);
@@ -63,11 +64,7 @@ public class CyclicShift {
     }
 
     public static <E> List<E> reverse(List<E> from) {
-        for (int i = 0; i < from.size() / 2; i++) {
-            E temp = from.get(i);
-            from.set(i, from.get(from.size() - 1 - i));
-            from.set(from.size() - 1 - i, temp);
-        }
+        Collections.reverse(from);
         return from;
     }
 

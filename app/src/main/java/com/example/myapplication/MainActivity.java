@@ -15,18 +15,20 @@ import com.example.myapplication.bean.BaseSelectData;
 import com.example.myapplication.bean.CommonTitleBean;
 import com.example.myapplication.bean.DataType;
 import com.example.myapplication.urtils.SelectUtils;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.wenmq.clickanno.OnceClick;
+import com.wenmq.ddclick.OnceInit;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
 
     private ListView mListView;
     private List<DataType> mList;
     private ButtonItemAdapter mButtonItemAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initBaseView() {
         mContainer = findViewById(R.id.content);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(this);
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//        fab.setOnClickListener(this);
         mListView = findViewById(R.id.listView);
         generateDataList(100);
         mButtonItemAdapter = new ButtonItemAdapter(this, mList);
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         }
                     });
-        } else if(position <20){
+        } else if (position < 20) {
             SelectUtils.showCommonSelect(MainActivity.this, new SelectUtils.CommonMultiPickCallback() {
                 @Override
                 public void onSelectData(List<BaseSelectData> selectData) {
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
 
-        }else {
+        } else {
             SelectUtils.showTimeSelect(MainActivity.this
                     , new SelectUtils.TimeSelectCallback() {
                         @Override
@@ -93,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     });
         }
+
+        OnceInit.once(this, 2000);
     }
 
     @Override
@@ -101,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -112,20 +115,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        switch (id) {
-            case R.id.fab:
-                selectTime();
 
-                break;
+//    @Override
+//    public void onClick(View v) {
+//        int id = v.getId();
+//        switch (id) {
+//            case R.id.fab:
+//                selectTime();
+//
+//                break;
+//
+//        }
+//    }
 
-        }
-    }
 
-    private void selectTime() {
-        //时间选择器
+    @OnceClick(value = R.id.fab)
+    private void selectFab() {
+        SelectUtils.showCommonSelect(MainActivity.this, new SelectUtils.CommonMultiPickCallback() {
+            @Override
+            public void onSelectData(List<BaseSelectData> selectData) {
+                Toast.makeText(MainActivity.this, (selectData).toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

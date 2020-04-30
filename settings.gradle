@@ -1,3 +1,6 @@
 include ':app'
 rootProject.name='My Application'
 include ':code'
+//include ':anno'
+include ':ddclick'
+include ':clickanno'

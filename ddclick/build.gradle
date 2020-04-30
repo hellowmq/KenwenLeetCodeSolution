@@ -1,0 +1,71 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'groovy'
+//apply plugin: 'maven'
+
+ext {
+    PUBLISH_GROUP_ID = 'com.wenmq.ddclick'
+    PUBLISH_ARTIFACT_ID = 'once-click'
+    PUBLISH_VERSION = '0.0.1'
+}
+
+allprojects {
+    repositories {
+        maven { url "../repository" }
+    }
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+apply from: 'maven-release-aar.gradle'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.wenmq.clickanno:OnceClickProcessor:0.0.1'
+
+}
+
+
+//uploadArchives {
+////group和version在后面使用自定义插件的时候会用到
+//    group = 'com.wenmq.ddclick'
+//    version = '0.0.1'
+//    repositories {
+//        mavenDeployer {
+//            //提交到远程服务器：
+//            // repository(url: "http://www.xxx.com/repos") {
+//            //    authentication(userName: "admin", password: "admin")
+//            // }
+//            //本地的Maven地址:当前工程下
+//            repository(url: uri('../repository'))
+//            pom.groupId = group  //groupId ，自行定义，一般是包名
+//            pom.artifactId = 'once-click' //artifactId ，自行定义
+//            pom.version = version //version 版本号
+//        }
+//    }
+//}
