@@ -1,0 +1,56 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+repositories {
+    maven { url "${rootProject.projectDir}/repository" }
+    mavenCentral()
+    jcenter()
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.wenmq.clickanno:click-anno:0.0.1'
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+
+//uploadArchives {
+////group和version在后面使用自定义插件的时候会用到
+//    group = 'com.wenmq.clickanno'
+//    version = '0.0.1'
+//    repositories {
+//        mavenDeployer {
+//            //提交到远程服务器：
+//            // repository(url: "http://www.xxx.com/repos") {
+//            //    authentication(userName: "admin", password: "admin")
+//            // }
+//            //本地的Maven地址:当前工程下
+//            repository(url: uri('../repository'))
+//            pom.groupId = group  //groupId ，自行定义，一般是包名
+//            pom.artifactId = 'OnceClickProcessor' //artifactId ，自行定义
+//            pom.version = version //version 版本号
+//        }
+//    }
+//}
+
+uploadArchives {
+    group = 'com.wenmq.clickanno'
+    version = '0.0.1'
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repository')) {
+//                authentication(userName: "deployment", password: "deployment123")
+            }
+            pom.project {
+                groupId = group
+                artifactId = "click-compiler"
+                version = version
+                packaging = "aar"
+            }
+        }
+    }
+}

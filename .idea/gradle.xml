@@ -12,9 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/clickanno" />
+            <option value="$PROJECT_DIR$/click-anno" />
+            <option value="$PROJECT_DIR$/click-api" />
+            <option value="$PROJECT_DIR$/click-compiler" />
             <option value="$PROJECT_DIR$/code" />
-            <option value="$PROJECT_DIR$/ddclick" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

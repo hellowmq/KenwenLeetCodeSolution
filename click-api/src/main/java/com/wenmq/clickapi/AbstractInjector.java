@@ -1,4 +1,4 @@
-package com.wenmq.ddclick;
+package com.wenmq.clickapi;
 
 /**
  * 注射代码接口

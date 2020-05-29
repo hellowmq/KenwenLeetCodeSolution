@@ -1,4 +1,4 @@
-package com.wenmq.ddclick;
+package com.wenmq.clickapi;
 
 import android.app.Activity;
 import android.view.View;

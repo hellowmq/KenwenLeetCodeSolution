@@ -1,4 +1,8 @@
-package com.wenmq.clickanno;
+package com.wenmq.clickcompiler;
+
+
+
+import com.wenmq.clickanno.OnceClick;
 
 import java.io.IOException;
 import java.io.Writer;

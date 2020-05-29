@@ -1,4 +1,4 @@
-package com.wenmq.clickanno;
+package com.wenmq.clickcompiler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class ProxyInfo {
         return packageName + "." + proxyClassName;
     }
 
-    String generateJavaCode() throws OnceClickException {
+    String generateJavaCode() throws com.wenmq.clickcompiler.OnceClickException {
 
         StringBuilder builder = new StringBuilder();
         builder.append("// Generated code from OnceClick. Do not modify!\n");
@@ -57,7 +57,7 @@ public class ProxyInfo {
         return targetClassName.replace("$", ".");
     }
 
-    private void generateInjectMethod(StringBuilder builder) throws OnceClickException {
+    private void generateInjectMethod(StringBuilder builder) throws com.wenmq.clickcompiler.OnceClickException {
 
         builder.append("public long intervalTime; \n");
 
@@ -85,7 +85,7 @@ public class ProxyInfo {
                 if (method.getMethodParameters().get(0).equals("android.view.View")) {
                     builder.append("target.").append(method.getMethodName()).append("(v);");
                 } else {
-                    throw new OnceClickException("Parameters must be android.view.View");
+                    throw new com.wenmq.clickcompiler.OnceClickException("Parameters must be android.view.View");
                 }
             } else if (method.getMethodParametersSize() == 0) {
                 builder.append("target.").append(method.getMethodName()).append("();");

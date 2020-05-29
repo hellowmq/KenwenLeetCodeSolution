@@ -16,7 +16,7 @@ import com.example.myapplication.bean.CommonTitleBean;
 import com.example.myapplication.bean.DataType;
 import com.example.myapplication.urtils.SelectUtils;
 import com.wenmq.clickanno.OnceClick;
-import com.wenmq.ddclick.OnceInit;
+import com.wenmq.clickapi.OnceInit;
 
 import java.util.ArrayList;
 import java.util.Date;

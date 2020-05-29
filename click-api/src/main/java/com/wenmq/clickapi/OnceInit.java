@@ -1,10 +1,11 @@
-package com.wenmq.ddclick;
+package com.wenmq.clickapi;
 
 
 import android.app.Activity;
 import android.view.View;
 
 
+import com.wenmq.clickcompiler.ProxyInfo;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class OnceInit {
         if (injector == null) {
             try {
                 Class injectorClazz = Class.forName(clazz.getName()
-//                        + "$$" + ProxyInfo.PROXY
+                        + "$$" + ProxyInfo.PROXY
                 );
                 injector = (AbstractInjector<Object>) injectorClazz
                         .newInstance();

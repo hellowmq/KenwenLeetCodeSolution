@@ -1,4 +1,4 @@
-package com.wenmq.clickanno;
+package com.wenmq.clickcompiler;
 
 /**
  * Created by lizhaoxuan on 16/5/27.

@@ -2,9 +2,9 @@
 
 buildscript {
     repositories {
+        maven { url "${rootProject.projectDir}/repository" }
         google()
         jcenter()
-        maven { url "${rootProject.projectDir}/repository" }
         
     }
     dependencies {
@@ -17,9 +17,9 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url "${rootProject.projectDir}/repository" }
         google()
         jcenter()
-        maven { url "${rootProject.projectDir}/repository" }
     }
 }
 

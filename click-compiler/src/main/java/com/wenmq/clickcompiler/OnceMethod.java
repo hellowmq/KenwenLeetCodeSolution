@@ -1,4 +1,4 @@
-package com.wenmq.clickanno;
+package com.wenmq.clickcompiler;
 
 import java.util.List;
 
