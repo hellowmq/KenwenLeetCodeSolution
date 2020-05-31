@@ -10,11 +10,11 @@ import java.util.Random;
 
 public class UnionSet {
 
-    private int count;// Ԫ������
-    private int[] rank; // ����
-    private int[] parent;// �ڵ�
+    private int count;// 元素数量
+    private int[] rank; // 层数
+    private int[] parent;// 节点
 
-    UnionSet(int count) { //��ʼ������
+    UnionSet(int count) { //初始化操作
         this.count = count;
         rank = new int[count];
         parent = new int[count];
@@ -27,20 +27,20 @@ public class UnionSet {
 
     }
 
-    public void union(int p, int q) { // �ϲ�����Ԫ��
+    public void union(int p, int q) { // 合并两个元素
 
-        int pRoot = find(p); //��λ������ڵ�
+        int pRoot = find(p); //定位到其根节点
         int qRoot = find(q);
-        if (pRoot == qRoot) //�����������ȣ�֤���Ѿ������Ӻõģ������ٺϲ�
+        if (pRoot == qRoot) //如果两个都相等，证明已经是连接好的，不必再合并
             return;
 
-        if (rank[pRoot] > rank[qRoot]) { //���p���ڵ�Ĳ�������q�ģ���ô��qRoot�ӵ�pRoot���棬�����Ӻ��Ժ�㼶��������
+        if (rank[pRoot] > rank[qRoot]) { //如果p根节点的层数大于q的，那么将qRoot接到pRoot下面，这样接好以后层级不会增加
             parent[qRoot] = pRoot;
 
         } else if (rank[pRoot] < rank[qRoot]) {
 
             parent[pRoot] = qRoot;
-        } else //������ڣ�������ı߲㼶�����һ
+        } else //如果等于，则随便哪边层级都会加一
         {
             parent[pRoot] = qRoot;
             rank[qRoot] = rank[qRoot] + 1;
@@ -49,10 +49,10 @@ public class UnionSet {
 
     }
 
-    public int find(int p) {// ����Ԫ�� ���ظ�Ԫ��
+    public int find(int p) {// 查找元素 返回根元素
 
         while (p != parent[p]) {
-            parent[p] = parent[parent[p]]; //·��ѹ��
+            parent[p] = parent[parent[p]]; //路径压缩
             p = parent[p];
         }
 
@@ -94,14 +94,14 @@ public class UnionSet {
         int tempA;
         int tempB;
         Random random = new Random();
-        //����N�κϲ�����
+        //进行N次合并操作
         for (int i = 0; i < N; i++) {
             tempA = random.nextInt(N) % N;
             tempB = random.nextInt(N) % N;
             uf.union(tempA, tempB);
 
         }
-        //����N�β���
+        //进行N次查找
         for (int i = 0; i < N; i++) {
             tempA = random.nextInt(N) % N;
             tempB = random.nextInt(N) % N;

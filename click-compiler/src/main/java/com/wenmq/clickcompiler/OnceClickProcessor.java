@@ -46,6 +46,32 @@ public class OnceClickProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         //获取proxyMap
+        Messager messager = processingEnv.getMessager();
+        int size = roundEnv.getElementsAnnotatedWith(OnceClick.class).size();
+        messager.printMessage(Diagnostic.Kind.NOTE,
+                "Annotation class size = " + size);
+        for (Element element : roundEnv.getElementsAnnotatedWith(OnceClick.class)) {
+            PackageElement packageElement = (PackageElement) element
+                    .getEnclosingElement();
+            //获取该注解所在类的包名
+            String packageName = packageElement.getQualifiedName().toString();
+            TypeElement classElement = (TypeElement) element;
+            //获取该注解所在类的类名
+            String className = classElement.getSimpleName().toString();
+            //获取该注解所在类的全类名
+            String fullClassName = classElement.getQualifiedName().toString();
+            //获取该注解的值
+            int value = classElement.getAnnotation(OnceClick.class).value();
+            String name = classElement.getAnnotation(OnceClick.class).value()+"";
+            messager.printMessage(Diagnostic.Kind.NOTE,
+                    "Annotation class : packageName = " + packageName);
+            messager.printMessage(Diagnostic.Kind.NOTE,
+                    "Annotation class : className = " + className);
+            messager.printMessage(Diagnostic.Kind.NOTE,
+                    "Annotation class : fullClassName = " + fullClassName);
+            messager.printMessage(Diagnostic.Kind.NOTE,
+                    "Annotation class : value = " + value);
+        }
         Map<String, ProxyInfo> proxyMap = getProxyMap(roundEnv);
         System.out.println("LifecycleClassVisitor : process proxyMap ----> ");
 

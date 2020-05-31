@@ -15,6 +15,7 @@ import com.example.myapplication.bean.BaseSelectData;
 import com.example.myapplication.bean.CommonTitleBean;
 import com.example.myapplication.bean.DataType;
 import com.example.myapplication.urtils.SelectUtils;
+import com.wenmq.anno.GetMsg;
 import com.wenmq.clickanno.OnceClick;
 import com.wenmq.clickapi.OnceInit;
 
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+@GetMsg(id = 2, name = "MAIN")
 public class MainActivity extends AppCompatActivity {
 
 

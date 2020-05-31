@@ -1,7 +1,7 @@
 include ':app'
 rootProject.name='My Application'
 include ':code'
-//include ':anno'
+include ':anno'
 include ':click-api'
 include ':click-compiler'
 include ':click-anno'

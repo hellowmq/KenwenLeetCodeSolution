@@ -42,9 +42,7 @@ uploadArchives {
     version = '0.0.1'
     repositories {
         mavenDeployer {
-            repository(url: uri('../repository')) {
-//                authentication(userName: "deployment", password: "deployment123")
-            }
+            repository(url: uri('../repository')) {}
             pom.project {
                 groupId = group
                 artifactId = "click-compiler"
