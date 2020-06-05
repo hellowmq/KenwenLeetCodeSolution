@@ -2,6 +2,7 @@ package com.wenmq.clickcompiler;
 
 
 
+import com.google.auto.service.AutoService;
 import com.wenmq.clickanno.OnceClick;
 
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.util.Set;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
@@ -30,6 +32,7 @@ import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
 
+@AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
 public class OnceClickProcessor extends AbstractProcessor {
 

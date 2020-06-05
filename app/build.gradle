@@ -35,10 +35,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.contrarywind:Android-PickerView:4.1.9'
     implementation 'com.contrarywind:wheelview:4.1.0'
-    compile 'com.wenmq.anno:MsgProcessor:0.0.1'
+
+    implementation 'com.wenmq.anno:MsgProcessor:0.0.1'
     annotationProcessor"com.wenmq.anno:MsgProcessor:0.0.1"
+
     implementation 'com.wenmq.clickanno:click-api:0.0.1'
-//    annotationProcessor 'com.wenmq.clickanno:OnceClickProcessor:0.0.1'
-    compile 'com.wenmq.clickanno:click-anno:0.0.1'
+    implementation 'com.wenmq.clickanno:click-anno:0.0.1'
     annotationProcessor 'com.wenmq.clickanno:click-compiler:0.0.1'
 }
