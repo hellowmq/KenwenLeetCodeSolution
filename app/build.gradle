@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.contrarywind:wheelview:4.1.0'
 
     implementation 'com.wenmq.anno:MsgProcessor:0.0.1'
-    annotationProcessor"com.wenmq.anno:MsgProcessor:0.0.1"
+    annotationProcessor "com.wenmq.anno:MsgProcessor:0.0.1"
 
     implementation 'com.wenmq.clickanno:click-api:0.0.1'
     implementation 'com.wenmq.clickanno:click-anno:0.0.1'
