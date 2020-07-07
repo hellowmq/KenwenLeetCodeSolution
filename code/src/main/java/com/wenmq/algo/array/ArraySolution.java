@@ -8,7 +8,9 @@ package com.wenmq.algo.array;
 public class ArraySolution {
 
     public static void main(String[] args) {
-        System.out.println(numWays(7));
+//        System.out.println(numWays(7));
+//        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        System.out.println(hasGroupsSizeX(new int[]{1, 2, 3, 4, 4, 3, 2, 1}));
 //        int[][] aa = new int[][]{{1, 2, 3, 4}, {1, 2, 3, 4}, {1, 2, 3, 4}};
 //
 //        int[][] bb = new int[10][10];
@@ -82,4 +84,33 @@ public class ArraySolution {
         return fibo[n];
     }
 
+
+    static public int maxSubArray(int[] nums) {
+        int cur = 0, max = Integer.MIN_VALUE;
+        for (int num : nums) {
+            cur = cur > 0 ? (cur + num) : num;
+            max = Math.max(max, cur);
+        }
+        return max;
+    }
+
+    static public boolean hasGroupsSizeX(int[] deck) {
+        int[] hash = new int[10000];
+        for (int num : deck) {
+            hash[num]++;
+        }
+        int maxS = 0;
+        for (int num : hash) {
+            if (num == 0) continue;
+            maxS = gcd(maxS, num);
+            if (maxS == 1) return false;
+        }
+
+
+        return maxS >= 2;
+    }
+
+    static private int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
 }
