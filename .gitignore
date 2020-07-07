@@ -12,6 +12,8 @@
 /captures
 .externalNativeBuild
 .cxx
-/repository/com/wenmq/
+/repository
 /repository/com/wenmq/
 /android.keystore
+/click-compiler/.idea/
+/.idea/
