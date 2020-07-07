@@ -1,8 +1,8 @@
 package com.wenmq.algo.tree;
 
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * @author ifans.wen
@@ -38,6 +38,46 @@ public class TreeSolution {
         return node;
     }
 
+
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) return false;
+        if (root.left == null && root.right == null) {
+            return sum == root.val;
+        }
+        int surplus = sum - root.val;
+        return hasPathSum(root.left, surplus)
+                || hasPathSum(root.right, surplus);
+    }
+
+
+    public boolean hasPathSum2(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        Queue<Integer> valQueue = new LinkedList<>();
+        nodeQueue.offer(root);
+        valQueue.offer(root.val);
+        while (!nodeQueue.isEmpty()) {
+            TreeNode now = nodeQueue.poll();
+            int temp = valQueue.poll();
+            if (now.left == null && now.right == null) {
+                if (temp == sum) {
+                    return true;
+                }
+                continue;
+            }
+            if (now.left != null) {
+                nodeQueue.offer(now.left);
+                valQueue.offer(now.left.val + temp);
+            }
+            if (now.right != null) {
+                nodeQueue.offer(now.right);
+                valQueue.offer(now.right.val + temp);
+            }
+        }
+        return false;
+    }
 
 
 }
