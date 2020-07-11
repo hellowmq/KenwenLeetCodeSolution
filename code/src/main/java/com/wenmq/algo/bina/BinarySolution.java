@@ -238,4 +238,17 @@ public class BinarySolution {
     }
 
 
+    static public int numberOfSteps(int num) {
+
+        int a = 0;
+        while (num != 0) {
+            if ((num & 1) == 1) {
+                num--;
+            } else {
+                num = num >>1;
+            }
+            a++;
+        }
+        return a;
+    }
 }
