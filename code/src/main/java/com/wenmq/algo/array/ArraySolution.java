@@ -1,5 +1,10 @@
 package com.wenmq.algo.array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * @author ifans.wen
  * @date 2020/7/6
@@ -99,7 +104,6 @@ public class ArraySolution {
     }
 
 
-
     static public int maxSubArray(int[] nums) {
         int cur = 0, max = Integer.MIN_VALUE;
         for (int num : nums) {
@@ -171,8 +175,41 @@ public class ArraySolution {
         if (points.length < 2 || points[0].length < 2) return 0;
         int sum = 0;
         for (int i = 1; i < points.length; i++) {
-            sum += Math.max(Math.abs(points[i][0] - points[i-1][0]), Math.abs(points[i][1] - points[i - 1][1]));
+            sum += Math.max(Math.abs(points[i][0] - points[i - 1][0]), Math.abs(points[i][1] - points[i - 1][1]));
         }
         return sum;
+    }
+
+
+    static public int[] intersect(int[] nums1, int[] nums2) {
+        int[] nums11, nums22;
+        List<Integer> list = new ArrayList<>();
+        if (nums1.length < nums2.length) {
+            nums11 = nums1;
+            nums22 = nums2;
+        } else {
+            nums11 = nums2;
+            nums22 = nums1;
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums11.length; i++) {
+            int key = nums11[i];
+            map.put(key, (map.containsKey(key) ? map.get(key) : 0) + 1);
+        }
+        for (int i = 0; i < nums22.length; i++) {
+            int key = nums22[i];
+            if (map.containsKey(key) && map.get(key) > 0) {
+                list.add(key);
+                map.put(key, map.get(key) - 1);
+            }
+        }
+        int[] result = new int[list.size()];
+
+        for (int i = 0; i < list.size(); i++) {
+            result[i] = list.get(i);
+        }
+        return result;
+
+
     }
 }

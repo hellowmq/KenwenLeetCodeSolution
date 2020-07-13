@@ -39,8 +39,6 @@ public class DpSolution {
     }
 
 
-
-
     static public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
@@ -61,8 +59,10 @@ public class DpSolution {
     public static void main(String[] args) {
 //        System.out.println(isMatch("abade", "a?ad*e"));
         int[][] a = new int[3][5];
+        int[][] b = new int[][]{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}};
 //        a[1][2] = 1;
-        System.out.println(uniquePathsWithObstacles(a));
+//        System.out.println(uniquePathsWithObstacles(a));
+        System.out.println(calculateMinimumHP(b));
     }
 
     public int respace(String[] dictionary, String sentence) {
@@ -78,6 +78,24 @@ public class DpSolution {
             }
         }
         return dp[n];
+    }
+
+
+    static public int calculateMinimumHP(int[][] dungeon) {
+        int m = dungeon.length;
+        int n = dungeon[0].length;
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i < m + 1; i++) {
+            Arrays.fill(dp[i], Integer.MAX_VALUE);
+        }
+        dp[m][n - 1] = dp[m - 1][n] = 1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int min = Math.min(dp[m - i][n - j - 1], dp[m - i - 1][n - j]);
+                dp[m - i - 1][n - j - 1] = Math.max(min - dungeon[m - i - 1][n - j - 1], 1);
+            }
+        }
+        return dp[0][0];
     }
 
     class Solution {

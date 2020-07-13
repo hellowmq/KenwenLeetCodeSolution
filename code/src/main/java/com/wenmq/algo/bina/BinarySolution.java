@@ -2,6 +2,8 @@ package com.wenmq.algo.bina;
 
 import com.wenmq.algo.array.ArraySolution;
 
+import java.util.Arrays;
+
 /**
  * @author ifans.wen
  * @date 2020/7/6
@@ -51,6 +53,10 @@ public class BinarySolution {
 //            }
 //
 //        }
+//        System.out.println(findComplement(5));
+        int i = majorityElement2(new int[]{3, 2});
+        System.out.println(i);
+        System.out.println(Integer.toBinaryString(i));
     }
 
     static public int xorOperation1(int n, int start) {
@@ -245,10 +251,97 @@ public class BinarySolution {
             if ((num & 1) == 1) {
                 num--;
             } else {
-                num = num >>1;
+                num = num >> 1;
             }
             a++;
         }
         return a;
+    }
+
+
+    static public int findComplement(int num) {
+        int a = num;
+        int bit = 0;
+        while (a != 0) {
+            a >>= 1;
+            bit++;
+        }
+        return ((1 << bit) - 1) ^ num;
+    }
+
+    public int exchangeBits(int num) {
+        return ((num & 0xAAAAAAAA) >> 1) | ((num & 0x55555555) << 1);
+    }
+
+
+    public int[] sortByBits(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] += Integer.bitCount(arr[i]) << 16;
+        }
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] %= 1 << 16;
+        }
+        return arr;
+    }
+
+
+    static public int majorityElement2(int[] nums) {
+        int result = 0;
+        int cnt;
+        int counter;
+        int length = nums.length;
+        for (int i = 0; i < 32; i++) {
+            cnt = 0;
+            counter = 1 << (31 - i);
+            for (int j = 0; j < length; j++) {
+                if ((nums[j] & counter) == 0) cnt++;
+            }
+            result <<= 1;
+            if ((cnt << 1) < length) {
+                result++;
+            }
+        }
+        cnt = 0;
+        for (int a : nums) {
+            if (a == result) cnt++;
+        }
+        return (cnt << 1 > length) ? result : -1;
+    }
+
+
+    public int missingNumber(int[] nums) {
+        int a = getXorResult(nums.length);
+        for (int b : nums
+        ) {
+            a ^= b;
+        }
+        return a;
+    }
+
+
+    public char findTheDifference(String s, String t) {
+        char[] ss = s.toCharArray();
+        char[] tt = t.toCharArray();
+        char a = (char) 0;
+        for (char b : ss) a ^= b;
+        for (char b : tt) a ^= b;
+        return a;
+    }
+
+
+    public boolean hasAlternatingBits(int n) {
+        long i = n ^ (n << 1);
+        return (i & (i + 1)) != 0;
+
+    }
+
+    public int reverseBits(int n) {
+        int ans = 0;
+        for (int bitsSize = 31; n != 0; n = n >>> 1, bitsSize--) {
+            ans += (n & 1) << bitsSize;
+        }
+        return ans;
+
     }
 }
