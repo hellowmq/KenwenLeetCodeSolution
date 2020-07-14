@@ -2,6 +2,7 @@ package com.wenmq.algo.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,7 +33,17 @@ public class ArraySolution {
 //        printArray(spiralOrder(aa));
 //        int[][] ints = new int[0][0];
 //        printArray(spiralOrder(ints));
-
+//        List<List<Integer>> listList = new ArrayList<>();
+//        listList.add(Arrays.asList(2));
+//        listList.add(Arrays.asList(3, 4));
+//        listList.add(Arrays.asList(6, 5, 7));
+//        listList.add(Arrays.asList(4, 1, 8, 3));
+//        minimumTotal(listList);
+        System.out.println(new ArraySolution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
+        new ArraySolution().rotate(aa);
+        for (int i = 0; i < aa.length; i++) {
+            printArray(aa[i]);
+        }
     }
 
     static public void printArray(int[] a) {
@@ -211,5 +222,122 @@ public class ArraySolution {
         return result;
 
 
+    }
+
+
+    static public int minimumTotal(List<List<Integer>> triangle) {
+        int height = triangle.size();
+        for (int i = height - 2; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                int newValue = triangle.get(i).get(j) +
+                        Math.min(
+                                triangle.get(i + 1).get(j),
+                                triangle.get(i + 1).get(j + 1)
+                        );
+                triangle.get(i).set(j, newValue
+                );
+            }
+        }
+        return triangle.get(0).get(0);
+    }
+
+
+    public int pivotIndex(int[] nums) {
+        int sum = 0;
+        for (int a : nums) {
+            sum += a;
+        }
+        int left = 0;
+        for (int a = 0; a < nums.length; a++) {
+            if (sum - nums[a] == left << 1) {
+                return a;
+            } else {
+                left += nums[a];
+            }
+        }
+        return -1;
+    }
+
+
+    public void rotate(int[][] matrix) {
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                matrix[i][j] ^= matrix[j][i];
+                matrix[j][i] ^= matrix[i][j];
+                matrix[i][j] ^= matrix[j][i];
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n / 2; j++) {
+                matrix[i][j] ^= matrix[i][n - 1 - j];
+                matrix[i][n - 1 - j] ^= matrix[i][j];
+                matrix[i][j] ^= matrix[i][n - 1 - j];
+            }
+        }
+
+    }
+
+
+    public void setZeroes(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        boolean[] am = new boolean[m];
+        boolean[] an = new boolean[n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                am[i] |= (matrix[i][j] == 0);
+                an[j] |= (matrix[i][j] == 0);
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (am[i] || an[j]) matrix[i][j] = 0;
+            }
+        }
+    }
+
+
+    public int[] findDiagonalOrder(int[][] matrix) {
+        if (matrix.length == 0)
+            return new int[0];
+        int size = matrix.length * matrix[0].length;
+        int index = 0;
+        int[] result = new int[size];
+        int maxK = matrix.length + matrix[0].length;
+
+        for (int k = 0; k < maxK; k++) {
+            int m = 0, n = 0;
+
+            if (k % 2 == 0) { //偶数部分
+                if (k < matrix.length) {
+                    m = k;
+                    n = 0;
+                } else {
+                    m = matrix.length - 1;
+                    n = k - m;
+                }
+                while (m >= 0 && n < matrix[0].length) { //n到达边界为止
+                    result[index++] = matrix[m][n];
+                    m--;
+                    n++;
+                }
+            } else {//奇数部分
+                if (k < matrix[0].length) {
+                    m = 0;
+                    n = k;
+                } else {
+                    n = matrix[0].length - 1;
+                    m = k - n;
+                }
+                while (m < matrix.length && n >= 0) { //m到达边界为止
+                    result[index++] = matrix[m][n];
+                    m++;
+                    n--;
+                }
+            }
+        }
+
+        return result;
     }
 }
