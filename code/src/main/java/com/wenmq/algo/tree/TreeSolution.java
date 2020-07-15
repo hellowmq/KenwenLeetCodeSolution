@@ -10,6 +10,9 @@ import java.util.Queue;
  * @description
  */
 public class TreeSolution {
+
+    private static TreeSolution _instance;
+
     public TreeNode sortedArrayToBST(int[] nums) {
         return dfs(nums, 0, nums.length - 1);
     }
@@ -77,6 +80,27 @@ public class TreeSolution {
             }
         }
         return false;
+    }
+
+    int numTrees(int n) {
+        int[] a = new int[n + 2];
+        a[0] = 1;
+        a[1] = 1;
+        for (int i = 2; i <= n; i++)
+            for (int j = 0; j < i; j++)
+                a[i] += a[j] * a[i - j - 1];
+        return a[n];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getInstance().numTrees(3));
+    }
+
+    public static TreeSolution getInstance() {
+        if (_instance == null) {
+            _instance = new TreeSolution();
+        }
+        return _instance;
     }
 
 

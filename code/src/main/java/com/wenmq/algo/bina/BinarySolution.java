@@ -59,6 +59,7 @@ public class BinarySolution {
         System.out.println(Integer.toBinaryString(i));
     }
 
+
     static public int xorOperation1(int n, int start) {
         return (((getXorResult(n + start - 1))
                 ^ (getXorResult(start - 1)))
