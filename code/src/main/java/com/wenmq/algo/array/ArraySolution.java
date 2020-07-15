@@ -18,9 +18,11 @@ public class ArraySolution {
         int[][] bb = new int[][]{{2, 2, 2}, {2, 1, 2}, {2, 2, 2}};
         int[][] cc = new int[][]{{1, 1}, {3, 4}, {-1, 0}};
         System.out.println(minTimeToVisitAllPoints(cc));
+        printArray(divingBoard(1, 2, 3));
 //        System.out.println(surfaceArea(bb));
 //        System.out.println(numWays(7));
-//        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+        System.out.println(maxSubArray2(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
 //        System.out.println(hasGroupsSizeX(new int[]{1, 2, 3, 4, 4, 3, 2, 1}));
 //
 //        int[][] bb = new int[10][10];
@@ -191,7 +193,6 @@ public class ArraySolution {
         return sum;
     }
 
-
     static public int[] intersect(int[] nums1, int[] nums2) {
         int[] nums11, nums22;
         List<Integer> list = new ArrayList<>();
@@ -339,5 +340,57 @@ public class ArraySolution {
         }
 
         return result;
+    }
+
+
+    static public int[] divingBoard(int shorter, int longer, int k) {
+        if (k == 0) return new int[]{};
+        int d = longer - shorter;
+        if (d == 0) return new int[]{shorter * k};
+        int[] a = new int[k + 1];
+        int sum = shorter * k;
+        a[0] = sum;
+        for (int i = 1; i <= k; i++) {
+            sum += d;
+            a[i] = sum;
+        }
+        return a;
+    }
+
+    static public int maxSubArray2(int[] nums) {
+        int max = Integer.MIN_VALUE;
+        int cur = 0;
+        for (int i = 0; i < nums.length; i++) {
+            cur = cur > 0 ? cur + nums[i] : nums[i];
+            max = Math.max(max, cur);
+        }
+        return max;
+    }
+
+    public int[] exchange(int[] nums) {
+        int end = nums.length - 1;
+        int start = 0;
+        boolean matchStart = false;
+        boolean matchEnd = false;
+        matchStart = (nums[start] & 1) == 1;
+        matchEnd = (nums[end] & 1) == 0;
+        while (start < end) {
+            if (!matchStart) {
+                start++;
+                matchStart = (nums[start] & 1) == 1;
+            }
+            if (!matchEnd) {
+                end++;
+                matchEnd = (nums[end] & 1) == 0;
+            }
+            if (matchStart & matchEnd) {
+                nums[start] ^= nums[end];
+                nums[end] ^= nums[start];
+                nums[start] ^= nums[end];
+            }
+        }
+
+
+        return nums;
     }
 }

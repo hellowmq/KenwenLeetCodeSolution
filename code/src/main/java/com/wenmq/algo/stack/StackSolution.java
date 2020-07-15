@@ -1,5 +1,7 @@
 package com.wenmq.algo.stack;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -30,5 +32,34 @@ public class StackSolution {
         }
 
         return max;
+    }
+
+
+    public boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        char[] str = s.toCharArray();
+        for (char st : str) {
+            switch (st) {
+                case '(':
+                    stack.push(')');
+                    break;
+                case '[':
+                    stack.push(']');
+                    break;
+                case '{':
+                    stack.push('}');
+                    break;
+                case ')':
+                case ']':
+                case '}':
+                    if (stack.size() == 0) return false;
+                    if (stack.peek() == st) {
+                        stack.pop();
+                    } else return false;
+                    break;
+            }
+        }
+        return stack.size() == 0;
     }
 }

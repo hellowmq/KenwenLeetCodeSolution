@@ -59,6 +59,7 @@ public class BinarySolution {
         System.out.println(Integer.toBinaryString(i));
     }
 
+
     static public int xorOperation1(int n, int start) {
         return (((getXorResult(n + start - 1))
                 ^ (getXorResult(start - 1)))
@@ -243,6 +244,48 @@ public class BinarySolution {
         return target;
     }
 
+    public int totalHammingDistance(int[] nums) {
+        int a = 0;
+        int cnt;
+        int counter;
+        for (int i = 0; i < 30; i++) {
+            cnt = 0;
+            counter = 1 << i;
+            for (int n : nums) {
+                if ((n & counter) == 0) cnt++;
+            }
+            a += cnt * (nums.length - cnt);
+
+        }
+        return a;
+    }
+
+    public int[] swapNumbers(int[] numbers) {
+        numbers[0] ^= numbers[1];
+        numbers[1] ^= numbers[0];
+        numbers[0] ^= numbers[1];
+        return numbers;
+    }
+
+
+    public int getSum(int a, int b) {
+        if (a == 0) return b;
+        if (b == 0) return a;
+        int s;
+        int carrier;
+        while (true) {
+            s = a ^ b;
+            carrier = a & b;
+            if (carrier == 0) break;
+            a = s;
+            b = carrier << 1;
+        }
+        return s;
+    }
+
+    public boolean isPowerOfFour(int num) {
+        return ((num & (num - 1)) == 0) && (num & 0xAAAAAAAA) == 0;
+    }
 
     static public int numberOfSteps(int num) {
 
