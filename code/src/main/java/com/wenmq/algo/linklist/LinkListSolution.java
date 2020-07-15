@@ -1,6 +1,9 @@
 package com.wenmq.algo.linklist;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
@@ -504,5 +507,40 @@ public class LinkListSolution {
 
     }
 
+
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode cur = head;
+        if (cur == null || cur.next == null) return head;
+        ListNode next = head.next;
+        while (next != null) {
+            if (cur.val == next.val) {
+                cur.next = next = next.next;
+            } else {
+                cur = next;
+                next = next.next;
+            }
+        }
+        return head;
+    }
+
+
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        for (int i = 0; i < numRows; i++) {
+            ArrayList<Integer> sub = new ArrayList<Integer>();
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    sub.add(1);
+                } else {
+                    //上一行的元素进行相加
+                    sub.add(result.get(i - 1).get(j - 1) + result.get(i - 1).get(j));
+                }
+            }
+            result.add(sub);
+
+        }
+        return result;
+
+    }
 
 }
