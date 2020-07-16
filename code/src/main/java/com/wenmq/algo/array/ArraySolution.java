@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.function.ToIntFunction;
 
 /**
  * @author ifans.wen
@@ -13,16 +15,18 @@ import java.util.List;
  */
 public class ArraySolution {
 
+    private static ArraySolution _instance;
+
     public static void main(String[] args) {
         int[][] aa = new int[][]{{1, 2, 3, 4}, {1, 2, 3, 4}, {1, 2, 3, 4}, {1, 2, 3, 4}};
         int[][] bb = new int[][]{{2, 2, 2}, {2, 1, 2}, {2, 2, 2}};
         int[][] cc = new int[][]{{1, 1}, {3, 4}, {-1, 0}};
-        System.out.println(minTimeToVisitAllPoints(cc));
-        printArray(divingBoard(1, 2, 3));
+//        System.out.println(minTimeToVisitAllPoints(cc));
+//        printArray(divingBoard(1, 2, 3));
 //        System.out.println(surfaceArea(bb));
 //        System.out.println(numWays(7));
-        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
-        System.out.println(maxSubArray2(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+//        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
+//        System.out.println(maxSubArray2(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
 //        System.out.println(hasGroupsSizeX(new int[]{1, 2, 3, 4, 4, 3, 2, 1}));
 //
 //        int[][] bb = new int[10][10];
@@ -41,11 +45,20 @@ public class ArraySolution {
 //        listList.add(Arrays.asList(6, 5, 7));
 //        listList.add(Arrays.asList(4, 1, 8, 3));
 //        minimumTotal(listList);
-        System.out.println(new ArraySolution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
-        new ArraySolution().rotate(aa);
-        for (int i = 0; i < aa.length; i++) {
-            printArray(aa[i]);
-        }
+//        System.out.println(new ArraySolution().pivotIndex(new int[]{1, 7, 3, 6, 5, 6}));
+//        new ArraySolution().rotate(aa);
+//        for (int i = 0; i < aa.length; i++) {
+//            printArray(aa[i]);
+//        }
+//        printArray(getInstance().decompressRLElist(new int[]{3, 4, 5, 2}));
+//        System.out.println(getInstance().canMakeArithmeticProgression(new int[]{3, 5, 1}));
+        System.out.println((getInstance().findNumbers(new int[]{17, 18, 5, 4, 6, 1})));
+    }
+
+
+    public static ArraySolution getInstance() {
+        if (_instance == null) _instance = new ArraySolution();
+        return _instance;
     }
 
     static public void printArray(int[] a) {
@@ -392,5 +405,149 @@ public class ArraySolution {
 
 
         return nums;
+    }
+
+    public int maxProduct(int[] nums) {
+        int[] a = new int[2];
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > a[0]) {
+                if (nums[i] > a[1]) {
+                    a[0] = a[1];
+                    a[1] = nums[i];
+                } else {
+                    a[0] = nums[i];
+                }
+            }
+        }
+        return (a[0] - 1) * (a[1] - 1);
+    }
+
+
+    public int[] decompressRLElist(int[] nums) {
+        int len = 0;
+        for (int i = 0; i < nums.length; i++) {
+            len += nums[i];
+            i++;
+        }
+        int[] re = new int[len];
+        int index = 0;
+        for (int j = 0; j < nums.length; j++) {
+            while (nums[j] > 0) {
+                re[index] = nums[j + 1];
+                nums[j]--;
+                index++;
+            }
+            j++;
+        }
+        return re;
+    }
+
+
+    public boolean canMakeArithmeticProgression(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int a : arr) {
+            if (a > max) {
+                max = a;
+            }
+            if (a < min) {
+                min = a;
+            }
+        }
+        if (max == min) {
+            return true;
+        }
+        int len = arr.length;
+        boolean[] c = new boolean[len];
+        if ((max - min) % (len - 1) != 0) {
+            return false;
+        }
+        int d = (max - min) / (len - 1);
+        for (int i = 0; i < len; i++) {
+            int k_d = arr[i] - min;
+            int k = k_d / d;
+            if ((k_d % d == 0) && (k < len) && (k > -1) && !c[k]) {
+                c[k] = true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public int[] createTargetArray(int[] nums, int[] index) {
+        LinkedList<Integer> list = new LinkedList();
+        for (int i = 0; i < nums.length; i++) {
+            list.add(index[i], nums[i]);
+        }
+        return list.stream().mapToInt(new ToIntFunction<Integer>() {
+            @Override
+            public int applyAsInt(Integer i) {
+                return i;
+            }
+        }).toArray();
+
+    }
+
+
+    public int[] replaceElements(int[] arr) {
+        int max = -1;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            int temp = max;
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            arr[i] = temp;
+        }
+        return arr;
+    }
+
+
+    public int findNumbers(int[] nums) {
+        int a = 0;
+        for (int i : nums) {
+            if ((i >= 10 && i < 100) || (i >= 1e3 && i < 1e4) || (i == 1e5)) {
+                a++;
+            }
+        }
+        return a;
+    }
+
+
+    public int[] sumZero(int n) {
+        int[] result = new int[n];
+        for (int i = 1; i <= (n >> 1); i++) {
+            result[i - 1] = -i;
+            result[i - 1 + (n >> 1)] = i;
+        }
+
+        return result;
+
+
+    }
+
+
+    public int busyStudent(int[] startTime, int[] endTime, int queryTime) {
+        int sum = 0;
+        for (int i = 0; i < startTime.length; i++) {
+            if (startTime[i] <= queryTime && endTime[i] >= queryTime) sum++;
+        }
+        return sum;
+    }
+
+
+    public int[][] flipAndInvertImage(int[][] A) {
+        int m = A.length;
+        int n = A[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < ((n + 1) >> 1); j++) {
+                int temp = A[i][j] ^ 1;
+                A[i][j] = A[i][n - 1 - j] ^ 1;
+                A[i][n - 1 - j] = temp;
+            }
+        }
+        return A;
+
     }
 }
