@@ -1,7 +1,10 @@
 package com.wenmq.algo.tree;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -83,7 +86,7 @@ public class TreeSolution {
     }
 
 
-    public int numTree1(int n){
+    public int numTree1(int n) {
         long C = 1;
         for (int i = 0; i < n; ++i) {
             C = C * 2 * (2 * i + 1) / (i + 2);
@@ -102,7 +105,6 @@ public class TreeSolution {
         }
         return G[n];
     }
-
 
 
     int numTrees(int n) {
@@ -131,6 +133,45 @@ public class TreeSolution {
         if (p == null || q == null) return false;
         return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 
+    }
+
+    public int minDepth(TreeNode root) {
+        if (root == null) return 0;
+        int m1 = minDepth(root.left);
+        int m2 = minDepth(root.right);
+        //1.如果左孩子和右孩子有为空的情况，直接返回m1+m2+1
+        //2.如果都不为空，返回较小深度+1
+        return root.left == null || root.right == null ? m1 + m2 + 1 : Math.min(m1, m2) + 1;
+
+    }
+
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> listList = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            int target = 0 - nums[i];
+            int left = i + 1;
+            int right = nums.length - 1;
+            if (nums[i] > 0)
+                break;
+            if (i == 0 || nums[i] != nums[i - 1]) {
+                while (left < right) {
+                    if (nums[left] + nums[right] == target) {
+                        listList.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                        while (left < right && nums[left] == nums[left + 1]) left++;
+                        while (left < right && nums[right] == nums[right - 1]) right--;
+                        left++;
+                        right--;
+                    } else if (nums[left] + nums[right] < target) {
+                        left++;
+                    } else {
+                        right--;
+                    }
+                }
+            }
+        }
+        return listList;
     }
 
 
