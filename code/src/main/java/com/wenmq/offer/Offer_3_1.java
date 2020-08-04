@@ -11,16 +11,14 @@ import java.util.Set;
  * 数组中某些数字是重复的，但是不知道几个数字重复了，也不知道数字重复了几次。
  * 请找出数组中任意一个重复的数字。
  * 例如：一个长度为7的数组{2,3,1,0,2,5,3}，数组中重复的数字是2和3。
- * !!! 这里已经确定必然存在重复值
  */
-public class Offer_3 {
+public class Offer_3_1 {
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
-        int so1 = new Solution1().findRepeatNumber(nums);
-        int so5 = new Solution5().findRepeatNumber(nums);
+        int[] nums = new int[]{0, 2, 1, 3, 4, 6, 6, 5, 3};
+        Solution solution1 = new Solution1();
+        int so1 = solution1.findRepeatNumber(nums);
         System.out.println(so1);
-        System.out.println(so5);
     }
 
     /**
@@ -95,77 +93,37 @@ public class Offer_3 {
      * 时间 O(nlogn)
      * 空间 O(1)
      * - 不修改原数组，空间最小化，耗时显著提升
+     * - 要求重复必然存在
      */
     static class Solution4 implements Solution {
         @Override
         public int findRepeatNumber(int[] nums) {
-            int len = nums.length;
+            // 该方法需要数字一定有重复的才行，
+            // 因此如果题目修改在长度为n，数字在1到n-1的情况下，此时数组中至少有一个数字是重复的，该方法可以通过。
+            int n = nums.length;
             int left = 1;
-            int right = len - 1;
+            int right = n - 1;
             while (left < right) {
-                // 在 Java 里可以这么用，当 left + right 溢出的时候，无符号右移保证结果依然正确
-                int mid = (left + right) >>> 1;
-
+                int mid = left + (right - left) / 2;
                 int cnt = 0;
-                for (int num : nums) {
-                    if (num <= mid) {
-                        cnt += 1;
+                for (int i = 0; i < n; i++) {
+                    if (nums[i] <= mid) {
+                        cnt++;
                     }
                 }
-
-                // 根据抽屉原理，小于等于 4 的个数如果严格大于 4 个
-                // 此时重复元素一定出现在 [1, 4] 区间里
+                // 从1到mid最多有mid个元素，超过它说明有重复元素
                 if (cnt > mid) {
-                    // 重复元素位于区间 [left, mid]
                     right = mid;
                 } else {
-                    // if 分析正确了以后，else 搜索的区间就是 if 的反面
-                    // [mid + 1, right]
                     left = mid + 1;
                 }
             }
             return left;
         }
-    }
 
-    /**
-     * 限制修改原数组并且限制 O(1) 空间的解法
-     * 快慢指针
-     * 时间 O(n) Floyd 判圈算法
-     * 空间 O(1)
-     * 目前看来算是不错的解法
-     */
-    static class Solution5 implements Solution {
-        @Override
-        public int findRepeatNumber(int[] nums) {
-            if (nums.length <= 2) {
-                return nums[0];
-            }
-            //第一步找到相遇点
-            //慢指针走一步nums[i];
-            //快指针走两步nums[nums[j]]
-            int i = 0, j = 0;
-            while (true) {
-                i = nums[i];
-                j = nums[nums[j]];
-                if (i == j) {
-                    break;
-                }
-            }
-            //慢指针归位
-            i = 0;
-            //快指针调整步调
-            while (true) {
-                i = nums[i];
-                j = nums[j];
-                if (i == j) break;
-            }
-            return i;
-        }
     }
-
 
     interface Solution {
-        public int findRepeatNumber(int[] nums);
+        int findRepeatNumber(int[] nums);
     }
 }
