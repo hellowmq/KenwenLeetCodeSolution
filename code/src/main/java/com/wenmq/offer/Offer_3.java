@@ -15,13 +15,22 @@ import java.util.Set;
  */
 public class Offer_3 {
 
+    public static void main(String[] args) {
+        int[] nums = new int[]{2, 3, 1, 0, 2, 5, 3};
+        int so1 = new Solution1().findRepeatNumber(nums);
+        int so5 = new Solution5().findRepeatNumber(nums);
+        System.out.println(so1);
+        System.out.println(so5);
+    }
+
     /**
      * 使用集合的唯一性
      * O(n) 时间
      * O(n) 空间
      * - 不修改原数组，时间最小化
      */
-    static class Solution1 {
+    static class Solution1 implements Solution {
+        @Override
         public int findRepeatNumber(int[] nums) {
             Set<Integer> set = new HashSet<>();
             int repeat = -1;
@@ -42,7 +51,8 @@ public class Offer_3 {
      * 每次交换至少减少一次 for 循环，时间复杂度为 O(n)
      * - 修改了原数组，时间空间最小化
      */
-    static class Solution2 {
+    static class Solution2 implements Solution {
+        @Override
         public int findRepeatNumber(int[] nums) {
             for (int i = 0; i < nums.length; i++) {
                 while (i != nums[i]) {
@@ -64,7 +74,8 @@ public class Offer_3 {
      * O(1) 空间
      * - 修改了原数组，时间空间最小化
      */
-    static class Solution3 {
+    static class Solution3 implements Solution {
+        @Override
         public int findRepeatNumber(int[] nums) {
             for (int i = 0; i < nums.length; i++) {
                 int m = Math.abs(nums[i]);
@@ -84,10 +95,10 @@ public class Offer_3 {
      * 时间 O(nlogn)
      * 空间 O(1)
      * - 不修改原数组，空间最小化，耗时显著提升
-     *
      */
-    static class Solution4 {
-        public int findRepeatNumber(int[] nums){
+    static class Solution4 implements Solution {
+        @Override
+        public int findRepeatNumber(int[] nums) {
             int len = nums.length;
             int left = 1;
             int right = len - 1;
@@ -118,37 +129,43 @@ public class Offer_3 {
     }
 
     /**
-     *
      * 限制修改原数组并且限制 O(1) 空间的解法
      * 快慢指针
      * 时间 O(n) Floyd 判圈算法
      * 空间 O(1)
      * 目前看来算是不错的解法
      */
-    static class Solution5{
-        public int findDuplicate(int[] nums) {
-            if(nums.length <= 2){
+    static class Solution5 implements Solution {
+        @Override
+        public int findRepeatNumber(int[] nums) {
+            if (nums.length <= 2) {
                 return nums[0];
             }
             //第一步找到相遇点
             //慢指针走一步nums[i];
             //快指针走两步nums[nums[j]]
-            int i = 0,j = 0;
-            while(true){
+            int i = 0, j = 0;
+            while (true) {
                 i = nums[i];
                 j = nums[nums[j]];
-                if(i == j)  { break;}
+                if (i == j) {
+                    break;
+                }
             }
             //慢指针归位
             i = 0;
             //快指针调整步调
-            while(true){
+            while (true) {
                 i = nums[i];
                 j = nums[j];
-                if(i == j) break;
+                if (i == j) break;
             }
             return i;
         }
     }
 
+
+    interface Solution {
+        public int findRepeatNumber(int[] nums);
+    }
 }
