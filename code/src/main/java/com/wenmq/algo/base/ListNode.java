@@ -1,4 +1,4 @@
-package com.wenmq.algo.linklist;
+package com.wenmq.algo.base;
 
 /**
  * @author ifans.wen
@@ -16,19 +16,21 @@ package com.wenmq.algo.linklist;
  */
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 
-    ListNode appendNewNode(int newNodeV) {
+
+    public ListNode appendNewNode(int newNodeV) {
         this.next = new ListNode(newNodeV);
         return this.next;
     }
 
-    ListNode appendNode(ListNode newNode) {
+
+    public ListNode appendNode(ListNode newNode) {
         this.next = newNode;
         return this.next;
     }

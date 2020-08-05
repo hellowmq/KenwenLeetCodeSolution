@@ -1,7 +1,8 @@
 package com.wenmq.algo.linklist;
 
+import com.wenmq.algo.base.ListNode;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

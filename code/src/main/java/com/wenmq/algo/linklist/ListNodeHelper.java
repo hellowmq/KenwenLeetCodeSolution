@@ -1,5 +1,7 @@
 package com.wenmq.algo.linklist;
 
+import com.wenmq.algo.base.ListNode;
+
 /**
  * @author ifans.wen
  * @date 2020/7/3

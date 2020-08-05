@@ -1,5 +1,7 @@
 package com.wenmq.offer;
 
+import com.wenmq.algo.base.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -78,14 +80,7 @@ public class Offer_6 {
     }
 
 
-    public class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     interface Solution {
         public int[] reversePrint(ListNode head);
