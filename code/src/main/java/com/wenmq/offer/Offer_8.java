@@ -60,6 +60,8 @@ public class Offer_8 {
         Offer_8 a = new Offer_8();
         TreeNode root = a.reConstructBinaryTree(pre, in);
         System.out.println(a.solution(root.right.right) == null ? "null" : a.solution(root.right.right).val);
+        System.out.println(a.solution(root.right) == null ? "null" : a.solution(root.right).val);
+        System.out.println(a.solution(root) == null ? "null" : a.solution(root).val);
 
     }
 
