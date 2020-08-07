@@ -11,9 +11,8 @@ package com.wenmq.offer;
  * Offer-10-2
  * 青蛙跳台阶问题
  * 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
- *
+ * <p>
  * 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
- *
  */
 public class Offer_10 {
 
@@ -40,7 +39,7 @@ public class Offer_10 {
      * 只保留前两项的值
      * 使用 O(1) 空间
      */
-    class Solution2 implements Solution{
+    class Solution2 implements Solution {
         @Override
         public int fib(int n) {
 
@@ -54,6 +53,31 @@ public class Offer_10 {
             }
             return first;
 
+        }
+    }
+
+    /**
+     * 递归的想法
+     * 只保留前两项的值
+     * 使用 O(1) 空间
+     */
+    class Solution3 implements Solution {
+        @Override
+        public int fib(int n) {
+            if (n < 2) {
+                return n;
+            }
+            int[] sum = new int[2];
+            sum[1] = 1;
+            int i = 2;
+            int c;
+            while (i < n) {
+                c = (sum[0] + sum[1]) % 1000000007;
+                sum[0] = sum[1];
+                sum[1] = c;
+                i++;
+            }
+            return (sum[0] + sum[1]) % 1000000007;
         }
     }
 
