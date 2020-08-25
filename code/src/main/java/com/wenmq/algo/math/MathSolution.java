@@ -31,7 +31,7 @@ public class MathSolution {
 
 
     public static void main(String[] args) {
-        System.out.println(getInstance().subtractProductAndSum(4421));
+        System.out.println("MathSolution");
 
     }
 
@@ -43,4 +43,7 @@ public class MathSolution {
     }
 
 
+    void a(){
+        System.out.println("MathSolution instance");
+    }
 }
