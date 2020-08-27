@@ -21,4 +21,21 @@ public class BubbleSort {
             }
         }
     }
+
+    public void geekBubbleSort(int[] arr) {
+        int length = arr.length;
+        if (length < 2) return;
+        for (int i = 0; i < length; i++) {
+            boolean flag = false;
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                    flag = true;
+                }
+            }
+            if (!flag) break;
+        }
+    }
 }
