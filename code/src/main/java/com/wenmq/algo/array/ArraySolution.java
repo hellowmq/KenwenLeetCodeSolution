@@ -52,7 +52,8 @@ public class ArraySolution {
 //        }
 //        printArray(getInstance().decompressRLElist(new int[]{3, 4, 5, 2}));
 //        System.out.println(getInstance().canMakeArithmeticProgression(new int[]{3, 5, 1}));
-        System.out.println((getInstance().findNumbers(new int[]{17, 18, 5, 4, 6, 1})));
+//        System.out.println((getInstance().findNumbers(new int[]{17, 18, 5, 4, 6, 1})));
+        System.out.println(getInstance().Fibonacci(3));
     }
 
 
@@ -119,6 +120,23 @@ public class ArraySolution {
         return fibo[n];
     }
 
+
+    public int Fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n < 2) return 1;
+        int an1 = 1;
+        int an2 = 2;
+        for (int i = 1; i < n; i++) {
+            int temp = an2 + an1;
+            an1 = an2;
+            an2 = temp;
+        }
+        return an2;
+    }
+
+    public int JumpFloorII(int target) {
+        return 1 << (target - 1);
+    }
 
     static public int[] runningSum(int[] nums) {
         int[] sum = new int[nums.length];

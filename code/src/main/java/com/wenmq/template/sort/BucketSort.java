@@ -41,4 +41,22 @@ class BucketSort {
             }
         }
     }
+
+    // Driver code
+    public static void main(String args[]) {
+        float arr[] = {(float) 0.897, (float) 0.565,
+                (float) 0.656, (float) 0.1234,
+                (float) 0.665, (float) 0.3434};
+
+        int n = arr.length;
+        bucketSort(arr, n);
+
+        System.out.println("Sorted array is ");
+        for (float el : arr) {
+            System.out.print(el + " ");
+        }
+    }
+
+
+// This code is contributed by Himangshu Shekhar Jha
 }
