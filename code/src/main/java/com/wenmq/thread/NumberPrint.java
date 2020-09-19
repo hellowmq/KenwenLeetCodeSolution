@@ -20,7 +20,7 @@ class NumberPrint implements Runnable {
         synchronized (res) {
             while (count-- > 0) {
                 try {
-                    res.notify();//唤醒等待res资源的线程，把锁交给线程（该同步锁执行完毕自动释放锁）
+                    res.notify();//唤醒等待res资源的线程，把锁交给线程（该同步锁执行完毕自 动释放锁）
                     System.out.println(" " + number);
                     Thread.sleep(2000);
 

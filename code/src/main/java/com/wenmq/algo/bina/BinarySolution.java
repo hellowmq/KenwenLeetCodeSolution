@@ -1,7 +1,5 @@
 package com.wenmq.algo.bina;
 
-import com.wenmq.algo.array.ArraySolution;
-
 import java.util.Arrays;
 
 /**
@@ -355,8 +353,7 @@ public class BinarySolution {
 
     public int missingNumber(int[] nums) {
         int a = getXorResult(nums.length);
-        for (int b : nums
-        ) {
+        for (int b : nums) {
             a ^= b;
         }
         return a;
@@ -387,4 +384,22 @@ public class BinarySolution {
         return ans;
 
     }
+
+
+    /**
+     * 二进制的异或运算（二进制加法）找出两个中的一个
+     * 三个中的一个需要三进制加法
+     * 00 +> 01 +> 10 +> 00
+     *
+     */
+    public int singleNumber(int[] nums) {
+        int a = 0;
+        int b = 0;
+        for (int num : nums) {
+            b = (b ^ num) & ~a;
+            a = (a ^ num) & ~b;
+        }
+        return b;
+    }
+
 }
