@@ -16,7 +16,8 @@ public class StaticMethodHide {
         static void start() {
             System.out.println("start MethodParent");
         }
-        static void end(){
+
+        static void end() {
             System.out.println("end MethodParent");
         }
     }
@@ -28,7 +29,7 @@ public class StaticMethodHide {
         /**
          * 声明和父类相同的静态方法，这里的本质是隐藏而非重载。
          * 此时父类的静态成员依然存在只是无法访问到。
-         * @Override 注解会直接报错
+         * "@Override" 注解会直接报错
          */
         static void start() {
             System.out.println("start MethodSon");

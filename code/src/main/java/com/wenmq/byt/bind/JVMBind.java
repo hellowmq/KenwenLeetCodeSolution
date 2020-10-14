@@ -77,7 +77,6 @@ public class JVMBind {
     /**
      * Created by  @ifans.wen
      *
-     *
      * @date 2020/10/12.
      */
     public static class Animal {
