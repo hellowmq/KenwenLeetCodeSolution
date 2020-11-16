@@ -1,6 +1,5 @@
 package com.wenmq.leetcode;
 
-import com.wenmq.algo.array.Array;
 import com.wenmq.tools.ArrayTools;
 
 import java.util.HashMap;
