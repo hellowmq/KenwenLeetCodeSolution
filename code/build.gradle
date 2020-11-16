@@ -3,6 +3,10 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+
+    // Required -- JUnit 4 framework
+    testImplementation 'junit:junit:4.12'
+    testImplementation "com.google.truth:truth:0.40"
 }
 
 sourceCompatibility = "1.8"
