@@ -3,6 +3,8 @@ package com.wenmq.leetcode;
 /**
  * Q389
  * https://leetcode-cn.com/problems/find-the-difference/
+ * 题解
+ * https://leetcode-cn.com/problems/find-the-difference/solution/chai-yi-yi-huo-a-a-0-by-hellowmq/
  */
 public class Q389 {
     static class Solution {
