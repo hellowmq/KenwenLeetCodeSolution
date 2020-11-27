@@ -1,7 +1,8 @@
 package com.wenmq.leetcode;
 
 /**
- * {https://leetcode-cn.com/problems/reverse-vowels-of-a-string/}
+ * Q374
+ * https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
  */
 public class Q374 {
 
@@ -46,6 +47,12 @@ public class Q374 {
             }
         }
 
+    }
+
+    public static void main(String[] args) {
+        Solution solution  = new Solution();
+        System.out.println(solution.reverseVowels("hello"));
+        System.out.println(solution.reverseVowels("leetcode"));
     }
 
 

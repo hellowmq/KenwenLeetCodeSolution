@@ -1,7 +1,8 @@
 package com.wenmq.leetcode;
 
 /**
- * {https://leetcode-cn.com/problems/base-7/}
+ * Q504
+ * https://leetcode-cn.com/problems/base-7/
  */
 public class Q504 {
 
@@ -23,6 +24,12 @@ public class Q504 {
             sb.reverse();
             return sb.toString();
         }
+    }
+
+    public static void main(String[] args) {
+        Solution solution =new Solution();
+        System.out.println(solution.convertToBase7(100));
+        System.out.println(solution.convertToBase7(-7));
     }
 
 
