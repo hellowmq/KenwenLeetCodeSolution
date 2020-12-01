@@ -17,19 +17,33 @@ public class Solution767UnitTest {
 
     @Test
     public void testReorganizeString_case1() {
-        TimeUtils.getInstance("reorganizeString").start();
-        assertEquals(mTestSolution.reorganizeString("aab"), "aba");
-        TimeUtils.getInstance("reorganizeString").end();
-        TimeUtils.getInstance("reorganizeString2").start();
-
-        assertEquals(mTestSolution.reorganizeString2("aab"), "aba");
-        TimeUtils.getInstance("reorganizeString2").end();
-
+        String s = "aab";
+        String result = "aba";
+        assertEquals(mTestSolution.reorganizeString(s), result);
+        assertEquals(mTestSolution.reorganizeString2(s), result);
     }
 
     @Test
     public void testReorganizeString_case2() {
-        assertEquals(mTestSolution.reorganizeString("aaab"), "");
-        assertEquals(mTestSolution.reorganizeString2("aaab"), "");
+        String s = "aaab";
+        String result = "";
+        assertEquals(mTestSolution.reorganizeString(s), result);
+        assertEquals(mTestSolution.reorganizeString2(s), result);
+    }
+
+    @Test
+    public void testReorganizeString_case3() {
+        String s = "b";
+        String result = "b";
+        assertEquals(mTestSolution.reorganizeString(s), result);
+        assertEquals(mTestSolution.reorganizeString2(s), result);
+    }
+
+    @Test
+    public void testReorganizeString_case4() {
+        String s = "aabb";
+        String result = "abab";
+        assertEquals(mTestSolution.reorganizeString(s), result);
+        assertEquals(mTestSolution.reorganizeString2(s), result);
     }
 }
