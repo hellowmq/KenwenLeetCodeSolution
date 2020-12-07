@@ -32,4 +32,10 @@ public class Solution204UnitTest {
         Assert.assertEquals(0, mTestSolution.countPrimes(1));
         Assert.assertEquals(0, mTestSolution.countPrimes2(1));
     }
+
+    @Test
+    public void testCountPrimes_Case4() {
+        Assert.assertEquals(25, mTestSolution.countPrimes(100));
+        Assert.assertEquals(25, mTestSolution.countPrimes2(100));
+    }
 }
