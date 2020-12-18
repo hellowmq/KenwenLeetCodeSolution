@@ -23,6 +23,8 @@ public class Solution389UnitTest {
         String t = "abcde";
         char e = 'e';
         Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
@@ -31,6 +33,8 @@ public class Solution389UnitTest {
         String t = "y";
         char e = 'y';
         Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
@@ -39,6 +43,8 @@ public class Solution389UnitTest {
         String t = "aa";
         char e = 'a';
         Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
@@ -47,5 +53,7 @@ public class Solution389UnitTest {
         String t = "aea";
         char e = 'a';
         Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
     }
 }
