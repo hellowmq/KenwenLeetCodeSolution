@@ -52,5 +52,4 @@ public class Solution861 {
         return sum;
     }
 
-
 }
