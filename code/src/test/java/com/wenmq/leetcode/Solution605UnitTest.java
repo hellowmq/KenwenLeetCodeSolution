@@ -32,4 +32,13 @@ public class Solution605UnitTest {
         boolean expected = false;
         Assert.assertEquals(expected, canPlaceFlowers);
     }
+
+    @Test
+    public void testCanPlaceFlowers_Case3() {
+        int [] flowered = {1,0,0,1,1};
+        int n = 2;
+        boolean canPlaceFlowers = mTestSolutioin.canPlaceFlowers(flowered, n);
+        boolean expected = false;
+        Assert.assertEquals(expected, canPlaceFlowers);
+    }
 }
