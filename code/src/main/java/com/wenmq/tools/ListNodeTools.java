@@ -22,4 +22,23 @@ public class ListNodeTools {
         sb.append("null");
         System.out.println(sb);
     }
+
+    public static int[] toArray(ListNode node){
+        ListNode iNode = node;
+        int length = 0;
+        while(iNode != null){
+            length++;
+            iNode = iNode.next;
+        }
+        //
+        int[] array = new int[length];
+        ListNode indexNode = node;
+        int index = 0;
+        while(indexNode != null){
+            array[index] = indexNode.val;
+            index++;
+            indexNode = indexNode.next;
+        }
+        return array;
+    }
 }
