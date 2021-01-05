@@ -1,5 +1,7 @@
 package com.wenmq.leetcode;
 
+import com.wenmq.tools.ArrayTools;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,43 +23,35 @@ public class Solution830UnitTest {
     public void testLargeGroupPositions_Case1() {
         String s = "abbxxxxzzy";
         Integer[][] result = {{3, 6}};
+        String expect = ArrayTools.array2ListString(result);
         List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
-        Assert.assertEquals(result.length, lists.size());
-        for (int i = 0; i < lists.size(); i++) {
-            Assert.assertArrayEquals(result[i], lists.get(i).toArray());
-        }
+        Assert.assertEquals(expect, lists.toString());
     }
 
     @Test
     public void testLargeGroupPositions_Case2() {
         String s = "abc";
         Integer[][] result = {};
+        String expect = ArrayTools.array2ListString(result);
         List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
-        Assert.assertEquals(result.length, lists.size());
-        for (int i = 0; i < lists.size(); i++) {
-            Assert.assertArrayEquals(result[i], lists.get(i).toArray());
-        }
+        Assert.assertEquals(expect, lists.toString());
     }
 
     @Test
     public void testLargeGroupPositions_Case3() {
         String s = "abcdddeeeeaabbbcd";
         Integer[][] result = {{3, 5}, {6, 9}, {12, 14}};
+        String expect = ArrayTools.array2ListString(result);
         List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
-        Assert.assertEquals(result.length, lists.size());
-        for (int i = 0; i < lists.size(); i++) {
-            Assert.assertArrayEquals(result[i], lists.get(i).toArray());
-        }
+        Assert.assertEquals(expect, lists.toString());
     }
 
     @Test
     public void testLargeGroupPositions_Case4() {
         String s = "aba";
         Integer[][] result = {};
+        String expect = ArrayTools.array2ListString(result);
         List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
-        Assert.assertEquals(result.length, lists.size());
-        for (int i = 0; i < lists.size(); i++) {
-            Assert.assertArrayEquals(result[i], lists.get(i).toArray());
-        }
+        Assert.assertEquals(expect, lists.toString());
     }
 }
