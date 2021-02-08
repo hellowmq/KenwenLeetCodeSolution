@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class Solution978UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution978";
+    private static final String TAG = "com.wenmq.leetcode.Solution978";
     private Solution978 mTestSolution;
 
     @Before
