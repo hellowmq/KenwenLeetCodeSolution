@@ -27,7 +27,7 @@ public class Solution978UnitTest {
 
     @Test
     public void testMaxTurbulenceSize_Case2() {
-        int[] array = new int[]{4,8,12,16};
+        int[] array = new int[]{4, 8, 12, 16};
         int expect = 2;
         int actual = mTestSolution.maxTurbulenceSize(array);
         Assert.assertEquals(expect, actual);
