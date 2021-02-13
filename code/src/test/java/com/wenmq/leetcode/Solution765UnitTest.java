@@ -30,4 +30,18 @@ public class Solution765UnitTest {
         int result = 0;
         Assert.assertEquals(result, mTestSolution.minSwapsCouples(array));
     }
+
+    @Test
+    public void testMinSwapsCouples2_Case1() {
+        int[] array = new int[]{0, 2, 1, 3};
+        int result = 1;
+        Assert.assertEquals(result, mTestSolution.minSwapsCouples2(array));
+    }
+
+    @Test
+    public void testMinSwapsCouples2_Case2() {
+        int[] array = new int[]{3, 2, 0, 1};
+        int result = 0;
+        Assert.assertEquals(result, mTestSolution.minSwapsCouples2(array));
+    }
 }
