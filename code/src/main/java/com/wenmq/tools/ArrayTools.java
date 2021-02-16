@@ -15,6 +15,10 @@ public class ArrayTools {
     }
 
     static public void print2DArray(int[][] a) {
+        System.out.println(get2DIntString(a));
+    }
+
+    public static String get2DIntString(int[][] a) {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
         for (int i = 0; i < a.length; i++) {
@@ -27,7 +31,7 @@ public class ArrayTools {
             sb.append(']');
         }
         sb.append(']');
-        System.out.println(sb);
+        return sb.toString();
     }
 
 
