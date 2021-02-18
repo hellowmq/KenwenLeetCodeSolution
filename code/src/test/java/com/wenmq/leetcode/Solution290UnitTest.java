@@ -4,18 +4,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 
-public class Solution0290UnitTest {
+public class Solution290UnitTest {
 
     String TAG = "com.wenmq.leetcode.Solution0290";
-    private Solution0290 mTestSolution;
+    private Solution290 mTestSolution;
 
 
     @Before
     public void setUp() throws Exception {
-
-        mTestSolution = new Solution0290();
+        mTestSolution = new Solution290();
     }
 
     @Test

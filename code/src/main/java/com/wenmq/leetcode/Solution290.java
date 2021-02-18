@@ -7,7 +7,7 @@ import java.util.Set;
  * Q290
  * https://leetcode-cn.com/problems/word-pattern/
  */
-public class Solution0290 {
+public class Solution290 {
     public boolean wordPattern(String pattern, String s) {
         String[] map = new String[26];
         Set<String> set = new HashSet<>();
