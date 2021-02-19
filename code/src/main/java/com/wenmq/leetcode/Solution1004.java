@@ -11,17 +11,15 @@ public class Solution1004 {
         int right = 0;
         int res = 0;
         while (right < A.length) {
-            if (A[right] != 0) {
-                res = Math.max(res, ++right - left);
-                continue;
-            }
-            if (K == 0) {
-                while (A[left] == 1) {
+            if (A[right] == 0) {
+                if (K == 0) {
+                    while (A[left] == 1) {
+                        left++;
+                    }
                     left++;
+                } else {
+                    K--;
                 }
-                left++;
-            } else {
-                K--;
             }
             res = Math.max(res, ++right - left);
         }
