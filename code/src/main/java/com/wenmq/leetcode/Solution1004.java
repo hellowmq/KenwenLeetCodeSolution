@@ -7,21 +7,21 @@ package com.wenmq.leetcode;
 public class Solution1004 {
 
     public int longestOnes(int[] A, int K) {
-        int left = 0;
         int right = 0;
+        int left = 0;
         int res = 0;
-        while (right < A.length) {
-            if (A[right] == 0) {
+        while (left < A.length) {
+            if (A[left] == 0) {
                 if (K == 0) {
-                    while (A[left] == 1) {
-                        left++;
+                    while (A[right] == 1) {
+                        right++;
                     }
-                    left++;
+                    right++;
                 } else {
                     K--;
                 }
             }
-            res = Math.max(res, ++right - left);
+            res = Math.max(res, ++left - right);
         }
         return res;
     }
