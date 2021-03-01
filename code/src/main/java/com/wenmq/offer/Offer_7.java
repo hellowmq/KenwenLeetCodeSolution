@@ -26,7 +26,7 @@ public class Offer_7 {
             if (preorder == null || preorder.length == 0) {
                 return null;
             }
-            Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
+            Map<Integer, Integer> indexMap = new HashMap<>();
             int length = preorder.length;
             for (int i = 0; i < length; i++) {
                 indexMap.put(inorder[i], i);
