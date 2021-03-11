@@ -62,12 +62,30 @@ public class ArrayTools {
             }
             if (list[i] instanceof Object[]) {
                 appendArray(sb, (Object[]) list[i]);
+            } else if (list[i] instanceof int[]) {
+                appendArray(sb, (int[]) list[i]);
             } else {
                 sb.append(list[i]);
             }
         }
         sb.append(']');
         return sb;
+    }
+
+    public static StringBuilder appendArray(StringBuilder sb, int[] list) {
+        if (list == null) {
+            return sb;
+        }
+        sb.append('[');
+        for (int i = 0; i < list.length; i++) {
+            if (i > 0) {
+                sb.append(", ");
+            }
+            sb.append(list[i]);
+        }
+        sb.append(']');
+        return sb;
+
     }
 
 }
