@@ -11,6 +11,15 @@ public class ListNodeTools {
     }
 
     static public void printListNode(ListNode listNode, int cycleDetect) {
+        System.out.println(getListNodeString(listNode, cycleDetect));
+    }
+
+    public static String getListNodeString(ListNode listNode) {
+        return getListNodeString(listNode, COUNTER_MAX);
+    }
+
+
+    public static String getListNodeString(ListNode listNode, int cycleDetect) {
         StringBuilder sb = new StringBuilder();
         int counter = cycleDetect;
         while (listNode != null && counter > 0) {
@@ -20,13 +29,13 @@ public class ListNodeTools {
             counter--;
         }
         sb.append("null");
-        System.out.println(sb);
+        return sb.toString();
     }
 
-    public static int[] toArray(ListNode node){
+    public static int[] toArray(ListNode node) {
         ListNode iNode = node;
         int length = 0;
-        while(iNode != null){
+        while (iNode != null) {
             length++;
             iNode = iNode.next;
         }
@@ -34,7 +43,7 @@ public class ListNodeTools {
         int[] array = new int[length];
         ListNode indexNode = node;
         int index = 0;
-        while(indexNode != null){
+        while (indexNode != null) {
             array[index] = indexNode.val;
             index++;
             indexNode = indexNode.next;
