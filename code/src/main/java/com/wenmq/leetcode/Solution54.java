@@ -1,9 +1,6 @@
 package com.wenmq.leetcode;
 
-import com.wenmq.algo.array.Array;
-
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.AbstractList;
 import java.util.List;
 
 /**
@@ -16,13 +13,11 @@ public class Solution54 {
      */
     public List<Integer> spiralOrder(int[][] matrix) {
         int m = matrix.length;
-        if (m == 0) {
-            return Collections.emptyList();
+        if (m == 0 || matrix[0].length == 0) {
+            return java.util.Collections.emptyList();
         }
         int n = matrix[0].length;
-        if (n == 0) {
-            return Collections.emptyList();
-        }
+
         int left = 0;
         int top = 0;
         int right = n - 1;
@@ -47,6 +42,25 @@ public class Solution54 {
             }
             left++;
         }
-        return Arrays.asList(result);
+        return new A(result);
     }
+
+    static class A extends java.util.AbstractList<Integer> {
+        Integer[] array;
+
+        public A(Integer[] array) {
+            this.array = array;
+        }
+
+        @Override
+        public Integer get(int index) {
+            return array[index];
+        }
+
+        @Override
+        public int size() {
+            return array.length;
+        }
+    }
+
 }
