@@ -11,13 +11,6 @@ import java.util.List;
 public class Solution341UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution341";
-    private Solution341 mTestSolution;
-
-
-    @Before
-    public void setUp() throws Exception {
-        mTestSolution = new Solution341();
-    }
 
     @Test
     public void testNestedIterator_Case1() {
@@ -32,7 +25,7 @@ public class Solution341UnitTest {
                         new NInteger(1)
                 )
         );
-        Solution341.NestedIterator actualIterator = mTestSolution.new NestedIterator(nestedInteger.getList());
+        Solution341.NestedIterator actualIterator = new Solution341.NestedIterator(nestedInteger.getList());
 
         List<Integer> actualList = new ArrayList<>();
         while (actualIterator.hasNext()) {
@@ -51,7 +44,7 @@ public class Solution341UnitTest {
                         new NInteger(6)
                 )
         );
-        Solution341.NestedIterator actualIterator = mTestSolution.new NestedIterator(nestedInteger.getList());
+        Solution341.NestedIterator actualIterator = new Solution341.NestedIterator(nestedInteger.getList());
 
         List<Integer> actualList = new ArrayList<>();
         while (actualIterator.hasNext()) {
