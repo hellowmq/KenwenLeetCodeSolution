@@ -1,11 +1,11 @@
 package com.wenmq.leetcode;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Solution341UnitTest {
@@ -25,14 +25,9 @@ public class Solution341UnitTest {
                         new NInteger(1)
                 )
         );
-        Solution341.NestedIterator actualIterator = new Solution341.NestedIterator(nestedInteger.getList());
-
-        List<Integer> actualList = new ArrayList<>();
-        while (actualIterator.hasNext()) {
-            actualList.add(actualIterator.next());
-        }
-        List<Integer> expected = Arrays.asList(1, 1, 2, 1, 1);
-        Assert.assertEquals(expected.toString(), actualList.toString());
+        List<Integer> expectedList = Arrays.asList(1, 1, 2, 1, 1);
+        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
+        assertIteratorCase(expectedList, new Solution341.NestedIterator2(nestedInteger.getList()));
     }
 
 
@@ -44,16 +39,19 @@ public class Solution341UnitTest {
                         new NInteger(6)
                 )
         );
-        Solution341.NestedIterator actualIterator = new Solution341.NestedIterator(nestedInteger.getList());
+        List<Integer> expectedList = Arrays.asList(1, 4, 6);
+        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
+        assertIteratorCase(expectedList, new Solution341.NestedIterator2(nestedInteger.getList()));
+    }
 
+    private void assertIteratorCase(List<Integer> expectedList, Iterator<Integer> actualIterator) {
         List<Integer> actualList = new ArrayList<>();
         while (actualIterator.hasNext()) {
             actualList.add(actualIterator.next());
         }
-        List<Integer> expected = Arrays.asList(1, 4, 6);
-        Assert.assertEquals(expected.toString(), actualList.toString());
-    }
 
+        Assert.assertEquals(expectedList.toString(), actualList.toString());
+    }
 
     private static final class NInteger implements Solution341.NestedInteger {
 
