@@ -19,7 +19,7 @@ public class Solution445 {
     }
 
     /**
-     * 方法一：
+     * 用缓冲区
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         Deque<Integer> stack1 = getStack(l1);
@@ -49,5 +49,61 @@ public class Solution445 {
         return stack1;
     }
 
+
+    /**
+     * 反转链表
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        if (l1 == null || l2 == null) {
+            return l1 == null ? l2 : l1;
+        }
+        l1 = reverse(l1);
+        l2 = reverse(l2);
+        int carry = 0;
+        ListNode result = null;
+        ListNode temp = result;
+        while (l1 != null || l2 != null) {
+            int n1 = 0;
+            int n2 = 0;
+            int sum = 0;
+            if (l1 != null) {
+                n1 = l1.val;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                n2 = l2.val;
+                l2 = l2.next;
+            }
+            sum = n1 + n2 + carry;
+            carry = sum / 10;
+            if (result == null) {
+                result = new ListNode(sum % 10);
+                temp = result;
+            } else {
+                temp.next = new ListNode(sum % 10);
+                temp = temp.next;
+            }
+        }
+        if (carry != 0) {
+            temp.next = new ListNode(carry);
+        }
+        return reverse(result);
+    }
+
+    public ListNode reverse(ListNode l) {
+        ListNode preHead = new ListNode(0);
+        preHead.next = l;
+        ListNode temp = l;
+        ListNode tail = l;
+        ListNode cur = tail.next;
+        while (cur != null) {
+            temp = preHead.next;
+            preHead.next = cur;
+            tail.next = cur.next;
+            cur.next = temp;
+            cur = tail.next;
+        }
+        return preHead.next;
+    }
 
 }
