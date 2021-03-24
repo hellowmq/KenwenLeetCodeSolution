@@ -44,4 +44,14 @@ public class Solution150UnitTest {
         int expected = 22;
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testEvalRPN_Case4() {
+        String[] tokens = new String[]{
+                "2", "1", "-"
+        };
+        int actual = mSolution150.evalRPN(tokens);
+        int expected = 1;
+        Assert.assertEquals(expected, actual);
+    }
 }

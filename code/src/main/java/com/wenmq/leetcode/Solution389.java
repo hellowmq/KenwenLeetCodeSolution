@@ -35,7 +35,6 @@ public class Solution389 {
         int[] res = new int[26];
         char[] ss = s.toCharArray();
         char[] tt = t.toCharArray();
-        int a = 0;
         for (char b : ss) res[b - 'a']--;
         for (char b : tt) res[b - 'a']++;
         for (int i = 0; i < res.length; i++) {

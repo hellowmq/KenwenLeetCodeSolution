@@ -6,7 +6,7 @@ package com.wenmq.leetcode;
  */
 public class Solution304 {
 
-    static class NumMatrix {
+    static class NumMatrix implements Solution {
 
         int[][] array;
 
@@ -22,6 +22,7 @@ public class Solution304 {
             }
         }
 
+        @Override
         public int sumRegion(int row1, int col1, int row2, int col2) {
             return array[row2 + 1][col2 + 1] + array[row1][col1]
                     - array[row2 + 1][col1] - array[row1][col2 + 1];
@@ -29,7 +30,7 @@ public class Solution304 {
     }
 
 
-    static class NumMatrix2 {
+    static class NumMatrix2 implements Solution {
 
         int[][] array;
 
@@ -49,10 +50,15 @@ public class Solution304 {
             }
         }
 
+        @Override
         public int sumRegion(int row1, int col1, int row2, int col2) {
             return array[row2 + 1][col2 + 1] + array[row1][col1]
                     - array[row2 + 1][col1] - array[row1][col2 + 1];
         }
+    }
+
+    interface Solution {
+        int sumRegion(int row1, int col1, int row2, int col2);
     }
 
 /**

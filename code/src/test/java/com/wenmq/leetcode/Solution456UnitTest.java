@@ -38,4 +38,12 @@ public class Solution456UnitTest {
         Assert.assertEquals(expected, mTestSolution.find132pattern(array));
         Assert.assertEquals(expected, mTestSolution.find132pattern2(array));
     }
+
+    @Test
+    public void testFind132pattern_Case4() {
+        int[] array = new int[]{-1, 3};
+        final boolean expected = false;
+        Assert.assertEquals(expected, mTestSolution.find132pattern(array));
+        Assert.assertEquals(expected, mTestSolution.find132pattern2(array));
+    }
 }

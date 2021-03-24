@@ -34,9 +34,10 @@ public class Solution205 {
     }
 
     private boolean canMap(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
+//        可以假设 s 和 t 长度相同。
+//        if (s.length() != t.length()) {
+//            return false;
+//        }
 
         int[] ms = new int[128];
         char[] cs = s.toCharArray();

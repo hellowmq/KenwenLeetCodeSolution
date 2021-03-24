@@ -27,11 +27,4 @@ public class Solution978 {
         return max;
     }
 
-    /**
-     * 方法二
-     */
-    public void solution2() {
-    }
-
-
 }

@@ -18,14 +18,36 @@ public class Solution387UnitTest {
     @Test
     public void testFirstUniqChar_case1() {
         int expected = 0;
-        Assert.assertEquals(expected,mTestSolution.firstUniqChar("leetcode"));
-        Assert.assertEquals(expected,mTestSolution.firstUniqChar2("leetcode"));
+        String s = "leetcode";
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar2(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar3(s));
     }
 
     @Test
     public void testFirstUniqChar_case2() {
         int expected = 2;
-        Assert.assertEquals(expected,mTestSolution.firstUniqChar("loveleetcode"));
-        Assert.assertEquals(expected,mTestSolution.firstUniqChar2("loveleetcode"));
+        String s = "loveleetcode";
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar2(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar3(s));
+    }
+
+    @Test
+    public void testFirstUniqChar_case3() {
+        int expected = 29;
+        String s = "aaaaaaaaaa" + "aaaaaaaaaa" + "aaaaaaaaab";
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar2(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar3(s));
+    }
+
+    @Test
+    public void testFirstUniqChar_case4() {
+        int expected = -1;
+        String s = "aaaaaaaaaa";
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar2(s));
+        Assert.assertEquals(expected, mTestSolution.firstUniqChar3(s));
     }
 }

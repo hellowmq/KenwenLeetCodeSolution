@@ -22,11 +22,24 @@ public class Solution445UnitTest {
         Solution445.ListNode actual = mTestSolution.addTwoNumbers(l1, l2);
         assertListNode(expected, actual);
     }
+
     @Test
     public void testAddTwoNumbers_Case2() {
         Solution445.ListNode l1 = generateList(new int[]{7, 2, 4, 3});
         Solution445.ListNode l2 = generateList(new int[]{5, 6, 4});
         Solution445.ListNode expected = generateList(new int[]{7, 8, 0, 7});
+        Solution445.ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
+        assertListNode(expected, actual);
+    }
+
+    /**
+     *
+     */
+    @Test
+    public void errorTestAddTwoNumbers_CaseEmpty() {
+        Solution445.ListNode l1 = generateList(new int[]{7, 2, 4, 3});
+        Solution445.ListNode l2 = null;
+        Solution445.ListNode expected = generateList(new int[]{7, 2, 4, 3});
         Solution445.ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
         assertListNode(expected, actual);
     }

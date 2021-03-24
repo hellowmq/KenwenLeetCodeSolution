@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.util.Arrays;
 
 public class Solution1046UnitTest {
 
@@ -21,17 +21,15 @@ public class Solution1046UnitTest {
     public void testLastStoneWeight_() {
         int[] stones = new int[]{2, 7, 4, 1, 8, 1};
         int expected = 1;
-        int actual = mSolution.lastStoneWeight(stones);
-        Assert.assertEquals(expected, actual);
-
-
+        Assert.assertEquals(expected, mSolution.lastStoneWeight(Arrays.copyOf(stones, stones.length)));
+        Assert.assertEquals(expected, mSolution.lastStoneWeight2(Arrays.copyOf(stones, stones.length)));
     }
 
     @Test
-    public void testLastStoneWeight2_() {
-        int[] stones = new int[]{2, 7, 4, 1, 8, 1};
-        int expected = 1;
-        int actual = mSolution.lastStoneWeight2(stones);
-        Assert.assertEquals(expected, actual);
+    public void testLastStoneWeight_Case2() {
+        int[] stones = new int[]{2};
+        int expected = 2;
+        Assert.assertEquals(expected, mSolution.lastStoneWeight(Arrays.copyOf(stones, stones.length)));
+        Assert.assertEquals(expected, mSolution.lastStoneWeight2(Arrays.copyOf(stones, stones.length)));
     }
 }
