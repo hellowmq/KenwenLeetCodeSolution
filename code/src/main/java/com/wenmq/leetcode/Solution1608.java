@@ -58,7 +58,6 @@ public class Solution1608 {
         for (int num : nums) {
             cnt[Math.min(num, n)]++;
         }
-        ArrayTools.printArray(cnt);
         for (int i = n; i >= 0; i--) {
             if (i < n) {
                 cnt[i] += cnt[i + 1];
