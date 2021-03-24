@@ -20,12 +20,7 @@ public class Solution445UnitTest {
         Solution445.ListNode l2 = generateList(new int[]{5, 6, 4});
         Solution445.ListNode expected = generateList(new int[]{7, 8, 0, 7});
         Solution445.ListNode actual = mTestSolution.addTwoNumbers(l1, l2);
-        while (expected != actual) {
-            Assert.assertEquals(expected.val, actual.val);
-            expected = expected.next;
-            actual = actual.next;
-        }
-        Assert.assertNull(actual);
+        assertListNode(expected, actual);
     }
     @Test
     public void testAddTwoNumbers_Case2() {
@@ -33,6 +28,10 @@ public class Solution445UnitTest {
         Solution445.ListNode l2 = generateList(new int[]{5, 6, 4});
         Solution445.ListNode expected = generateList(new int[]{7, 8, 0, 7});
         Solution445.ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
+        assertListNode(expected, actual);
+    }
+
+    private void assertListNode(Solution445.ListNode expected, Solution445.ListNode actual) {
         while (expected != actual) {
             Assert.assertEquals(expected.val, actual.val);
             expected = expected.next;
