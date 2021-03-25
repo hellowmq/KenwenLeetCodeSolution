@@ -17,7 +17,9 @@ public class Solution83 {
 
     public ListNode deleteDuplicates(ListNode head) {
         ListNode cur = head;
-        if (cur == null || cur.next == null) return head;
+        if (cur == null || cur.next == null) {
+            return head;
+        }
         ListNode next = head.next;
         while (next != null) {
             if (cur.val == next.val) {
