@@ -5,7 +5,7 @@ package com.wenmq.leetcode;
  * https://leetcode-cn.com/problems/design-hashset/
  */
 public class Solution705 {
-    public static class MyHashSet {
+    public static class MyHashSet implements Solution {
 
         public static final int length = 31251;
         /**
@@ -18,10 +18,12 @@ public class Solution705 {
 
         }
 
+        @Override
         public void add(int key) {
             map[key >> 5] |= 1 << (key & 31);
         }
 
+        @Override
         public void remove(int key) {
             map[key >> 5] &= ~(1 << (key & 31));
         }
@@ -29,12 +31,13 @@ public class Solution705 {
         /**
          * Returns true if this set contains the specified element
          */
+        @Override
         public boolean contains(int key) {
             return (map[key >> 5] & 1 << (key & 31)) != 0;
         }
     }
 
-    public static class MyHashSet2 {
+    public static class MyHashSet2 implements Solution {
 
         public static final int INT_LENGTH = 32;
         public static final int COL = 64;
@@ -54,24 +57,26 @@ public class Solution705 {
 
         }
 
+        @Override
         public void add(int key) {
-            getLazyArray(key >> COL_BIAS)[getColIndex(key)] |= getINTAND(key);
+            getLazyArray(key >> COL_BIAS)[getColIndex(key)] |= getIntegerAnd(key);
         }
 
-        private int getINTAND(int key) {
+        private int getIntegerAnd(int key) {
             return 1 << (key & 31);
         }
 
-
+        @Override
         public void remove(int key) {
-            getLazyArray(key >> COL_BIAS)[getColIndex(key)] &= ~(getINTAND(key));
+            getLazyArray(key >> COL_BIAS)[getColIndex(key)] &= ~(getIntegerAnd(key));
         }
 
         /**
          * Returns true if this set contains the specified element
          */
+        @Override
         public boolean contains(int key) {
-            return (getLazyArray(key >> COL_BIAS)[getColIndex(key)] & getINTAND(key)) != 0;
+            return (getLazyArray(key >> COL_BIAS)[getColIndex(key)] & getIntegerAnd(key)) != 0;
         }
 
         private int getColIndex(int key) {
@@ -86,5 +91,13 @@ public class Solution705 {
         }
     }
 
+
+    interface Solution {
+        void add(int key);
+
+        void remove(int key);
+
+        boolean contains(int key);
+    }
 
 }

@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution343UnitTest {
 
     String TAG = "com.wenmq.leetcode.Solution343";
@@ -19,17 +17,35 @@ public class Solution343UnitTest {
 
     @Test
     public void testIntegerBreak_case1() {
+        int n = 2;
         int expected = 1;
-        Assert.assertEquals(expected, mTestSolutoin.integerBreak(2));
-        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(2));
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak(n));
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(n));
 
     }
 
     @Test
     public void testIntegerBreak_case2() {
-        int expected = 36;
-        Assert.assertEquals(expected, mTestSolutoin.integerBreak(10));
-        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(10));
-
+        int n = 8;
+        int expected = 18;
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak(n));
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(n));
     }
+
+    @Test
+    public void testIntegerBreak_case3() {
+        int n = 9;
+        int expected = 27;
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak(n));
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(n));
+    }
+
+    @Test
+    public void testIntegerBreak_case4() {
+        int n = 10;
+        int expected = 36;
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak(n));
+        Assert.assertEquals(expected, mTestSolutoin.integerBreak2(n));
+    }
+
 }

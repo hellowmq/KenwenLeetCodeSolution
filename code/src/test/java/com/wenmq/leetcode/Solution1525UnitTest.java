@@ -3,7 +3,7 @@ package com.wenmq.leetcode;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class Solution1525UnitTest {
 
@@ -20,32 +20,32 @@ public class Solution1525UnitTest {
     public void testNumSplits_Case1() {
         String s = "aacaba";
         int expected = 2;
-        int actual = mTestSolution.numSplits(s);
-        assertEquals(expected, actual);
+        assertEquals(expected, mTestSolution.numSplits(s));
+        assertEquals(expected, mTestSolution.numSplits2(s));
     }
 
     @Test
     public void testNumSplits_Case2() {
         String s = "abcd";
         int expected = 1;
-        int actual = mTestSolution.numSplits(s);
-        assertEquals(expected, actual);
+        assertEquals(expected, mTestSolution.numSplits(s));
+        assertEquals(expected, mTestSolution.numSplits2(s));
     }
 
     @Test
     public void testNumSplits_Case3() {
         String s = "aaaaa";
         int expected = 4;
-        int actual = mTestSolution.numSplits(s);
-        assertEquals(expected, actual);
+        assertEquals(expected, mTestSolution.numSplits(s));
+        assertEquals(expected, mTestSolution.numSplits2(s));
     }
 
     @Test
     public void testNumSplits_Case4() {
         String s = "acbadbaada";
         int expected = 2;
-        int actual = mTestSolution.numSplits(s);
-        assertEquals(expected, actual);
+        assertEquals(expected, mTestSolution.numSplits(s));
+        assertEquals(expected, mTestSolution.numSplits2(s));
     }
 
 

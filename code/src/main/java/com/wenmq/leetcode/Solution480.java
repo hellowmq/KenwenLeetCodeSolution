@@ -8,7 +8,7 @@ import java.util.Arrays;
  */
 public class Solution480 {
     /**
-     * 方法一：
+     * 高难度
      */
     public double[] medianSlidingWindow(int[] nums, int k) {
         double[] window = new double[nums.length - k + 1];

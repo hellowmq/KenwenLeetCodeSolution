@@ -50,4 +50,18 @@ public class Solution54UnitTest {
         String expected = ArrayTools.array2ListString(list);
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testSpiralOrder_Case3() {
+        int[][] mesh = new int[][]{
+                {},
+                {},
+                {},
+        };
+
+        String actual = mTestSolution.spiralOrder(mesh).toString();
+        Object[] list = {};
+        String expected = ArrayTools.array2ListString(list);
+        Assert.assertEquals(expected, actual);
+    }
 }

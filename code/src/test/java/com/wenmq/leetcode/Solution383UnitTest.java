@@ -43,4 +43,13 @@ public class Solution383UnitTest {
         boolean actual = mTestSolution.canConstruct(ransomNote, magazine);
         Assert.assertEquals(expect, actual);
     }
+
+    @Test
+    public void testCanConstruct_Case4() {
+        String ransomNote = "aab";
+        String magazine = "aa";
+        final boolean expect = false;
+        boolean actual = mTestSolution.canConstruct(ransomNote, magazine);
+        Assert.assertEquals(expect, actual);
+    }
 }

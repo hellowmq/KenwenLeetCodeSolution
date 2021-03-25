@@ -1,10 +1,18 @@
 package com.wenmq.leetcode;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class Solution303UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution303";
+    private Solution303 mTestSolution;
+
+
+    @Before
+    public void setUp() throws Exception {
+        mTestSolution = new Solution303();
+    }
 
     @Test
     public void test_NumArrayCase0() {

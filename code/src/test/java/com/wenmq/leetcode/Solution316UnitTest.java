@@ -34,4 +34,14 @@ public class Solution316UnitTest {
         String actual2 = mTestSolution.removeDuplicateLetters2(s);
         Assert.assertEquals(expect,actual2);
     }
+
+    @Test
+    public void testRemoveDuplicateLetters_case3() {
+        String s = "a";
+        String expect = "a";
+        String actual1 = mTestSolution.removeDuplicateLetters(s);
+        Assert.assertEquals(expect,actual1);
+        String actual2 = mTestSolution.removeDuplicateLetters2(s);
+        Assert.assertEquals(expect,actual2);
+    }
 }

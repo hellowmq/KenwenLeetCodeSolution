@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution389UnitTest {
 
     String TAG = "com.wenmq.leetcode.Solution389";
@@ -21,39 +19,49 @@ public class Solution389UnitTest {
     public void testFindTheDifference_case1() {
         String s = "abcd";
         String t = "abcde";
-        char e = 'e';
-        Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
+        char expected = 'e';
+        Assert.assertEquals(expected, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
     public void testFindTheDifference_case2() {
         String s = "";
         String t = "y";
-        char e = 'y';
-        Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
+        char expected = 'y';
+        Assert.assertEquals(expected, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
     public void testFindTheDifference_case3() {
         String s = "a";
         String t = "aa";
-        char e = 'a';
-        Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
+        char expected = 'a';
+        Assert.assertEquals(expected, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference3(s, t));
     }
 
     @Test
     public void testFindTheDifference_case4() {
         String s = "ae";
         String t = "aea";
-        char e = 'a';
-        Assert.assertEquals(e, mTestSolution.findTheDifference(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference2(s, t));
-        Assert.assertEquals(e, mTestSolution.findTheDifference3(s, t));
+        char expected = 'a';
+        Assert.assertEquals(expected, mTestSolution.findTheDifference(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference2(s, t));
+        Assert.assertEquals(expected, mTestSolution.findTheDifference3(s, t));
     }
+
+    /**
+     * 无意义单测，覆盖编译需要语句
+     */
+    @Test
+    public void testFindTheDifference_case5() {
+        Assert.assertEquals('a', mTestSolution.findTheDifference3("", ""));
+    }
+
+
 }

@@ -14,7 +14,7 @@ public class Solution830 {
      */
     public List<List<Integer>> largeGroupPositions(String s) {
         int start = 0;
-        List<List<Integer>> result = new ArrayList();
+        List<List<Integer>> result = new ArrayList<>();
         for (int end = 1; end < s.length(); end++) {
             if (s.charAt(end) != s.charAt(start)) {
                 if (end - start >= 3) {

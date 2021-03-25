@@ -33,11 +33,6 @@ public class Solution48 {
 
     public void reverse(int[] nums, int start, int end) {
         int temp;
-        if (start > end) {
-            temp = start;
-            start = end;
-            end = temp;
-        }
         if (start < 0) return;
         if (end + 1 > nums.length) return;
         while (start < end) {

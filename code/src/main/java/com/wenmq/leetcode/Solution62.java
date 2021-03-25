@@ -38,11 +38,13 @@ public class Solution62 {
     }
 
 
-    public int uniquePaths3(int m, int n) {
-        // 直接计算组合数 C(m + n - 2, m - 1)
-        // 有溢出风险
-        return 0;
-    }
+//    /**
+//     * 直接计算组合数 C(m + n - 2, m - 1)
+//     * 有溢出风险
+//     */
+//    public int uniquePaths3(int m, int n) {
+//        return 0;
+//    }
 
 
 }

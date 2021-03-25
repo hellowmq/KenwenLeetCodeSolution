@@ -7,6 +7,7 @@ package com.wenmq.leetcode;
  * https://leetcode-cn.com/problems/can-make-arithmetic-progression-from-sequence/solution/java-kong-jian-huan-shi-jian-by-hellowmq/
  */
 public class Solution1502 {
+
     public boolean canMakeArithmeticProgression(int[] arr) {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
