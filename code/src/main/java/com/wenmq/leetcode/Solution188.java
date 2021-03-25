@@ -19,10 +19,7 @@ public class Solution188 {
         }
         for (int price : prices) {
             for (int i = 1; i <= k; i++) {
-//                dp[i][1] = Math.max(dp[i - 1][0] - price, dp[i][1]);
-//                dp[i][0] = Math.max(dp[i][0], dp[i][1] + price);
                 if (dp[i][1] < dp[i - 1][0] - price) {
-                    //如果当前持有
                     dp[i][1] = dp[i - 1][0] - price;
                 }
                 if (dp[i][0] < dp[i][1] + price) {
@@ -33,6 +30,10 @@ public class Solution188 {
         return dp[k][0];
     }
 
+    /**
+     * 满足 k > prices.length / 2 时是一种特殊情况
+     * 抽出来只是为了提高运行速度
+     */
     private int maxProfitNormal(int[] prices) {
         int length = prices.length;
         if (length < 2) {
@@ -40,21 +41,12 @@ public class Solution188 {
         }
         int notHold = 0;
         int hold = -prices[0];
-
         for (int i = 1; i < length; i++) {
             int price = prices[i];
-//            donTHold = Math.max(hold + price, donTHold);
-//            hold = Math.max(donTHold - price, hold);
-
-            if (hold < notHold - price) {
-                hold = notHold - price;
-            }
-            if (notHold < hold + price) {
-                notHold = hold + price;
-            }
+            hold = Math.max(hold,notHold - price);
+            notHold = Math.max(notHold,hold + price);
         }
         return notHold;
     }
-
 
 }
