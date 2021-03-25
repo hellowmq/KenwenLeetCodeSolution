@@ -4,35 +4,35 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.wenmq.leetcode.Solution82.*;
+import static com.wenmq.leetcode.Solution83.ListNode;
 
-public class Solution82UnitTest {
+public class Solution83UnitTest {
 
-    private static final String TAG = "com.wenmq.leetcode.Solution82";
-    private Solution82 mTestSolution;
+    private static final String TAG = "com.wenmq.leetcode.Solution83";
+
+    private Solution83 mTestSolution;
 
 
     @Before
     public void setUp() throws Exception {
-        mTestSolution = new Solution82();
+        mTestSolution = new Solution83();
     }
 
     @Test
     public void testDeleteDuplicates_Case1() {
-        ListNode node = generateList(new int[]{1, 2, 3, 3, 4, 4, 5});
-        ListNode expected = generateList(new int[]{1, 2, 5});
-        ListNode actual = mTestSolution.deleteDuplicates(node);
-        assertListNode(expected, actual);
+        ListNode head = generateList(new int[]{1, 1, 2});
+        ListNode expected = generateList(new int[]{1, 2});
+        head = mTestSolution.deleteDuplicates(head);
+        assertListNode(expected, head);
     }
 
     @Test
     public void testDeleteDuplicates_Case2() {
-        ListNode node = generateList(new int[]{1, 1, 1, 2, 3});
-        ListNode expected = generateList(new int[]{2, 3});
-        ListNode actual = mTestSolution.deleteDuplicates(node);
-        assertListNode(expected, actual);
+        ListNode head = generateList(new int[]{1, 1, 2, 3, 3});
+        ListNode expected = generateList(new int[]{1, 2, 3});
+        head = mTestSolution.deleteDuplicates(head);
+        assertListNode(expected, head);
     }
-
 
     public ListNode generateList(int[] list) {
         if (list == null || list.length == 0) {
@@ -45,7 +45,6 @@ public class Solution82UnitTest {
             node = node.next;
         }
         return head;
-
     }
 
     private void assertListNode(ListNode expected, ListNode actual) {
