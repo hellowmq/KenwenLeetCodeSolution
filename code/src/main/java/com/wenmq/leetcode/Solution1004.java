@@ -6,6 +6,7 @@ package com.wenmq.leetcode;
  */
 public class Solution1004 {
 
+    @SuppressWarnings("checkstyle:ParameterName")
     public int longestOnes(int[] A, int K) {
         int right = 0;
         int left = 0;
