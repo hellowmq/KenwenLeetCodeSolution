@@ -15,6 +15,7 @@ public class Solution1004UnitTest {
         mTestSolution = new Solution1004();
     }
 
+    @SuppressWarnings("checkstyle:LocalVariableName")
     @Test
     public void testLongestOnes_Case1() {
         int[] A = new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0};
@@ -24,6 +25,7 @@ public class Solution1004UnitTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @SuppressWarnings("checkstyle:LocalVariableName")
     @Test
     public void testLongestOnes_Case2() {
         int[] A = new int[]{
