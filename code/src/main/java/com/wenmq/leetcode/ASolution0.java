@@ -2,7 +2,7 @@ package com.wenmq.leetcode;
 
 /**
  * Q
- * https://leetcode-cn.com/problems/maximum-gap/
+ * https://leetcode-cn.com/problems/all/
  */
 public class ASolution0 {
     /**
