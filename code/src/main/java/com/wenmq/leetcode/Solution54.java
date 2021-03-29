@@ -1,6 +1,5 @@
 package com.wenmq.leetcode;
 
-import java.util.AbstractList;
 import java.util.List;
 
 /**
