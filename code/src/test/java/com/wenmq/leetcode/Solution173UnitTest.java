@@ -26,7 +26,7 @@ public class Solution173UnitTest {
                 "BSTIterator", "next", "next", "hasNext", "next",
                 "hasNext", "next", "hasNext", "next", "hasNext"
         };
-        Object[] list = {7, 3, 15, null, null, 9, 20};
+        Integer[] list = {7, 3, 15, null, null, 9, 20};
         TreeNode head;
         BSTIterator iterator = null;
         Object[] expected = {null, 3, 7, true, 9, true, 15, true, 20, false};
@@ -34,7 +34,7 @@ public class Solution173UnitTest {
             String command = instructions[i];
             switch (command) {
                 case "BSTIterator":
-                    head = buildTreeNode(list, 0);
+                    head = buildTreeNode(list);
                     iterator = new BSTIterator(head);
                     break;
                 case "next":
@@ -51,12 +51,16 @@ public class Solution173UnitTest {
 
     }
 
-    private TreeNode buildTreeNode(Object[] list, int head) {
+    private TreeNode buildTreeNode(Integer[] list) {
+        return buildTreeNode(list, 0);
+    }
+
+    private TreeNode buildTreeNode(Integer[] list, int head) {
         if (head >= list.length || list[head] == null) {
             return null;
         }
         return new TreeNode(
-                (Integer) list[head],
+                list[head],
                 buildTreeNode(list, head * 2 + 1),
                 buildTreeNode(list, head * 2 + 2)
         );
