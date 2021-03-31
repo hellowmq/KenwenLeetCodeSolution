@@ -1,11 +1,19 @@
 package com.wenmq.leetcode;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class Solution304UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution304";
+
+    private Solution304 mTestSolution;
+
+    @Before
+    public void setUp() throws Exception {
+        mTestSolution = new Solution304();
+    }
 
     @Test
     public void test2DNumArray() {
@@ -42,7 +50,7 @@ public class Solution304UnitTest {
     public void test2DNumArray_Null() {
         int[][] twoDArray = new int[][]{
         };
-        Solution304.NumMatrix numMatrix = new Solution304.NumMatrix(twoDArray);
+        Solution304.Solution numMatrix = new Solution304.NumMatrix(twoDArray);
     }
 
 

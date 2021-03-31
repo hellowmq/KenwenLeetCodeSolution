@@ -1,6 +1,7 @@
 package com.wenmq.leetcode;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,6 +12,13 @@ import java.util.List;
 public class Solution341UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution341";
+    
+    Solution341 mTestSolution;
+
+    @Before
+    public void setUp() throws Exception {
+        mTestSolution = new Solution341();
+    }
 
     @Test
     public void testNestedIterator_Case1() {
