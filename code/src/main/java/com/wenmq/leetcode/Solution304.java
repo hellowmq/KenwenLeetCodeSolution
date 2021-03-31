@@ -6,12 +6,14 @@ package com.wenmq.leetcode;
  */
 public class Solution304 {
 
-    static class NumMatrix implements Solution {
+    public static class NumMatrix implements Solution {
 
         int[][] array;
 
         public NumMatrix(int[][] matrix) {
-            if (matrix.length == 0 || matrix[0].length == 0) return;
+            if (matrix.length == 0 || matrix[0].length == 0) {
+                return;
+            }
             int m = matrix.length + 1;
             int n = matrix[0].length + 1;
             array = new int[m][n];
@@ -30,7 +32,7 @@ public class Solution304 {
     }
 
 
-    static class NumMatrix2 implements Solution {
+    public static class NumMatrix2 implements Solution {
 
         int[][] array;
 
@@ -57,13 +59,13 @@ public class Solution304 {
         }
     }
 
+    /**
+     * Your NumMatrix object will be instantiated and called as such:
+     * NumMatrix obj = new NumMatrix(matrix);
+     * int param_1 = obj.sumRegion(row1,col1,row2,col2);
+     */
     interface Solution {
         int sumRegion(int row1, int col1, int row2, int col2);
     }
 
-/**
- * Your NumMatrix object will be instantiated and called as such:
- * NumMatrix obj = new NumMatrix(matrix);
- * int param_1 = obj.sumRegion(row1,col1,row2,col2);
- */
 }
