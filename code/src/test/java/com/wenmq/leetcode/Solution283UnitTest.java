@@ -21,7 +21,6 @@ public class Solution283UnitTest {
     @Test
     public void testMoveZeroes_Case1() {
         int[] array = {0, 1, 0, 3, 12};
-        ArrayTools.printArray(array);
         int[] expected = new int[]{1, 3, 12, 0, 0};
         mTestSolution.moveZeroes(array);
         Assert.assertArrayEquals(expected, array);
