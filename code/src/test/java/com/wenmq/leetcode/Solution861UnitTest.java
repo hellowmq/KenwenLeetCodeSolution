@@ -15,13 +15,20 @@ public class Solution861UnitTest {
 
     @Test
     public void testMatrixScore_Case() {
-        int[][] A = {
+        int[][] a = {
                 {0, 0, 1, 1},
                 {1, 0, 1, 0},
                 {1, 1, 0, 0},
         };
-        Assert.assertEquals(39, mTestSolution.matrixScore(A));
-        Assert.assertEquals(39, mTestSolution.matrixScore2(A));
+        Assert.assertEquals(39, mTestSolution.matrixScore(a));
+        Assert.assertEquals(39, mTestSolution.matrixScore2(a));
+    }
+
+    @Test
+    public void testMatrixScore_Case2() {
+        int[][] a = null;
+        Assert.assertEquals(0, mTestSolution.matrixScore(a));
+        Assert.assertEquals(0, mTestSolution.matrixScore2(a));
     }
 
 }

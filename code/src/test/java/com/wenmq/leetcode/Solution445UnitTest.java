@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.wenmq.leetcode.Solution445.ListNode;
+
 public class Solution445UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution445";
@@ -16,19 +18,28 @@ public class Solution445UnitTest {
 
     @Test
     public void testAddTwoNumbers_Case1() {
-        Solution445.ListNode l1 = generateList(new int[]{7, 2, 4, 3});
-        Solution445.ListNode l2 = generateList(new int[]{5, 6, 4});
-        Solution445.ListNode expected = generateList(new int[]{7, 8, 0, 7});
-        Solution445.ListNode actual = mTestSolution.addTwoNumbers(l1, l2);
+        ListNode l1 = generateList(new int[]{7, 2, 4, 3});
+        ListNode l2 = generateList(new int[]{5, 6, 4});
+        ListNode expected = generateList(new int[]{7, 8, 0, 7});
+        ListNode actual = mTestSolution.addTwoNumbers(l1, l2);
         assertListNode(expected, actual);
     }
 
     @Test
-    public void testAddTwoNumbers_Case2() {
-        Solution445.ListNode l1 = generateList(new int[]{7, 2, 4, 3});
-        Solution445.ListNode l2 = generateList(new int[]{5, 6, 4});
-        Solution445.ListNode expected = generateList(new int[]{7, 8, 0, 7});
-        Solution445.ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
+    public void testAddTwoNumbers2_Case1() {
+        ListNode l1 = generateList(new int[]{7, 2, 4, 3});
+        ListNode l2 = generateList(new int[]{5, 6, 4});
+        ListNode expected = generateList(new int[]{7, 8, 0, 7});
+        ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
+        assertListNode(expected, actual);
+    }
+
+    @Test
+    public void testAddTwoNumbers2_Case2() {
+        ListNode l1 = generateList(new int[]{7, 2, 4, 3});
+        ListNode l2 = generateList(new int[]{3, 5, 6, 4});
+        ListNode expected = generateList(new int[]{1, 0, 8, 0, 7});
+        ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
         assertListNode(expected, actual);
     }
 
@@ -37,14 +48,14 @@ public class Solution445UnitTest {
      */
     @Test
     public void errorTestAddTwoNumbers_CaseEmpty() {
-        Solution445.ListNode l1 = generateList(new int[]{7, 2, 4, 3});
-        Solution445.ListNode l2 = null;
-        Solution445.ListNode expected = generateList(new int[]{7, 2, 4, 3});
-        Solution445.ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
+        ListNode l1 = generateList(new int[]{7, 2, 4, 3});
+        ListNode l2 = null;
+        ListNode expected = generateList(new int[]{7, 2, 4, 3});
+        ListNode actual = mTestSolution.addTwoNumbers2(l1, l2);
         assertListNode(expected, actual);
     }
 
-    private void assertListNode(Solution445.ListNode expected, Solution445.ListNode actual) {
+    private void assertListNode(ListNode expected, ListNode actual) {
         while (expected != actual) {
             Assert.assertEquals(expected.val, actual.val);
             expected = expected.next;
@@ -53,14 +64,14 @@ public class Solution445UnitTest {
         Assert.assertNull(actual);
     }
 
-    public Solution445.ListNode generateList(int[] list) {
+    public ListNode generateList(int[] list) {
         if (list == null || list.length == 0) {
             return null;
         }
-        Solution445.ListNode head = new Solution445.ListNode(list[0]);
-        Solution445.ListNode node = head;
+        ListNode head = new ListNode(list[0]);
+        ListNode node = head;
         for (int i = 1; i < list.length; i++) {
-            node.next = new Solution445.ListNode(list[i]);
+            node.next = new ListNode(list[i]);
             node = node.next;
         }
         return head;

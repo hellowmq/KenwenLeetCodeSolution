@@ -36,4 +36,12 @@ public class Solution1502UnitTest {
         Assert.assertEquals(expected, mTestSolution.canMakeArithmeticProgression(arr));
     }
 
+    @Test
+    public void testCanMakeArithmeticProgression_Case4() {
+        int[] arr = new int[]{1, 2, 4, 4};
+        final boolean expected = false;
+        Assert.assertEquals(expected, mTestSolution.canMakeArithmeticProgression(arr));
+    }
+
+
 }

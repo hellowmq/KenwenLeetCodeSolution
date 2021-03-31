@@ -8,21 +8,24 @@ import java.util.Set;
  * https://leetcode-cn.com/problems/word-pattern/
  */
 public class Solution290 {
+    /**
+     * 单词规律
+     */
     public boolean wordPattern(String pattern, String s) {
         String[] map = new String[26];
         Set<String> set = new HashSet<>();
-        int i = 0;
-        int j = 0;
-        for (; i < pattern.length(); i++, j++) {
-            int c = pattern.charAt(i) - 'a';
-            int k = j;
-            while (j < s.length() && s.charAt(j) != ' ') {
-                ++j;
+        int patternIndex = 0;
+        int charIndex = 0;
+        for (; patternIndex < pattern.length(); patternIndex++, charIndex++) {
+            int c = pattern.charAt(patternIndex) - 'a';
+            int k = charIndex;
+            while (charIndex < s.length() && s.charAt(charIndex) != ' ') {
+                ++charIndex;
             }
-            if (j == k) {
+            if (charIndex == k) {
                 return false;
             }
-            String w = s.substring(k, j);
+            String w = s.substring(k, charIndex);
             if (map[c] == null && !set.contains(w)) {
                 set.add(w);
                 map[c] = w;
@@ -32,6 +35,6 @@ public class Solution290 {
             }
             return false;
         }
-        return i == pattern.length() && j >= s.length();
+        return patternIndex == pattern.length() && charIndex >= s.length();
     }
 }

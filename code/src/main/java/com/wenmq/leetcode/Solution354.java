@@ -1,7 +1,6 @@
 package com.wenmq.leetcode;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * Q354
@@ -34,10 +33,12 @@ public class Solution354 {
         return res;
     }
 
+    /**
+     * envelopes
+     */
     public int maxEnvelopes2(int[][] envelopes) {
         int n = envelopes.length;
         Arrays.sort(envelopes, (a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
-
         int[] height = new int[n];
         for (int i = 0; i < n; ++i) {
             height[i] = envelopes[i][1];
@@ -48,7 +49,8 @@ public class Solution354 {
 
         for (int i = 0; i < n; ++i) {
             int poker = height[i];
-            int left = 0, right = piles - 1;
+            int left = 0;
+            int right = piles - 1;
             while (left <= right) {
                 int mid = (left + right) / 2;
                 if (top[mid] > poker) {
@@ -59,8 +61,9 @@ public class Solution354 {
                     right = mid - 1;
                 }
             }
-            if (left == piles)
+            if (left == piles) {
                 piles++;
+            }
             top[left] = poker;
         }
 

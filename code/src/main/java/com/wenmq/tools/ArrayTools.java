@@ -1,21 +1,35 @@
 package com.wenmq.tools;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ArrayTools {
-    static public void printArray(int[] a) {
+    public static void printArray(int[] a) {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
         for (int i = 0; i < a.length; i++) {
-            if (i > 0) sb.append(' ');
+            if (i > 0) {
+                sb.append(' ');
+            }
             sb.append(a[i]);
         }
         sb.append(']');
         System.out.println(sb);
     }
 
-    static public void print2DArray(int[][] a) {
+    public static void printArray(Object[] a) {
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for (int i = 0; i < a.length; i++) {
+            if (i > 0) {
+                sb.append(' ');
+            }
+            sb.append(a[i]);
+        }
+        sb.append(']');
+        System.out.println(sb);
+    }
+
+    public static void print2DArray(int[][] a) {
         System.out.println(get2DIntString(a));
     }
 
@@ -23,10 +37,14 @@ public class ArrayTools {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
         for (int i = 0; i < a.length; i++) {
-            if (i != 0) sb.append(',');
+            if (i != 0) {
+                sb.append(',');
+            }
             sb.append('[');
             for (int j = 0; j < a[i].length; j++) {
-                if (j != 0) sb.append(',');
+                if (j != 0) {
+                    sb.append(',');
+                }
                 sb.append(a[i][j]);
             }
             sb.append(']');
@@ -35,23 +53,14 @@ public class ArrayTools {
         return sb.toString();
     }
 
-
-    static public void printArray(Object[] a) {
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        for (int i = 0; i < a.length; i++) {
-            if (i > 0) sb.append(' ');
-            sb.append(a[i]);
-        }
-        sb.append(']');
-        System.out.println(sb);
-    }
-
     public static String array2ListString(Object[] list) {
         StringBuilder sb = new StringBuilder();
         return appendArray(sb, list).toString();
     }
 
+    /**
+     * appendArray
+     */
     public static StringBuilder appendArray(StringBuilder sb, Object[] list) {
         if (list == null) {
             return sb;
@@ -88,5 +97,49 @@ public class ArrayTools {
         return sb;
 
     }
+
+
+    public static Object copyOf(Object array) {
+        if (array instanceof int[][][]) {
+            return copyOfTriple((int[][][]) array);
+        }
+        if (array instanceof int[][]) {
+            return copyOfMatrix((int[][]) array);
+        }
+        if (array instanceof int[]) {
+            return copyOfArray((int[]) array);
+        }
+        return null;
+    }
+
+    public static int[] copyOfArray(int[] array) {
+        if (array == null) {
+            return null;
+        }
+        return Arrays.copyOf(array, array.length);
+    }
+
+    public static int[][] copyOfMatrix(int[][] array) {
+        if (array == null) {
+            return null;
+        }
+        int[][] matrix = new int[array.length][];
+        for (int i = 0; i < array.length; i++) {
+            matrix[i] = copyOfArray(array[i]);
+        }
+        return matrix;
+    }
+
+    public static int[][][] copyOfTriple(int[][][] array) {
+        if (array == null) {
+            return null;
+        }
+        int[][][] matrix = new int[array.length][][];
+        for (int i = 0; i < array.length; i++) {
+            matrix[i] = copyOfMatrix(array[i]);
+        }
+        return matrix;
+    }
+
 
 }

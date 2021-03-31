@@ -34,6 +34,14 @@ public class Solution83UnitTest {
         assertListNode(expected, head);
     }
 
+    @Test
+    public void testDeleteDuplicates_Case3() {
+        ListNode head = generateList(new int[]{1});
+        ListNode expected = generateList(new int[]{1});
+        head = mTestSolution.deleteDuplicates(head);
+        assertListNode(expected, head);
+    }
+
     public ListNode generateList(int[] list) {
         if (list == null || list.length == 0) {
             return null;

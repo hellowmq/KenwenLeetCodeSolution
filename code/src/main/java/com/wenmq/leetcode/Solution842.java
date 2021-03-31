@@ -12,12 +12,16 @@ public class Solution842 {
     /**
      * 方法一：
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public List<Integer> splitIntoFibonacci(String S) {
         List<Integer> res = new ArrayList<>();
         backtrack(S.toCharArray(), res, 0);
         return res;
     }
 
+    /**
+     * ignore
+     */
     public boolean backtrack(char[] digit, List<Integer> res, int index) {
         //边界条件判断，如果截取完了，并且res长度大于等于3，表示找到了一个组合。
         if (index == digit.length && res.size() >= 3) {
@@ -43,8 +47,9 @@ public class Solution842 {
                 //把数字num添加到集合res中
                 res.add((int) num);
                 //如果找到了就直接返回
-                if (backtrack(digit, res, i + 1))
+                if (backtrack(digit, res, i + 1)) {
                     return true;
+                }
                 //如果没找到，就会走回溯这一步，然后把上一步添加到集合res中的数字给移除掉
                 res.remove(res.size() - 1);
             }
