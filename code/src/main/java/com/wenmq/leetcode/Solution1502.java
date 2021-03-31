@@ -8,6 +8,9 @@ package com.wenmq.leetcode;
  */
 public class Solution1502 {
 
+    /**
+     * 空间换时间
+     */
     public boolean canMakeArithmeticProgression(int[] arr) {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
@@ -27,12 +30,15 @@ public class Solution1502 {
         if ((max - min) % (len - 1) != 0) {
             return false;
         }
-        int d = (max - min) / (len - 1);
+        int divider = (max - min) / (len - 1);
         for (int value : arr) {
-            int i1 = value - min;
-            int i2 = i1 / d;
-            if ((i1 % d == 0) && (i2 < len) && (i2 > -1) && !c[i2]) {
-                c[i2] = true;
+            int length = value - min;
+            int num = length / divider;
+            if ((length % divider == 0)
+                    && (num < len)
+                    && (num > -1)
+                    && !c[num]) {
+                c[num] = true;
             } else {
                 return false;
             }

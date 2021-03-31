@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Solution830UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution830";
+    private static final String TAG = "com.wenmq.leetcode.Solution830";
     private Solution830 mTestSolution;
 
 
@@ -50,6 +50,15 @@ public class Solution830UnitTest {
     public void testLargeGroupPositions_Case4() {
         String s = "aba";
         Integer[][] result = {};
+        String expect = ArrayTools.array2ListString(result);
+        List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
+        Assert.assertEquals(expect, lists.toString());
+    }
+
+    @Test
+    public void testLargeGroupPositions_Case5() {
+        String s = "abbxxxx";
+        Integer[][] result = {{3, 6}};
         String expect = ArrayTools.array2ListString(result);
         List<List<Integer>> lists = mTestSolution.largeGroupPositions(s);
         Assert.assertEquals(expect, lists.toString());

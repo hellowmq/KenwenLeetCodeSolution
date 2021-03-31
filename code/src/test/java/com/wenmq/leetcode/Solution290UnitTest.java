@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class Solution290UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution0290";
+    private static final String TAG = "com.wenmq.leetcode.Solution0290";
     private Solution290 mTestSolution;
 
 
@@ -41,6 +41,13 @@ public class Solution290UnitTest {
     public void testWordPattern_case4() {
         String pattern = "abba";
         String s = "dog dog dog dog";
+        Assert.assertFalse(mTestSolution.wordPattern(pattern, s));
+    }
+
+    @Test
+    public void testWordPattern_case5() {
+        String pattern = "ab";
+        String s = "dg";
         Assert.assertFalse(mTestSolution.wordPattern(pattern, s));
     }
 }
