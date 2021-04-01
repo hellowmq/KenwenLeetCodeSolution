@@ -23,6 +23,7 @@ public class Solution392UnitTest {
         final boolean expected = true;
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void testIsSubsequence_Case2() {
         String s = "abc";
@@ -31,6 +32,7 @@ public class Solution392UnitTest {
         final boolean expected = true;
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void testIsSubsequence_Case3() {
         String s = "axc";

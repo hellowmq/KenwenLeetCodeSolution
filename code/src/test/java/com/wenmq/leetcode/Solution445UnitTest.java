@@ -43,9 +43,6 @@ public class Solution445UnitTest {
         assertListNode(expected, actual);
     }
 
-    /**
-     *
-     */
     @Test
     public void errorTestAddTwoNumbers_CaseEmpty() {
         ListNode l1 = generateList(new int[]{7, 2, 4, 3});

@@ -6,6 +6,7 @@ package com.wenmq.leetcode;
  */
 public class Solution832 {
 
+    @SuppressWarnings("checkstyle:ParameterName")
     public int[][] flipAndInvertImage(int[][] A) {
         int m = A.length;
         int n = A[0].length;
@@ -20,6 +21,10 @@ public class Solution832 {
     }
 
 
+    /**
+     * method-2
+     */
+    @SuppressWarnings("checkstyle:ParameterName")
     public int[][] flipAndInvertImage2(int[][] A) {
         for (int i = 0; i < A.length; i++) {
             int length = A[i].length;

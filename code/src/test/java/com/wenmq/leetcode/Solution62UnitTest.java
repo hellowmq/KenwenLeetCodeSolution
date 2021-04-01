@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class Solution62UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution62";
+    public static final String TAG = "com.wenmq.leetcode.Solution62";
 
     Solution62 mTestSolution;
 

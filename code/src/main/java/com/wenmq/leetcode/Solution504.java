@@ -6,6 +6,9 @@ package com.wenmq.leetcode;
  */
 public class Solution504 {
 
+    /**
+     * convertToBase7
+     */
     public String convertToBase7(int num) {
         if (num == 0) {
             return "0";

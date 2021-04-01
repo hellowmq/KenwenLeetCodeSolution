@@ -8,6 +8,9 @@ public class Solution1030 {
     final int[] dr = {1, 1, -1, -1};
     final int[] dc = {1, -1, -1, 1};
 
+    /**
+     * allCellsDistOrder
+     */
     @SuppressWarnings("checkstyle:ParameterName")
     public int[][] allCellsDistOrder(int R, int C, int r0, int c0) {
         int maxDist = Math.max(r0, R - 1 - r0) + Math.max(c0, C - 1 - c0);

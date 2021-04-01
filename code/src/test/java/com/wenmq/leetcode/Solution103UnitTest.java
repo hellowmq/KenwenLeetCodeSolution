@@ -8,11 +8,9 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class Solution103UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution103";
+    public static final String TAG = "com.wenmq.leetcode.Solution103";
     private Solution103 mTestSolution;
 
 

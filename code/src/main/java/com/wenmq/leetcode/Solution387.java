@@ -28,9 +28,6 @@ public class Solution387 {
     /**
      * 方法二
      */
-    /**
-     * 方法一：9ms
-     */
     public int firstUniqChar2(String s) {
         int has = 0;
         int[] pos = new int[26];
@@ -54,6 +51,9 @@ public class Solution387 {
     }
 
 
+    /**
+     * firstUniqChar3
+     */
     public int firstUniqChar3(String s) {
         if (s.length() <= 26) {
             int[] chars = new int[26];

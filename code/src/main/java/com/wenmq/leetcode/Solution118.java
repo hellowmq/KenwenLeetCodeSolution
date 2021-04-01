@@ -8,6 +8,9 @@ import java.util.List;
  * https://leetcode-cn.com/problems/pascals-triangle/
  */
 public class Solution118 {
+    /**
+     * generate
+     */
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> matrix = new ArrayList<>();
         if (numRows < 1) {

@@ -39,6 +39,7 @@ public class Solution321UnitTest {
         int[] result = {9, 8, 9};
         Assert.assertArrayEquals(result, mTestSolution.maxNumber(nums1, nums2, k));
     }
+
     @Test
     public void testMaxNumber_Case4() {
         int[] nums1 = {9, 1, 2, 5, 8, 3};

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Solution49UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution49";
+    public static final String TAG = "com.wenmq.leetcode.Solution49";
     private Solution49 mTestSolution;
 
 

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.wenmq.leetcode.Solution82.*;
+import static com.wenmq.leetcode.Solution82.ListNode;
 
 public class Solution82UnitTest {
 

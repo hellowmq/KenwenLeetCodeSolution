@@ -11,8 +11,10 @@ public class Solution454 {
     /**
      * 方法一：利用 HashMap 的 merge 方法优化时间开销
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
-        int lenA = A.length, res = 0;
+        int lenA = A.length;
+        int res = 0;
         int lenB = B.length;
         Map<Integer, Integer> map = new HashMap<>(lenA * lenB);
 
@@ -33,6 +35,7 @@ public class Solution454 {
     /**
      * 方法二
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public int fourSumCount2(int[] A, int[] B, int[] C, int[] D) {
         return new Solution().fourSumCount(A, B, C, D);
     }
@@ -116,6 +119,10 @@ public class Solution454 {
         }
 
 
+        /**
+         * fourSumCount
+         */
+        @SuppressWarnings("checkstyle:ParameterName")
         public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
 
             // 避免扩容, 初始化一个最大初始容量

@@ -7,10 +7,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution86UnitTest {
-    String TAG = "com.wenmq.leetcode.Solution86";
+    public static final String TAG = "com.wenmq.leetcode.Solution86";
     private Solution86 mTestSolution;
 
 

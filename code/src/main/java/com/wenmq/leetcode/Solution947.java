@@ -27,9 +27,10 @@ public class Solution947 {
         }
     }
 
+    /**
+     * 并查集
+     */
     public int removeStones(int[][] stones) {
-        //又nm看错题
-        //并查集
         DJS[] unions = new DJS[20000];
         int ret = 0;
         for (int[] t : stones) {

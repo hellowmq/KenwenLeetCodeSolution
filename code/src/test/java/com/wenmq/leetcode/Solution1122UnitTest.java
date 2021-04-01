@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class Solution1122UnitTest {
-    String TAG = "com.wenmq.leetcode.Solution1122";
+    public static final String TAG = "com.wenmq.leetcode.Solution1122";
     Solution1122 mTestSolution;
 
     @Before

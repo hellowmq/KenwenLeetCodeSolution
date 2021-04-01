@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Solution1046UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution1046";
+    public static final String TAG = "com.wenmq.leetcode.Solution1046";
     private Solution1046 mSolution;
 
 

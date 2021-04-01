@@ -10,8 +10,9 @@ public class Solution738 {
      * 我原本认为这种写法并不美观
      * 但是他的耗时真的很短。
      */
-    public int monotoneIncreasingDigits(int n) {
-        String s = String.valueOf(n);
+    @SuppressWarnings("checkstyle:ParameterName")
+    public int monotoneIncreasingDigits(int N) {
+        String s = String.valueOf(N);
         int length = s.length();
         char[] chars = s.toCharArray();
         int flag = length;
@@ -36,6 +37,7 @@ public class Solution738 {
      * bias 作为位数偏移量
      * sum 求和或者用于重置 next = 0 情况的
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public int monotoneIncreasingDigits2(int N) {
         int sum = 0;
         int bias = 1;

@@ -12,18 +12,23 @@ public class Solution164 {
      * 桶排序
      */
     public int maximumGap(int[] nums) {
-        if (nums.length < 2) return 0;
+        if (nums.length < 2) {
+            return 0;
+        }
         int len = nums.length;
 
         // 找出最大值和最小值 为了方便后面确定桶的数量
-        int max = -1, min = Integer.MAX_VALUE;
+        int max = -1;
+        int min = Integer.MAX_VALUE;
         for (int num : nums) {
             max = Math.max(num, max);
             min = Math.min(num, min);
         }
 
         // 排除nums全部为一样的数字，nums = [1,1,1,1,1,1];
-        if (max - min == 0) return 0;
+        if (max - min == 0) {
+            return 0;
+        }
         // 用于存放每个桶的最大值
         int[] bucketMin = new int[len - 1];
         // 用于存放每个桶的最小值
@@ -33,13 +38,15 @@ public class Solution164 {
 
         // 确定桶的间距
         int interval = (int) Math.ceil((double) (max - min) / (len - 1));
-        for (int i = 0; i < len; i++) {
+        for (int num : nums) {
             // 找到每一个值所对应桶的索引
-            int index = (nums[i] - min) / interval;
-            if (nums[i] == min || nums[i] == max) continue;
+            int index = (num - min) / interval;
+            if (num == min || num == max) {
+                continue;
+            }
             // 更新每个桶的数据
-            bucketMax[index] = Math.max(bucketMax[index], nums[i]);
-            bucketMin[index] = Math.min(bucketMin[index], nums[i]);
+            bucketMax[index] = Math.max(bucketMax[index], num);
+            bucketMin[index] = Math.min(bucketMin[index], num);
         }
 
         // maxGap 表示桶之间最大的差距
@@ -49,7 +56,9 @@ public class Solution164 {
         for (int i = 0; i < len - 1; i++) {
             // 表示某一个桶为空
             // 但凡某一个桶不为空，都会在前面的数据中更新掉bucketMax的值
-            if (bucketMax[i] == -1) continue;
+            if (bucketMax[i] == -1) {
+                continue;
+            }
             maxGap = Math.max(bucketMin[i] - preMax, maxGap);
             preMax = bucketMax[i];
         }

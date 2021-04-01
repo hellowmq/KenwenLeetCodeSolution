@@ -30,6 +30,9 @@ public class Solution456 {
     }
 
 
+    /**
+     * find132pattern2
+     */
     public boolean find132pattern2(int[] nums) {
         if (nums.length < 3) {
             return false;

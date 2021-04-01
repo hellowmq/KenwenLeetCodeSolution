@@ -12,15 +12,17 @@ public class Solution48 {
     public void rotate(int[][] matrix) {
         mirrorSymmetry(matrix);
         int length = matrix.length;
-        for (int i = 0; i < length; i++) {
-            reverse(matrix[i], 0, length - 1);
+        for (int[] ints : matrix) {
+            reverse(ints, 0, length - 1);
         }
     }
 
     public void mirrorSymmetry(int[][] matrix) {
         int length = matrix.length;
         int temp;
-        if (length == 1) return;
+        if (length == 1) {
+            return;
+        }
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
                 temp = matrix[j][i];
@@ -33,8 +35,12 @@ public class Solution48 {
 
     public void reverse(int[] nums, int start, int end) {
         int temp;
-        if (start < 0) return;
-        if (end + 1 > nums.length) return;
+        if (start < 0) {
+            return;
+        }
+        if (end + 1 > nums.length) {
+            return;
+        }
         while (start < end) {
             temp = nums[start];
             nums[start] = nums[end];
@@ -46,10 +52,10 @@ public class Solution48 {
 
 
     public void rotate2(int[][] matrix) {
-        for (int i = 0; i < matrix.length/2; i++) {
+        for (int i = 0; i < matrix.length / 2; i++) {
             int[] tmp = matrix[i];
-            matrix[i] = matrix[matrix.length-1-i];
-            matrix[matrix.length-1-i] = tmp;
+            matrix[i] = matrix[matrix.length - 1 - i];
+            matrix[matrix.length - 1 - i] = tmp;
         }
         for (int i = 0; i < matrix.length; i++) {
             for (int j = i; j < matrix[0].length; j++) {

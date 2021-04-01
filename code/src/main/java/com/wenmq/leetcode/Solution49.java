@@ -20,7 +20,9 @@ public class Solution49 {
      */
     public List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> lists = new LinkedList<>();
-        if (strs == null || strs.length == 0) return lists;
+        if (strs == null || strs.length == 0) {
+            return lists;
+        }
 
         // 以Node为key，自定义实现Node的equals方法，如果是异位词，则equals相等
         HashMap<Node, LinkedList<String>> map = new HashMap<>();
@@ -50,11 +52,17 @@ public class Solution49 {
 
         @Override
         public boolean equals(Object obj) {
-            if (!(obj instanceof Node)) return false;
+            if (!(obj instanceof Node)) {
+                return false;
+            }
             Node other = (Node) obj;
-            if (this.s.length() != other.s.length()) return false;
+            if (this.s.length() != other.s.length()) {
+                return false;
+            }
             for (int i = 0; i < 26; i++) {
-                if (this.count[i] != other.count[i]) return false;
+                if (this.count[i] != other.count[i]) {
+                    return false;
+                }
             }
             return true;
         }

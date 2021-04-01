@@ -6,6 +6,9 @@ package com.wenmq.leetcode;
  */
 public class Solution134 {
 
+    /**
+     * canCompleteCircuit
+     */
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int total = 0;
         int part = 0;
