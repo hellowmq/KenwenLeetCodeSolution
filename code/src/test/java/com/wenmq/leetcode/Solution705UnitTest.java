@@ -48,6 +48,8 @@ public class Solution705UnitTest {
                     solution.remove(a[i][0]);
                     stringList.add("null");
                     break;
+                default:
+                    // ignore
             }
 
         }
@@ -57,7 +59,16 @@ public class Solution705UnitTest {
     }
 
     private String getOutputResult() {
-        return "[null, false, null, null, null, false, null, true, false, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null, true, null, null, true, null, null, null, null, null, null, null, null, true, null, null, null, null, false, null, false, null, null, null, null, null, true, null, null, null, null, true, null, null, null, null, null, null, true, true, null, null, null, null, null, null, null, false, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, false, null]";
+        return "[null, false, null, null, null, false, null, true, false, null,"
+                + " null, null, null, null, null, null, null, null, null, null,"
+                + " null, null, null, null, false, null, true, null, null, true,"
+                + " null, null, null, null, null, null, null, null, true, null,"
+                + " null, null, null, false, null, false, null, null, null, null,"
+                + " null, true, null, null, null, null, true, null, null, null,"
+                + " null, null, null, true, true, null, null, null, null, null,"
+                + " null, null, false, null, null, null, null, null, null, null,"
+                + " null, null, null, null, null, null, null, null, null, null,"
+                + " null, null, null, null, null, null, null, null, null, false, null]";
     }
 
     private int[][] getOperandNums() {

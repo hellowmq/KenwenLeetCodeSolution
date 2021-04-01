@@ -22,10 +22,11 @@ public class Solution188UnitTest {
         int expected = 2;
         Assert.assertEquals(expected, mTestSolution.maxProfit(k, prices));
     }
+
     @Test
     public void testMaxProfit_Case2() {
         int k = 2;
-        int[] prices = new int[]{3,2,6,5,0,3};
+        int[] prices = new int[]{3, 2, 6, 5, 0, 3};
         int expected = 7;
         Assert.assertEquals(expected, mTestSolution.maxProfit(k, prices));
     }

@@ -44,6 +44,9 @@ public class Solution1525 {
     }
 
 
+    /**
+     * numSplits
+     */
     public int numSplits(String s) {
         int res = 0;
         int left = 0;

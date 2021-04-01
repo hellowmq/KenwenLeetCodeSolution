@@ -10,7 +10,7 @@ public class Solution383 {
      */
     public boolean canConstruct(String ransomNote, String magazine) {
         int[] array = new int[26];
-        if(ransomNote.length() > magazine.length()) {
+        if (ransomNote.length() > magazine.length()) {
             return false;
         }
         for (int i = 0; i < ransomNote.length(); i++) {

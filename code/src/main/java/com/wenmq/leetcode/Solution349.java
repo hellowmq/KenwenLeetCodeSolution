@@ -41,7 +41,9 @@ class Solution349 {
 
         // 修剪数组，返回结果
         int[] ret = new int[idx];
-        if (idx >= 0) System.arraycopy(tmp, 0, ret, 0, idx);
+        if (idx >= 0) {
+            System.arraycopy(tmp, 0, ret, 0, idx);
+        }
         return ret;
     }
 

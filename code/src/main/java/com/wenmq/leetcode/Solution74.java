@@ -6,7 +6,7 @@ package com.wenmq.leetcode;
  */
 public class Solution74 {
     /**
-     *
+     * 这里二维数组的特性和一维数组是一致的，根据索引单向一致性
      */
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {

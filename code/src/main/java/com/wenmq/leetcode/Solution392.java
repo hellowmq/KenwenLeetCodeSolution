@@ -12,7 +12,9 @@ public class Solution392 {
         int index = -1;
         for (char c : s.toCharArray()) {
             index = t.indexOf(c, index + 1);
-            if (index == -1) return false;
+            if (index == -1) {
+                return false;
+            }
         }
         return true;
     }

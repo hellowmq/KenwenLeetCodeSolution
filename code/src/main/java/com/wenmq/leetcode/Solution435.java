@@ -14,15 +14,14 @@ public class Solution435 {
      * 放弃右边界更大的 [1,4],[2,3] 抛弃 [1,4]
      */
     public int eraseOverlapIntervals(int[][] intervals) {
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            public int compare(int a[], int b[]) {
-                return a[0] - b[0];
-            }
-        });
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
-        if (intervals.length == 0) return 0;
-        int count = 0, pre = 0, i, len;
-        for (i = 1, len = intervals.length; i < len; i++) {
+        if (intervals.length == 0) {
+            return 0;
+        }
+        int count = 0;
+        int pre = 0;
+        for (int i = 1; i < intervals.length; i++) {
             if (intervals[pre][1] > intervals[i][0]) {
                 // 有重叠
                 count++;
@@ -47,13 +46,11 @@ public class Solution435 {
             return 0;
         }
 
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            public int compare(int[] a, int[] b) {
-                if (a[0] != b[0]) {
-                    return a[0] - b[0];
-                } else {
-                    return a[1] - b[1];
-                }
+        Arrays.sort(intervals, (a, b) -> {
+            if (a[0] != b[0]) {
+                return a[0] - b[0];
+            } else {
+                return a[1] - b[1];
             }
         });
 
@@ -68,8 +65,9 @@ public class Solution435 {
                 j++;
                 ret++;
             }
-            if (j >= intervals.length)
+            if (j >= intervals.length) {
                 break;
+            }
             int nextRight = intervals[j][1];
             if (intervals[j][0] < nowRight) {
 

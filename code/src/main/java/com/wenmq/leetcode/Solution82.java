@@ -20,6 +20,9 @@ public class Solution82 {
         }
     }
 
+    /**
+     * 删除重复出现的每一组元素
+     */
     public ListNode deleteDuplicates(ListNode head) {
         ListNode p = new ListNode(0, head);
         head = p;

@@ -3,7 +3,6 @@ package com.wenmq.leetcode;
 /**
  * Q321
  * https://leetcode-cn.com/problems/create-maximum-number/
- * <p>
  * 做不出来，好好看看人家的题解
  * https://leetcode-cn.com/problems/create-maximum-number/solution/yi-zhao-chi-bian-li-kou-si-dao-ti-ma-ma-zai-ye-b-7/
  */
@@ -13,9 +12,11 @@ public class Solution321 {
      * not me
      */
     public int[] maxNumber(int[] nums1, int[] nums2, int k) {
-        int m = nums1.length, n = nums2.length;
+        int m = nums1.length;
+        int n = nums2.length;
         int[] maxSubsequence = new int[k];
-        int start = Math.max(0, k - n), end = Math.min(k, m);
+        int start = Math.max(0, k - n);
+        int end = Math.min(k, m);
         for (int i = start; i <= end; i++) {
             int[] subsequence1 = maxSubsequence(nums1, i);
             int[] subsequence2 = maxSubsequence(nums2, k - i);
@@ -27,13 +28,15 @@ public class Solution321 {
         return maxSubsequence;
     }
 
+    /**
+     * maxSubsequence
+     */
     public int[] maxSubsequence(int[] nums, int k) {
         int length = nums.length;
         int[] stack = new int[k];
         int top = -1;
         int remain = length - k;
-        for (int i = 0; i < length; i++) {
-            int num = nums[i];
+        for (int num : nums) {
             while (top >= 0 && stack[top] < num && remain > 0) {
                 top--;
                 remain--;
@@ -47,8 +50,12 @@ public class Solution321 {
         return stack;
     }
 
+    /**
+     * merge
+     */
     public int[] merge(int[] subsequence1, int[] subsequence2) {
-        int x = subsequence1.length, y = subsequence2.length;
+        int x = subsequence1.length;
+        int y = subsequence2.length;
         if (x == 0) {
             return subsequence2;
         }
@@ -57,7 +64,8 @@ public class Solution321 {
         }
         int mergeLength = x + y;
         int[] merged = new int[mergeLength];
-        int index1 = 0, index2 = 0;
+        int index1 = 0;
+        int index2 = 0;
         for (int i = 0; i < mergeLength; i++) {
             if (compare(subsequence1, index1, subsequence2, index2) > 0) {
                 merged[i] = subsequence1[index1++];
@@ -69,7 +77,8 @@ public class Solution321 {
     }
 
     public int compare(int[] subsequence1, int index1, int[] subsequence2, int index2) {
-        int x = subsequence1.length, y = subsequence2.length;
+        int x = subsequence1.length;
+        int y = subsequence2.length;
         while (index1 < x && index2 < y) {
             int difference = subsequence1[index1] - subsequence2[index2];
             if (difference != 0) {

@@ -12,9 +12,13 @@ public class Solution204 {
         int result = 0;
         int sqrtN = (int) Math.sqrt(n);
         boolean[] b = new boolean[n];
-        if (2 < n) result++;
+        if (2 < n) {
+            result++;
+        }
         for (int i = 3; i < n; i += 2) {
-            if (b[i]) continue;
+            if (b[i]) {
+                continue;
+            }
             if (i <= sqrtN) {
                 int temp = i * i;
                 for (int j = i; temp < n; j += 2, temp = i * j) {
@@ -27,6 +31,9 @@ public class Solution204 {
     }
 
 
+    /**
+     * countPrimes2
+     */
     public int countPrimes2(int n) {
         if (n < 3) {
             return 0;

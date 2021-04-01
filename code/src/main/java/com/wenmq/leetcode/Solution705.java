@@ -7,11 +7,11 @@ package com.wenmq.leetcode;
 public class Solution705 {
     public static class MyHashSet implements Solution {
 
-        public static final int length = 31251;
+        public static final int LENGTH = 31251;
         /**
          * Initialize your data structure here.
          */
-        int[] map = new int[length];
+        int[] map = new int[LENGTH];
 
 
         public MyHashSet() {

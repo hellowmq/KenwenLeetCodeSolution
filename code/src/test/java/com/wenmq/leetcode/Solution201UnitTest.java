@@ -1,9 +1,8 @@
 package com.wenmq.leetcode;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class Solution201UnitTest {
 
@@ -22,7 +21,7 @@ public class Solution201UnitTest {
         int right = 7;
         int actual = mTestSolution.rangeBitwiseAnd(left, right);
         int expected = 4;
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -31,7 +30,7 @@ public class Solution201UnitTest {
         int right = 0;
         int actual = mTestSolution.rangeBitwiseAnd(left, right);
         int expected = 0;
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -40,6 +39,6 @@ public class Solution201UnitTest {
         int right = 2147483647;
         int actual = mTestSolution.rangeBitwiseAnd(left, right);
         int expected = 0;
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 }

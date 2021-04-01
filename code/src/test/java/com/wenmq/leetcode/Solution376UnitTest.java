@@ -4,13 +4,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution376UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution376";
+    public static final String TAG = "com.wenmq.leetcode.Solution376";
 
-    Solution376 mTestSolution;
+    private Solution376 mTestSolution;
 
 
     @Before
@@ -41,6 +39,7 @@ public class Solution376UnitTest {
         int actual = mTestSolution.wiggleMaxLength(nums);
         Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void testWiggleMaxLength_case4() {
         int[] nums = {1};

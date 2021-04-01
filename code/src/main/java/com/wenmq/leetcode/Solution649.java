@@ -24,11 +24,11 @@ public class Solution649 {
         }
         int bias = 0;
         int dCount = chars.length - rCount;
-        while ((((rCount + bias) > 0) &&
-                ((dCount - bias) > 0))) {
+        while ((((rCount + bias) > 0)
+                && ((dCount - bias) > 0))) {
             Boolean poll = list.pop();
-            if (((bias < 0 && poll) ||
-                    (bias > 0 && !poll))) {
+            if (((bias < 0 && poll)
+                    || (bias > 0 && !poll))) {
                 bias += poll ? 1 : -1;
                 if (poll) {
                     rCount--;
@@ -82,6 +82,9 @@ public class Solution649 {
 
     }
 
+    /**
+     * predictPartyVictory3
+     */
     public String predictPartyVictory3(String senate) {
         char[] chars = senate.toCharArray();
         boolean[] booleans = new boolean[chars.length << 1];

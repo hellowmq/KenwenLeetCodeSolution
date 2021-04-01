@@ -20,20 +20,22 @@ public class Solution917UnitTest {
         String s = "ab-cd";
         String actual = mTestSolution.reverseOnlyLetters(s);
         String expected = "dc-ba";
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void testReverseOnlyLetters_Case2() {
         String s = "a-bC-dEf-ghIj";
         String actual = mTestSolution.reverseOnlyLetters(s);
         String expected = "j-Ih-gfE-dCba";
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
+
     @Test
     public void testReverseOnlyLetters_Case3() {
         String s = "Test1ng-Leet=code-Q!";
         String actual = mTestSolution.reverseOnlyLetters(s);
         String expected = "Qedo1ct-eeLg=ntse-T!";
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 }

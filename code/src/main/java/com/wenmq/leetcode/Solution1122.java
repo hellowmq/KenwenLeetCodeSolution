@@ -10,7 +10,9 @@ import java.util.PriorityQueue;
  */
 public class Solution1122 {
 
-
+    /**
+     * relativeSortArray
+     */
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
         Map<String, Integer> map = new HashMap<>(arr2.length);
         for (int a : arr2) {
@@ -43,6 +45,9 @@ public class Solution1122 {
         return result;
     }
 
+    /**
+     * relativeSortArray1
+     */
     public int[] relativeSortArray1(int[] arr1, int[] arr2) {
         Map<String, Integer> map = new HashMap<>(arr2.length);
         for (int a : arr2) {

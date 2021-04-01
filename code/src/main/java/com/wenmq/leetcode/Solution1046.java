@@ -14,14 +14,16 @@ public class Solution1046 {
      */
     public int lastStoneWeight(int[] stones) {
         PriorityQueue<Integer> pq = new PriorityQueue<>((i1, i2) -> i2 - i1);
-        for (int i : stones)
+        for (int i : stones) {
             pq.offer(i);
+        }
         while (pq.size() >= 2) {
 
             int x = pq.poll();
             int y = pq.poll();
-            if (x > y)
+            if (x > y) {
                 pq.offer(x - y);
+            }
         }
         return pq.size() == 1 ? pq.peek() : 0;
     }
@@ -32,16 +34,16 @@ public class Solution1046 {
      */
     public int lastStoneWeight2(int[] stones) {
         int len = stones.length;
-        if(len == 1){
+        if (len == 1) {
             return stones[0];
         }
         Arrays.sort(stones);
         // 中止条件，stones[i-2]=0
-        while(stones[len-2]!=0){
-            stones[len-1] -= stones[len-2];
-            stones[len-2] = 0;
+        while (stones[len - 2] != 0) {
+            stones[len - 1] -= stones[len - 2];
+            stones[len - 2] = 0;
             Arrays.sort(stones);
         }
-        return stones[len-1];
+        return stones[len - 1];
     }
 }

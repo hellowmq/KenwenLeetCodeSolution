@@ -13,6 +13,7 @@ public class Solution1047 {
      * @param S 目标字符串
      * @return 结果
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public String removeDuplicates(String S) {
         LinkedList<Integer> stack = new LinkedList<>();
 
@@ -36,6 +37,7 @@ public class Solution1047 {
      * 用 {@link String#toCharArray()} 得到的数组作为栈空间
      * 用一个 index 作为栈顶标记即可
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public String removeDuplicates2(String S) {
         int index = -1;
         char[] chars = S.toCharArray();

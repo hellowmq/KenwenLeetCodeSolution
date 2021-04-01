@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution1047UnitTest {
 
     private static final String TAG = "com.wenmq.leetcode.Solution1047";
@@ -24,6 +22,7 @@ public class Solution1047UnitTest {
         Assert.assertEquals(expect, mTestSolution.removeDuplicates(str));
         Assert.assertEquals(expect, mTestSolution.removeDuplicates2(str));
     }
+
     @Test
     public void testRemoveDuplicates_Case2() {
         final String str = "leetcode";

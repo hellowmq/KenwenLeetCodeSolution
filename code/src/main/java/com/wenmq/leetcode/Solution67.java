@@ -6,9 +6,16 @@ package com.wenmq.leetcode;
  */
 public class Solution67 {
 
+    /**
+     * addBinary
+     */
     public String addBinary(String a, String b) {
-        if (a == null || a.length() == 0) return b;
-        if (b == null || b.length() == 0) return a;
+        if (a == null || a.length() == 0) {
+            return b;
+        }
+        if (b == null || b.length() == 0) {
+            return a;
+        }
 
         StringBuilder sb = new StringBuilder();
         int i = a.length() - 1;
@@ -31,8 +38,12 @@ public class Solution67 {
     }
 
 
+    /**
+     * addBinary2
+     */
     public String addBinary2(String a, String b) {
-        char[] longChars, shortChars;
+        char[] longChars;
+        char[] shortChars;
         if (a.length() > b.length()) {
             longChars = a.toCharArray();
             shortChars = b.toCharArray();
@@ -64,6 +75,8 @@ public class Solution67 {
                     pre = 1;
                     longChars[il] = '1';
                     break;
+                default:
+                    // ignore
             }
         }
         for (int il = longChars.length - shortChars.length - 1; il >= 0; il--) {
@@ -82,6 +95,8 @@ public class Solution67 {
                     pre = 1;
                     longChars[il] = '0';
                     break;
+                default:
+                    // ignore
             }
         }
         if (pre == 1) {

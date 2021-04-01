@@ -14,6 +14,7 @@ public class Solution767 {
      * 堆重排比较容易
      * 堆排序写不出来，
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public String reorganizeString(String S) {
         if (S.length() < 2) {
             return S;
@@ -29,19 +30,21 @@ public class Solution767 {
         if (maxCount > (length + 1) / 2) {
             return "";
         }
-        PriorityQueue<Character> queue = new PriorityQueue<>((letter1, letter2) -> counts[letter2 - 'a'] - counts[letter1 - 'a']);
+        PriorityQueue<Character> queue = new PriorityQueue<>(
+                (letter1, letter2) -> counts[letter2 - 'a'] - counts[letter1 - 'a']);
         for (char c = 'a'; c <= 'z'; c++) {
             if (counts[c - 'a'] > 0) {
                 queue.offer(c);
             }
         }
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         while (queue.size() > 1) {
             char letter1 = queue.poll();
             char letter2 = queue.poll();
             sb.append(letter1);
             sb.append(letter2);
-            int index1 = letter1 - 'a', index2 = letter2 - 'a';
+            int index1 = letter1 - 'a';
+            int index2 = letter2 - 'a';
             counts[index1]--;
             counts[index2]--;
             if (counts[index1] > 0) {
@@ -60,6 +63,7 @@ public class Solution767 {
     /**
      * 每次重排
      */
+    @SuppressWarnings("checkstyle:ParameterName")
     public String reorganizeString2(String S) {
 
         StringBuilder sb = new StringBuilder();

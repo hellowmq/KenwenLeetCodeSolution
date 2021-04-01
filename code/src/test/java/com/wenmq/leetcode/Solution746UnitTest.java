@@ -4,11 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class Solution746UnitTest {
 
-    String TAG = "com.wenmq.leetcode.Solution746";
+    public static final String TAG = "com.wenmq.leetcode.Solution746";
     private Solution746 mTestSolution;
 
 

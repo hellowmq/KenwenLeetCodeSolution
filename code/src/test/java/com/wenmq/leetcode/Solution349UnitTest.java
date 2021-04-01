@@ -1,9 +1,8 @@
 package com.wenmq.leetcode;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class Solution349UnitTest {
 
@@ -21,8 +20,8 @@ public class Solution349UnitTest {
         int[] num1 = new int[]{1, 2, 2, 1};
         int[] num2 = new int[]{2, 2};
         int[] expected = new int[]{2};
-        assertArrayEquals(expected, mTestSolution.intersection(num1, num2));
-        assertArrayEquals(expected, mTestSolution.intersection2(num1, num2));
+        Assert.assertArrayEquals(expected, mTestSolution.intersection(num1, num2));
+        Assert.assertArrayEquals(expected, mTestSolution.intersection2(num1, num2));
     }
 
     @Test
@@ -30,8 +29,8 @@ public class Solution349UnitTest {
         int[] num1 = new int[]{4, 9, 5};
         int[] num2 = new int[]{9, 4, 9, 8, 4};
         int[] expected = new int[]{9, 4};
-        assertArrayEquals(expected, mTestSolution.intersection(num1, num2));
+        Assert.assertArrayEquals(expected, mTestSolution.intersection(num1, num2));
         int[] expected2 = new int[]{4, 9};
-        assertArrayEquals(expected2, mTestSolution.intersection2(num1, num2));
+        Assert.assertArrayEquals(expected2, mTestSolution.intersection2(num1, num2));
     }
 }

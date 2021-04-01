@@ -11,7 +11,9 @@ public class Solution566 {
     public int[][] matrixReshape(int[][] nums, int r, int c) {
         int rr = nums.length;
         int cc = nums[0].length;
-        if (rr * cc != r * c) return nums;
+        if (rr * cc != r * c) {
+            return nums;
+        }
         int[][] array = new int[r][c];
         int bias = 0;
         for (int[] row : nums) {
