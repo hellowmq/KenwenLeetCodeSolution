@@ -2,7 +2,7 @@ package com.wenmq.leetcode;
 
 /**
  * Q
- * https://leetcode-cn.com/problems/all/
+ * https://leetcode-cn.com/problemset/all/
  */
 public class Solution {
     /**
