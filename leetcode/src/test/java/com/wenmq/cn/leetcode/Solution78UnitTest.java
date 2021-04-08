@@ -1,12 +1,12 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.tools.ArrayTools;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+
+import static com.wenmq.cn.tools.ArrayTools.array2ListString;
 
 public class Solution78UnitTest {
 
@@ -33,7 +33,7 @@ public class Solution78UnitTest {
                 {3},
                 {}
         };
-        String oneOfSuccess = ArrayTools.array2ListString(mesh);
+        String oneOfSuccess = array2ListString(mesh);
         Assert.assertEquals(oneOfSuccess, subsets.toString());
     }
 
@@ -45,7 +45,7 @@ public class Solution78UnitTest {
                 {0},
                 {}
         };
-        String oneOfSuccess = ArrayTools.array2ListString(mesh);
+        String oneOfSuccess = array2ListString(mesh);
         Assert.assertEquals(oneOfSuccess, subsets.toString());
     }
 
@@ -63,7 +63,7 @@ public class Solution78UnitTest {
                 {2, 3},
                 {1, 2, 3},
         };
-        String oneOfSuccess = ArrayTools.array2ListString(mesh);
+        String oneOfSuccess = array2ListString(mesh);
         Assert.assertEquals(oneOfSuccess, subsets.toString());
     }
 
@@ -75,7 +75,7 @@ public class Solution78UnitTest {
                 {},
                 {0},
         };
-        String oneOfSuccess = ArrayTools.array2ListString(mesh);
+        String oneOfSuccess = array2ListString(mesh);
         Assert.assertEquals(oneOfSuccess, subsets.toString());
     }
 }

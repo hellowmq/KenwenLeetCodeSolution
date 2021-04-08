@@ -1,7 +1,5 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.algo.base.ListNode;
-
 /**
  * Q86
  * https://leetcode-cn.com/problems/partition-list/
@@ -39,6 +37,15 @@ public class Solution86 {
         lessThan.next = largerDump.next;
         largerThan.next = null;
         return lessDump.next;
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 
 }

@@ -1,10 +1,10 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.tools.ArrayTools;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static com.wenmq.cn.tools.ArrayTools.get2DIntString;
 
 public class Solution566UnitTest {
 
@@ -51,8 +51,8 @@ public class Solution566UnitTest {
 
 
     private void assertCase(int[][] expect, int[][] actual) {
-        String expectStr = ArrayTools.get2DIntString(expect);
-        String actualStr = ArrayTools.get2DIntString(actual);
+        String expectStr = get2DIntString(expect);
+        String actualStr = get2DIntString(actual);
         Assert.assertEquals(expectStr, actualStr);
     }
 }
