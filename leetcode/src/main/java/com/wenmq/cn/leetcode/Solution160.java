@@ -1,7 +1,5 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.algo.base.ListNode;
-
 /**
  * Q160
  * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/
@@ -20,5 +18,12 @@ public class Solution160 {
         return curA;
     }
 
+    public static class ListNode {
+        int val;
+        ListNode next;
 
+        ListNode(int x) {
+            val = x;
+        }
+    }
 }

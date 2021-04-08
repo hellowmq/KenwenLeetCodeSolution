@@ -1,12 +1,12 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.tools.ArrayTools;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+
+import static com.wenmq.cn.tools.ArrayTools.array2ListString;
 
 public class Solution90UnitTest {
 
@@ -28,7 +28,7 @@ public class Solution90UnitTest {
         };
         List<List<Integer>> lists = mTestSolution.subsetsWithDup(nums);
         try {
-            Assert.assertEquals(ArrayTools.array2ListString(oneExpectedCase), lists.toString());
+            Assert.assertEquals(array2ListString(oneExpectedCase), lists.toString());
         } catch (AssertionError error) {
             // this case can not assert
             System.err.println("Fail test in multi-option expected value unit test");
@@ -43,7 +43,7 @@ public class Solution90UnitTest {
         };
         List<List<Integer>> lists = mTestSolution.subsetsWithDup(nums);
         try {
-            Assert.assertEquals(ArrayTools.array2ListString(oneExpectedCase), lists.toString());
+            Assert.assertEquals(array2ListString(oneExpectedCase), lists.toString());
         } catch (AssertionError error) {
             // this case can not assert
             System.err.println("Fail test in multi-option expected value unit test");

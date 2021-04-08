@@ -1,11 +1,10 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.algo.base.ListNode;
-import com.wenmq.tools.ListNodeTools;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static com.wenmq.cn.leetcode.Solution147.ListNode;
 
 public class Solution147UnitTest {
 
@@ -20,41 +19,42 @@ public class Solution147UnitTest {
 
     @Test
     public void testInsertionSortList_Case1() {
-        ListNode head = new ListNode(4);
-        head.appendNewNode(2)
-                .appendNewNode(1)
-                .appendNewNode(3);
-        head = mSolution147.insertionSortList(head);
-        String actual = ListNodeTools.getListNodeString(head);
+        ListNode head = generateList(new int[]{4, 2, 1, 3});
+        ListNode actual = mSolution147.insertionSortList(head);
 
-        ListNode expectedHead = new ListNode(1);
-        expectedHead.appendNewNode(2)
-                .appendNewNode(3)
-                .appendNewNode(4);
-        String expected = ListNodeTools.getListNodeString(expectedHead);
-        Assert.assertEquals(expected, actual);
-
-
+        ListNode expectedHead = generateList(new int[]{1, 2, 3, 4});
+        assertListNode(expectedHead, actual);
     }
 
     @Test
     public void testInsertionSortList_Case2() {
-        ListNode head = new ListNode(-1);
-        head.appendNewNode(5)
-                .appendNewNode(3)
-                .appendNewNode(4)
-                .appendNewNode(0);
-        head = mSolution147.insertionSortList(head);
-        String actual = ListNodeTools.getListNodeString(head);
+        ListNode head = generateList(new int[]{-1, 5, 3, 4, 0});
 
-        ListNode expectedHead = new ListNode(-1);
-        expectedHead.appendNewNode(0)
-                .appendNewNode(3)
-                .appendNewNode(4)
-                .appendNewNode(5);
-        String expected = ListNodeTools.getListNodeString(expectedHead);
-        Assert.assertEquals(expected, actual);
+        ListNode actual = mSolution147.insertionSortList(head);
+
+        ListNode expectedHead = generateList(new int[]{-1, 0, 3, 4, 5});
+        assertListNode(expectedHead, actual);
     }
 
+    public ListNode generateList(int[] list) {
+        if (list == null || list.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(list[0]);
+        ListNode node = head;
+        for (int i = 1; i < list.length; i++) {
+            node.next = new ListNode(list[i]);
+            node = node.next;
+        }
+        return head;
+    }
 
+    private void assertListNode(ListNode expected, ListNode actual) {
+        while (expected != actual) {
+            Assert.assertEquals(expected.val, actual.val);
+            expected = expected.next;
+            actual = actual.next;
+        }
+        Assert.assertNull(actual);
+    }
 }

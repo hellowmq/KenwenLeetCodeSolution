@@ -3,8 +3,6 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-
-    implementation project(":code")
     // Required -- JUnit 4 framework
     testImplementation 'junit:junit:4.13.2'
     testImplementation "com.google.truth:truth:0.40"

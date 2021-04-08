@@ -1,6 +1,6 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.tools.ArrayTools;
+import com.wenmq.cn.tools.ArrayTools;
 
 import org.junit.Assert;
 

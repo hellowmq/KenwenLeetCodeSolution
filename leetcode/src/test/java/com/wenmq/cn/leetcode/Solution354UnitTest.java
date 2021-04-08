@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.wenmq.tools.ArrayTools.copyOfMatrix;
+import static com.wenmq.cn.tools.ArrayTools.copyOfMatrix;
 
 public class Solution354UnitTest {
 

@@ -1,10 +1,11 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.algo.base.ListNode;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static com.wenmq.cn.leetcode.Solution160.ListNode;
 
 public class Solution160UnitTest {
 
@@ -22,16 +23,12 @@ public class Solution160UnitTest {
      */
     @Test
     public void testGetIntersectionNode_Case1() {
-        ListNode commonLink = new ListNode(8)
-                .appendNewNode(4)
-                .appendNewNode(5);
-        ListNode listA = new ListNode(4);
-        listA.appendNewNode(1)
-                .appendNode(commonLink);
-        ListNode listB = new ListNode(5);
-        listB.appendNewNode(0)
-                .appendNewNode(1)
-                .appendNode(commonLink);
+        ListNode commonLink = generateList(new int[]{8, 4, 5});
+        ListNode listA = generateList(new int[]{4, 1});
+        connectListNode(listA, commonLink);
+        ListNode listB = generateList(new int[]{5, 0, 1});
+        connectListNode(listB, commonLink);
+
         ListNode actual = mTestSolution.getIntersectionNode(listA, listB);
         Assert.assertEquals(commonLink, actual);
     }
@@ -41,14 +38,13 @@ public class Solution160UnitTest {
      */
     @Test
     public void testGetIntersectionNode_Case2() {
-        ListNode commonLink = new ListNode(2)
-                .appendNewNode(4);
-        ListNode listA = new ListNode(0);
-        listA.appendNewNode(9)
-                .appendNewNode(1)
-                .appendNode(commonLink);
-        ListNode listB = new ListNode(3);
-        listB.appendNode(commonLink);
+        ListNode commonLink = generateList(new int[]{2, 4});
+        ListNode listA = generateList(new int[]{0, 9, 1});
+        connectListNode(listA, commonLink);
+        ListNode listB = generateList(new int[]{3});
+        connectListNode(listB, commonLink);
+
+
         ListNode actual = mTestSolution.getIntersectionNode(listA, listB);
         Assert.assertEquals(commonLink, actual);
     }
@@ -56,17 +52,46 @@ public class Solution160UnitTest {
     /**
      * intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
      */
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void testGetIntersectionNode_Case3() {
         final ListNode commonLink = null;
-        ListNode listA = new ListNode(2);
-        listA.appendNewNode(6)
-        .appendNewNode(4);
-        ListNode listB = new ListNode(1);
-        listB.appendNewNode(5);
+        ListNode listA = generateList(new int[]{0, 9, 1});
+        connectListNode(listA, commonLink);
+        ListNode listB = generateList(new int[]{3});
+        connectListNode(listB, commonLink);
+
         ListNode actual = mTestSolution.getIntersectionNode(listA, listB);
         Assert.assertEquals(commonLink, actual);
     }
 
+    public ListNode generateList(int[] list) {
+        if (list == null || list.length == 0) {
+            return null;
+        }
+        ListNode head = new ListNode(list[0]);
+        ListNode node = head;
+        for (int i = 1; i < list.length; i++) {
+            node.next = new ListNode(list[i]);
+            node = node.next;
+        }
+        return head;
+    }
+
+    public void connectListNode(ListNode head, ListNode tail) {
+        if (head == null || tail == null) {
+            return;
+        }
+        ListNode listNode = head;
+        int cycleLimit = 0;
+        while (listNode.next != null) {
+            listNode = listNode.next;
+            cycleLimit++;
+            if (cycleLimit > 1000) {
+                throw new Error("connectListNode");
+            }
+        }
+        listNode.next = tail;
+    }
 
 }

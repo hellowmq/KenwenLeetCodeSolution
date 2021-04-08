@@ -1,10 +1,10 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.tools.ArrayTools;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static com.wenmq.cn.tools.ArrayTools.array2ListString;
 
 public class Solution54UnitTest {
 
@@ -29,7 +29,7 @@ public class Solution54UnitTest {
         Object[] list = {
                 1, 2, 3, 6, 9, 8, 7, 4, 5
         };
-        String expected = ArrayTools.array2ListString(list);
+        String expected = array2ListString(list);
         Assert.assertEquals(expected, actual);
     }
 
@@ -45,7 +45,7 @@ public class Solution54UnitTest {
         Object[] list = {
                 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7
         };
-        String expected = ArrayTools.array2ListString(list);
+        String expected = array2ListString(list);
         Assert.assertEquals(expected, actual);
     }
 
@@ -59,7 +59,7 @@ public class Solution54UnitTest {
 
         String actual = mTestSolution.spiralOrder(mesh).toString();
         Object[] list = {};
-        String expected = ArrayTools.array2ListString(list);
+        String expected = array2ListString(list);
         Assert.assertEquals(expected, actual);
     }
 }

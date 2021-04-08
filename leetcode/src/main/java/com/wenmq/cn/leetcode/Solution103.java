@@ -1,7 +1,5 @@
 package com.wenmq.cn.leetcode;
 
-import com.wenmq.algo.base.TreeNode;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -66,4 +64,13 @@ public class Solution103 {
         traversal2(root.right, res, level + 1);
     }
 
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
+    }
 }
