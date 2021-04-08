@@ -5,8 +5,8 @@
 ### Leetcode 
 Leetcode 每日一题解答和单元测试尽量更新
 
-Module： code 
-Package：com.wenmq.leetcode
+Module： leetcode 
+Package：com.wenmq.cn.leetcode
 
 
 其余模块为初时用于学习插桩所建立。
