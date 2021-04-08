@@ -34,8 +34,8 @@ public class Solution341UnitTest {
                 )
         );
         List<Integer> expectedList = Arrays.asList(1, 1, 2, 1, 1);
-        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
         assertIteratorCase(expectedList, new Solution341.NestedIterator2(nestedInteger.getList()));
+        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
     }
 
 
@@ -48,8 +48,8 @@ public class Solution341UnitTest {
                 )
         );
         List<Integer> expectedList = Arrays.asList(1, 4, 6);
-        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
         assertIteratorCase(expectedList, new Solution341.NestedIterator2(nestedInteger.getList()));
+        assertIteratorCase(expectedList, new Solution341.NestedIterator(nestedInteger.getList()));
     }
 
     private void assertIteratorCase(List<Integer> expectedList, Iterator<Integer> actualIterator) {
