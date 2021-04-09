@@ -2,7 +2,7 @@ package com.wenmq.cn.leetcode;
 
 /**
  * Q1037
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/valid-boomerang/
  */
 public class Solution1037 {
     /**

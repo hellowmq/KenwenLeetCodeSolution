@@ -2,7 +2,7 @@ package com.wenmq.cn.leetcode;
 
 /**
  * Q414
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/third-maximum-number/
  */
 public class Solution414 {
     /**
