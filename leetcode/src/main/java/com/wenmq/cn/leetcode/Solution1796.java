@@ -35,8 +35,8 @@ public class Solution1796 {
      * 比较法
      */
     public int secondHighest2(String s) {
-        char max = 0;
-        char second = 0;
+        char max = '0' - 1;
+        char second = '0' - 1;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (c > '9' || c < '0') {
@@ -49,7 +49,7 @@ public class Solution1796 {
                 second = c;
             }
         }
-        return second > 0 ? (second - '0') : -1;
+        return second - '0';
     }
 
 
