@@ -14,7 +14,7 @@ public class Solution341 {
 
     public static class NestedIterator implements Iterator<Integer> {
         // 存储列表的当前遍历位置
-        private Deque<Iterator<NestedInteger>> mStack;
+        private final Deque<Iterator<NestedInteger>> mStack;
 
         public NestedIterator(List<NestedInteger> nestedList) {
             mStack = new LinkedList<>();
@@ -54,7 +54,6 @@ public class Solution341 {
     /**
      * 这个做法实际上不符合迭代器的设计想法
      * https://leetcode-cn.com/problems/flatten-nested-list-iterator/solution/bian-ping-hua-qian-tao-lie-biao-die-dai-ipjzq/848432
-     * 在面试官眼中，写了这个解法大打折扣
      */
     public static class NestedIterator2 implements Iterator<Integer> {
 
