@@ -33,19 +33,23 @@ public class ArrayTools {
         System.out.println(get2DIntString(a));
     }
 
-    public static String get2DIntString(int[][] a) {
+    /**
+     * @param matrix matrix
+     * @return string
+     */
+    public static String get2DIntString(int[][] matrix) {
         StringBuilder sb = new StringBuilder();
         sb.append('[');
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < matrix.length; i++) {
             if (i != 0) {
                 sb.append(',');
             }
             sb.append('[');
-            for (int j = 0; j < a[i].length; j++) {
+            for (int j = 0; j < matrix[i].length; j++) {
                 if (j != 0) {
                     sb.append(',');
                 }
-                sb.append(a[i][j]);
+                sb.append(matrix[i][j]);
             }
             sb.append(']');
         }
