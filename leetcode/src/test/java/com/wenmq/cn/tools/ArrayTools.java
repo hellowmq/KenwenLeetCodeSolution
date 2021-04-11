@@ -34,6 +34,7 @@ public class ArrayTools {
     }
 
     /**
+     * int matrix to List.toString format
      * @param matrix matrix
      * @return string
      */
