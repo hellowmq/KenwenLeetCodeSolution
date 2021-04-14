@@ -20,7 +20,6 @@ public class Solution208 {
          * Initialize your data structure here.
          */
         public Trie() {
-
         }
 
         /**
