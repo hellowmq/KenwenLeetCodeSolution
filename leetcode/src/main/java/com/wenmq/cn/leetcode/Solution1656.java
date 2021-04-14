@@ -15,7 +15,7 @@ public class Solution1656 {
 
         private final String[] mStrings;
         private final int mSize;
-        private int ptr = 1;
+        private int mPtr = 1;
 
         public OrderedStream(int n) {
             this.mSize = n;
@@ -25,9 +25,9 @@ public class Solution1656 {
         public List<String> insert(int id, String value) {
             mStrings[id] = value;
             List<String> res = new ArrayList<>();
-            while (ptr <= mSize && mStrings[ptr] != null) {
-                res.add(mStrings[ptr]);
-                ptr++;
+            while (mPtr <= mSize && mStrings[mPtr] != null) {
+                res.add(mStrings[mPtr]);
+                mPtr++;
             }
             return res;
         }
