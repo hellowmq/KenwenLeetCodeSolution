@@ -2,7 +2,7 @@ package com.wenmq.cn.leetcode;
 
 /**
  * Q1688
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/maximum-repeating-substring/
  */
 public class Solution1668 {
     /**
