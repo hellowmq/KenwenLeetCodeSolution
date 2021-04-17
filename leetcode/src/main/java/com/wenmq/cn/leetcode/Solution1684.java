@@ -6,7 +6,11 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1684 {
     /**
-     * 方法一：
+     * 1 <= words.length <= 104
+     * 1 <= allowed.length <= 26
+     * 1 <= words[i].length <= 10
+     * allowed 中的字符 互不相同 。
+     * words[i] 和 allowed 只包含小写英文字母
      */
     public int countConsistentStrings(String allowed, String[] words) {
         int filter = 0;
