@@ -6,7 +6,10 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1662 {
     /**
-     *
+     * 1 <= word1.length, word2.length <= 10^3
+     * 1 <= word1[i].length, word2[i].length <= 10^3
+     * 1 <= sum(word1[i].length), sum(word2[i].length) <= 10^3
+     * 根据 Index 越界情况同步更新比较的指针
      */
     public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
         int[] wordIndex = {0, 0};
@@ -30,6 +33,11 @@ public class Solution1662 {
     }
 
 
+    /**
+     * 先拼接，后比较
+     * 实际上用了O(N)的开销，比较的复杂度也无法降低
+     * 对于只有开头不同的超长字符串尤为严重
+     */
     public boolean arrayStringsAreEqual2(String[] word1, String[] word2) {
         if (word1[0].charAt(0) != word2[0].charAt(0)) {
             return false;
