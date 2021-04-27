@@ -6,7 +6,8 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1588 {
     /**
-     * 方法一：
+     * 1 <= arr.length <= 100
+     * 1 <= arr[i] <= 1000
      */
     public int sumOddLengthSubarrays(int[] arr) {
         int n = arr.length;
