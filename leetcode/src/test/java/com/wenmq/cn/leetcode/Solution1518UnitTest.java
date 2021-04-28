@@ -49,4 +49,12 @@ public class Solution1518UnitTest {
         Assert.assertEquals(expected, mTestSolution.numWaterBottles(numBottles, numExchange));
     }
 
+    @Test
+    public void testNumWaterBottles_Case5() {
+        int numBottles = 15;
+        int numExchange = 4;
+        int expected = 19;
+        Assert.assertEquals(expected, mTestSolution.numWaterBottles(numBottles, numExchange));
+    }
+
 }

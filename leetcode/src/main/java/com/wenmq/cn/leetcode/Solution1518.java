@@ -10,12 +10,12 @@ public class Solution1518 {
      * 2 <= numExchange <= 100
      */
     public int numWaterBottles(int numBottles, int numExchange) {
-        int sum = 0;
-        while (numBottles > 0) {
-            sum += numBottles;
-            numBottles /= numExchange;
+        int sum = numBottles;
+        while (sum >= numExchange) {
+            numBottles = numBottles + sum / numExchange;
+            sum = sum / numExchange + sum % numExchange;
         }
-        return sum;
+        return numBottles;
     }
 
 }
