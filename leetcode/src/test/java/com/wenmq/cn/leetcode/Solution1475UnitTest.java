@@ -24,7 +24,7 @@ public class Solution1475UnitTest {
         int[] expect = {
                 4, 2, 4, 2, 3
         };
-        Assert.assertEquals(expect, mTestSolution.finalPrices(prices));
+        Assert.assertArrayEquals(expect, mTestSolution.finalPrices(prices));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class Solution1475UnitTest {
         int[] expect = {
                 1, 2, 3, 4, 5
         };
-        Assert.assertEquals(expect, mTestSolution.finalPrices(prices));
+        Assert.assertArrayEquals(expect, mTestSolution.finalPrices(prices));
     }
 
     @Test
@@ -46,6 +46,6 @@ public class Solution1475UnitTest {
         int[] expect = {
                 9,0,1,6
         };
-        Assert.assertEquals(expect, mTestSolution.finalPrices(prices));
+        Assert.assertArrayEquals(expect, mTestSolution.finalPrices(prices));
     }
 }
