@@ -44,7 +44,7 @@ public class Solution1566UnitTest {
                 1, 2, 1, 2, 1, 3
         };
         int m = 2;
-        int k = 3;
+        int k = 2;
         final boolean expected = false;
         Assert.assertEquals(expected, mTestSolution.containsPattern(arr, m, k));
     }
