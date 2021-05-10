@@ -13,24 +13,27 @@ public class Solution1734 {
     public int[] decode(int[] encoded) {
         int len = encoded.length + 1;
         // a(0) ^ a(1) ^ a(2) ^ a(3) ^ a(4) ^... ^ a(n - 1) ^ a(n)
-        int first = getXorResult(len);
+        int first = (len % 4 == 1) ? 1 : 0;
+//        int first = getXorResult(len);
 
         // [a(1) ^ a(2)] ^ [a(3) ^ a(4)] ^ ... ^ [a(n - 1) ^ a(n)]
         for (int i = 1; i < encoded.length; i += 2) {
             first ^= encoded[i];
         }
 
-        int[] decode = new int[len];
-        decode[0] = first;
+        // get origin[0]
+        int[] origin = new int[len];
+        origin[0] = first;
 
+        // decode
         for (int i = 1; i < len; i++) {
-            decode[i] ^= decode[i - 1] ^ encoded[i - 1];
+            origin[i] ^= origin[i - 1] ^ encoded[i - 1];
         }
-        return decode;
+        return origin;
     }
 
     /**
-     * 前 N 个正整数的异或
+     * 前 N 个正整数的异或公式
      */
     public static int getXorResult(int p) {
         if (p < 0) {
@@ -48,6 +51,5 @@ public class Solution1734 {
                 return 0;
         }
     }
-
 
 }
