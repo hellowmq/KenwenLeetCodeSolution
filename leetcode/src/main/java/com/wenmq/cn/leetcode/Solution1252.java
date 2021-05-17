@@ -18,8 +18,6 @@ public class Solution1252 {
             row ^= 1L << index[0];
             col ^= 1L << index[1];
         }
-        System.out.println(Long.toBinaryString(row));
-        System.out.println(Long.toBinaryString(col));
         int oddR = numOfOne(row);
         int oddC = numOfOne(col);
         return oddC * (m - oddR) + oddR * (n - oddC);
