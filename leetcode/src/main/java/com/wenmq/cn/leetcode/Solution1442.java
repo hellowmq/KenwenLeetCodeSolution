@@ -8,27 +8,6 @@ import java.util.Map;
  * https://leetcode-cn.com/problems/maximum-gap/
  */
 public class Solution1442 {
-    /**
-     * Actually  a ^ b == 0
-     *
-     * @param arr input
-     * @return num of success;
-     */
-    public int countTriplets2(int[] arr) {
-        int sum = 0;
-        int[] norArray = new int[arr.length + 1];
-        for (int i = 0; i < arr.length; i++) {
-            norArray[i + 1] = (norArray[i] ^ arr[i]);
-        }
-        for (int i = 0; i < arr.length; i++) {
-            for (int k = i + 1; k < arr.length + 1; k++) {
-                if (norArray[i] == norArray[k]) {
-                    sum += k - i - 1;
-                }
-            }
-        }
-        return sum;
-    }
 
     /**
      * 这里的运算精髓在于 biasMap 的含义；
@@ -36,8 +15,8 @@ public class Solution1442 {
      * 这里用一个 biasMap 来把 ∑(K - Ii) 分解为 count * K -  ∑(Ii)
      */
     public int countTriplets(int[] arr) {
-        Map<Integer, Integer> countMap = new HashMap<>();
-        Map<Integer, Integer> biasMap = new HashMap<>();
+        Map<Integer, Integer> countMap = new HashMap<>(arr.length);
+        Map<Integer, Integer> biasMap = new HashMap<>(arr.length);
         countMap.put(0, 1);
         biasMap.put(0, 0);
         int sum = 0;
@@ -51,6 +30,46 @@ public class Solution1442 {
             biasMap.put(xorInt, biasMap.getOrDefault(xorInt, 0) + k + 1);
         }
         return sum;
+    }
+
+    /**
+     * Actually  a ^ b == 0
+     *
+     * @param arr input
+     * @return num of success;
+     */
+    public int countTriplets2(int[] arr) {
+        if (arr.length == 1) {
+            return 0;
+        }
+        int res = 0;
+        for (int i = 0; i < arr.length - 1; ++i) {
+            int xorN = arr[i];
+            for (int k = i + 1; k < arr.length; ++k) {
+                xorN ^= arr[k];
+                if (xorN == 0) {
+                    res += (k - i);
+                }
+            }
+        }
+        return res;
+    }
+
+    /**
+     * 原地修改
+     */
+    public int countTriplets3(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int ans = arr[i];
+            for (int k = i + 1; k < arr.length; k++) {
+                ans ^= arr[k];
+                if (ans == 0) {
+                    count += k - i;
+                }
+            }
+        }
+        return count;
     }
 
 
