@@ -10,9 +10,8 @@ public class Solution1518UnitTest {
 
     private Solution1518 mTestSolution;
 
-
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         mTestSolution = new Solution1518();
     }
 
@@ -33,7 +32,6 @@ public class Solution1518UnitTest {
     }
 
     @Test
-    
     public void testNumWaterBottles_Case3() {
         int numBottles = 5;
         int numExchange = 5;
