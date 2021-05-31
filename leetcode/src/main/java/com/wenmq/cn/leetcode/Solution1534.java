@@ -13,12 +13,12 @@ public class Solution1534 {
     public int countGoodTriplets(int[] arr, int a, int b, int c) {
         int count = 0;
         int len = arr.length;
-        for (int i = 0; i < len - 2; ++i) {
-            for (int j = i + 1; j < len - 1; ++j) {
+        for (int i = 0; i < len - 2; i++) {
+            for (int j = i + 1; j < len - 1; j++) {
                 if (Math.abs(arr[i] - arr[j]) > a) {
                     continue;
                 }
-                for (int k = j + 1; k < len; ++k) {
+                for (int k = j + 1; k < len; k++) {
                     if (Math.abs(arr[j] - arr[k]) <= b && Math.abs(arr[i] - arr[k]) <= c) {
                         ++count;
                     }
@@ -57,7 +57,7 @@ public class Solution1534 {
                 }
             }
             for (int k = arr[j]; k <= 1000; k++) {
-                ++sum[k];
+                sum[k]++;
             }
         }
         return ans;

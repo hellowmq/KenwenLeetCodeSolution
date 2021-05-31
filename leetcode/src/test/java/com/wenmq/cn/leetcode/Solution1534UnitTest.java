@@ -25,8 +25,7 @@ public class Solution1534UnitTest {
         int b = 2;
         int c = 3;
         int expected = 4;
-        Assert.assertEquals(expected, mTestSolution.countGoodTriplets(arr, a, b, c));
-        Assert.assertEquals(expected, mTestSolution.countGoodTriplets2(arr, a, b, c));
+        assertMoreSolution(arr, a, b, c, expected);
     }
 
     @Test
@@ -38,6 +37,10 @@ public class Solution1534UnitTest {
         int b = 0;
         int c = 1;
         int expected = 0;
+        assertMoreSolution(arr, a, b, c, expected);
+    }
+
+    private void assertMoreSolution(int[] arr, int a, int b, int c, int expected) {
         Assert.assertEquals(expected, mTestSolution.countGoodTriplets(arr, a, b, c));
         Assert.assertEquals(expected, mTestSolution.countGoodTriplets2(arr, a, b, c));
     }
