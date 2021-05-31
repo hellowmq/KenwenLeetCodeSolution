@@ -14,12 +14,12 @@ public class Solution1507 {
         int dateLen = date.length();
         StringBuilder sb = new StringBuilder(10);
         sb.append(date.substring(dateLen - 4));
-        sb.append("-");
+        sb.append('-');
         String month = date.substring(dateLen - 8, dateLen - 5);
         appendMonth(sb, month);
         String day = date.substring(0, dateLen - 11);
         if (day.length() == 1) {
-            sb.append("0");
+            sb.append('0');
         }
         sb.append(day);
         return sb.toString();
