@@ -15,7 +15,8 @@ public class Solution1441 {
      * target 是严格递增的
      */
     public List<String> buildArray(int[] target, int n) {
-        List<String> list = new ArrayList<>(target[target.length - 1]);
+        int initialCapacity = (target[target.length - 1] << 1) - target.length;
+        List<String> list = new ArrayList<>(initialCapacity);
         int cur = 1;
         int index = 0;
         while (index < target.length) {
