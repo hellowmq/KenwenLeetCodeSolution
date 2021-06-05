@@ -26,7 +26,7 @@ public class Solution1436 {
         return next;
     }
 
-    private String getNext(Map<String, String> map, String key) {
+    private static String getNext(Map<String, String> map, String key) {
         if (!map.containsKey(key)) {
             return key;
         }
