@@ -7,7 +7,7 @@ import java.util.Set;
 
 /**
  * Q1380
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/
  */
 public class Solution1380 {
     /**
