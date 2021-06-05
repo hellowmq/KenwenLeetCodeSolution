@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Q1374
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/generate-a-string-with-characters-that-have-odd-counts/
  */
 public class Solution1374 {
     /**
