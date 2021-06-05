@@ -6,7 +6,11 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1275 {
     /**
-     * 方法一：
+     * 1 <= moves.length <= 9
+     * moves[i].length == 2
+     * 0 <= moves[i][j] <= 2
+     * moves 里没有重复的元素。
+     * moves 遵循井字棋的规则。
      */
     @SuppressWarnings("SpellCheckingInspection")
     public String tictactoe(int[][] moves) {
@@ -21,7 +25,10 @@ public class Solution1275 {
             if (moves[i][0] + moves[i][1] == 2) {
                 checker[7]++;
             }
-            if (checker[moves[i][0]] == 3 || checker[moves[i][1] + 3] == 3 || checker[6] == 3 || checker[7] == 3) {
+            if (checker[moves[i][0]] == 3
+                    || checker[moves[i][1] + 3] == 3
+                    || checker[6] == 3
+                    || checker[7] == 3) {
                 return m % 2 == 0 ? "B" : "A";
             }
         }
