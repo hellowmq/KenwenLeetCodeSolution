@@ -19,7 +19,7 @@ public class Solution1317 {
         return null;
     }
 
-    boolean noZero(int n) {
+    private static boolean noZero(int n) {
         while (n > 0) {
             if (n % 10 == 0) {
                 return false;
