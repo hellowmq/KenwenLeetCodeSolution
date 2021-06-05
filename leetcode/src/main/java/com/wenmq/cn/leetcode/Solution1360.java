@@ -14,7 +14,7 @@ public class Solution1360 {
         return Math.abs(day1 - day2);
     }
 
-    public int toDay(String dateStr) {
+    public static int toDay(String dateStr) {
         String[] temp = dateStr.split("-");
         int year = Integer.parseInt(temp[0]);
         int month = Integer.parseInt(temp[1]);
