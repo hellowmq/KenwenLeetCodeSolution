@@ -48,7 +48,7 @@ public class ArrayTools {
             sb.append('[');
             for (int j = 0; j < matrix[i].length; j++) {
                 if (j != 0) {
-                    sb.append(',');
+                    sb.append(", ");
                 }
                 sb.append(matrix[i][j]);
             }
