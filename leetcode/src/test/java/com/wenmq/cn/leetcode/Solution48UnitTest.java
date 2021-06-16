@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class Solution48UnitTest {
 
     public static final String TAG = "com.wenmq.cn.leetcode.Solution48";
@@ -87,5 +89,26 @@ public class Solution48UnitTest {
         };
         mTestSolution.rotate2(matrix);
         Assert.assertArrayEquals(expect, matrix);
+    }
+
+
+    @Test
+    public void testReverse_Case1() {
+        int[] nums = new int[]{
+                1, 2, 3
+        };
+        int[] copy = Arrays.copyOf(nums, nums.length);
+        Solution48.reverse(copy, -1, 0);
+        Assert.assertArrayEquals(nums, copy);
+    }
+
+    @Test
+    public void testReverse_Case2() {
+        int[] nums = new int[]{
+                1, 2, 3
+        };
+        int[] copy = Arrays.copyOf(nums, nums.length);
+        Solution48.reverse(copy, 0, nums.length);
+        Assert.assertArrayEquals(nums, copy);
     }
 }

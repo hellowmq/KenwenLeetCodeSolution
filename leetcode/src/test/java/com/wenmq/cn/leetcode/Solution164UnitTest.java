@@ -1,6 +1,5 @@
 package com.wenmq.cn.leetcode;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,15 +16,27 @@ public class Solution164UnitTest {
     @Test
     public void testSolution_case1() {
         int[] input = new int[]{3, 6, 9, 1};
-        Assert.assertEquals(3, mTestSolution.maximumGap(input));
-        Assert.assertEquals(3, mTestSolution.maximumGap2(input));
+        int expected = 3;
+        assertMoreSolution(input, expected);
     }
 
     @Test
     public void testSolution_case2() {
         int[] input = new int[]{1};
-        Assert.assertEquals(0, mTestSolution.maximumGap(input));
-        Assert.assertEquals(0, mTestSolution.maximumGap2(input));
+        int expected = 0;
+        assertMoreSolution(input, expected);
+    }
+
+    @Test
+    public void testSolution_case3() {
+        int[] input = new int[]{1, 1, 1, 1};
+        int expected = 0;
+        assertMoreSolution(input, expected);
+    }
+
+    private void assertMoreSolution(int[] input, int expected) {
+        Assert.assertEquals(expected, mTestSolution.maximumGap(input));
+        Assert.assertEquals(expected, mTestSolution.maximumGap2(input));
     }
 
 

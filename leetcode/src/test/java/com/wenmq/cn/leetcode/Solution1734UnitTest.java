@@ -53,7 +53,9 @@ public class Solution1734UnitTest {
     public void test_getXorResult() {
         Assert.assertEquals(0, Solution1734.getXorResult(-1));
         Assert.assertEquals(0, Solution1734.getXorResult(0));
+        Assert.assertEquals(1, Solution1734.getXorResult(1));
         Assert.assertEquals(3, Solution1734.getXorResult(2));
+        Assert.assertEquals(0, Solution1734.getXorResult(3));
     }
 
 }

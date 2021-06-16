@@ -39,4 +39,13 @@ public class Solution1796UnitTest {
         Assert.assertEquals(expected, mTestSolution.secondHighest(s));
         Assert.assertEquals(expected, mTestSolution.secondHighest2(s));
     }
+
+
+    @Test
+    public void testSecondHighest_Case4() {
+        String s = "dfa312afd";
+        int expected = 2;
+        Assert.assertEquals(expected, mTestSolution.secondHighest(s));
+        Assert.assertEquals(expected, mTestSolution.secondHighest2(s));
+    }
 }

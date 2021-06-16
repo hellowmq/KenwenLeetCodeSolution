@@ -8,7 +8,9 @@ import java.util.Arrays;
  */
 public class Solution354 {
     /**
-     * 方法一：
+     * 1 <= envelopes.length <= 5000
+     * envelopes[i].length == 2
+     * 1 <= w_i, h_i <= 10^4
      */
     public int maxEnvelopes(int[][] envelopes) {
         if (envelopes.length == 0) {

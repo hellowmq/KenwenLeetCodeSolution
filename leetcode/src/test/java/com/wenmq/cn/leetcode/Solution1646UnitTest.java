@@ -44,4 +44,11 @@ public class Solution1646UnitTest {
         Assert.assertEquals(expected, mTestSolution.getMaximumGenerated(n));
     }
 
+    @Test
+    public void testGetMaximumGenerated_Case5() {
+        int n = 1;
+        int expected = 1;
+        Assert.assertEquals(expected, mTestSolution.getMaximumGenerated(n));
+    }
+
 }

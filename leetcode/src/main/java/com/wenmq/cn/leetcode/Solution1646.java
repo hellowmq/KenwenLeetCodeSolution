@@ -2,12 +2,13 @@ package com.wenmq.cn.leetcode;
 
 /**
  * Q1646
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/get-maximum-in-generated-array
  */
 public class Solution1646 {
 
     /**
      * DP 法
+     * 0 <= n <= 100
      */
     public int getMaximumGenerated(int n) {
         int[] nums = new int[n + 1];

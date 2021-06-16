@@ -6,7 +6,11 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution303 {
     /**
-     * 方法一：
+     * 0 <= nums.length <= 104
+     * -10^5<= nums[i] <= 10^5
+     * 0 <= i <= j < nums.length
+     * 最多调用 10^4 次 sumRange 方法
+     *
      */
     static class NumArray {
         public int[] nums;
