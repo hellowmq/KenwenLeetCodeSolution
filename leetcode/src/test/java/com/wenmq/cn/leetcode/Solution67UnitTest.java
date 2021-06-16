@@ -19,10 +19,7 @@ public class Solution67UnitTest {
         String a = "11";
         String b = "1";
         String expect = "100";
-        String actual1 = mTestSolution.addBinary(a, b);
-        Assert.assertEquals(expect, actual1);
-        String actual2 = mTestSolution.addBinary2(a, b);
-        Assert.assertEquals(expect, actual2);
+        assertMoreSolution(a, b, expect);
     }
 
     @Test
@@ -30,10 +27,7 @@ public class Solution67UnitTest {
         String a = "1010";
         String b = "1011";
         String expect = "10101";
-        String actual1 = mTestSolution.addBinary(a, b);
-        Assert.assertEquals(expect, actual1);
-        String actual2 = mTestSolution.addBinary2(a, b);
-        Assert.assertEquals(expect, actual2);
+        assertMoreSolution(a, b, expect);
     }
 
     @Test
@@ -41,9 +35,28 @@ public class Solution67UnitTest {
         String a = "10010110";
         String b = "10110";
         String expect = "10101100";
-        String actual1 = mTestSolution.addBinary(a, b);
-        Assert.assertEquals(expect, actual1);
-        String actual2 = mTestSolution.addBinary2(a, b);
-        Assert.assertEquals(expect, actual2);
+        assertMoreSolution(a, b, expect);
+    }
+
+    @Test
+    public void testAddBinary_case4() {
+        String a = "";
+        String b = "10110";
+        String expect = "10110";
+        assertMoreSolution(a, b, expect);
+    }
+
+
+    @Test
+    public void testAddBinary_case5() {
+        String a = "10110";
+        String b = "";
+        String expect = "10110";
+        assertMoreSolution(a, b, expect);
+    }
+
+    private void assertMoreSolution(String a, String b, String expect) {
+        Assert.assertEquals(expect, mTestSolution.addBinary(a, b));
+        Assert.assertEquals(expect, mTestSolution.addBinary2(a, b));
     }
 }

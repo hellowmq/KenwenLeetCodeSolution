@@ -74,6 +74,20 @@ public class Solution872UnitTest {
         assertMoreSolution(treeNode1, treeNode2, expected);
     }
 
+    @Test
+    public void testLeafSimilar_Case5() {
+        Integer[] root1 = {
+                1, 2
+        };
+        Integer[] root2 = {
+                2, 2,3
+        };
+        TreeNode treeNode1 = buildTreeNode(root1);
+        TreeNode treeNode2 = buildTreeNode(root2);
+        final boolean expected = false;
+        assertMoreSolution(treeNode1, treeNode2, expected);
+    }
+
     private void assertMoreSolution(TreeNode treeNode1, TreeNode treeNode2, boolean expected) {
         Assert.assertEquals(expected, mTestSolution.leafSimilar(treeNode1, treeNode2));
         Assert.assertEquals(expected, mTestSolution.leafSimilar2(treeNode1, treeNode2));

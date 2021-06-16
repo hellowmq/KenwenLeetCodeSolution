@@ -7,7 +7,9 @@ package com.wenmq.cn.leetcode;
 public class Solution67 {
 
     /**
-     * addBinary
+     * 每个字符串仅由字符 '0' 或 '1' 组成。
+     * 1 <= a.length, b.length <= 10^4
+     * 字符串如果不是 "0" ，就都不含前导零。
      */
     public String addBinary(String a, String b) {
         if (a == null || a.length() == 0) {

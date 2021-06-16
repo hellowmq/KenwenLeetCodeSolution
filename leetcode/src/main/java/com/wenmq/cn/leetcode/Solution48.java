@@ -17,12 +17,9 @@ public class Solution48 {
         }
     }
 
-    public void mirrorSymmetry(int[][] matrix) {
+    static void mirrorSymmetry(int[][] matrix) {
         int length = matrix.length;
         int temp;
-        if (length == 1) {
-            return;
-        }
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
                 temp = matrix[j][i];
@@ -33,7 +30,8 @@ public class Solution48 {
     }
 
 
-    public void reverse(int[] nums, int start, int end) {
+    @SuppressWarnings("SameParameterValue")
+    static void reverse(int[] nums, int start, int end) {
         int temp;
         if (start < 0) {
             return;

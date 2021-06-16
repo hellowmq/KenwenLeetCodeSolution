@@ -8,12 +8,14 @@ public class Solution1796 {
     /**
      * 实际上是十个字符的问题
      * 可以用存储法
+     * 1 <= s.length <= 500
+     * s 只包含小写英文字母和（或）数字。
      */
     public int secondHighest(String s) {
         int flag = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c > '9' || c < '0') {
+            if (c > '9') {
                 continue;
             }
             flag |= (1 << ('9' - c));
@@ -39,9 +41,10 @@ public class Solution1796 {
         char second = '0' - 1;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c > '9' || c < '0') {
+            if (c > '9') {
                 continue;
             }
+            System.out.println("c= " + c + " second= " + second + " max= " + max);
             if (c > max) {
                 second = max;
                 max = c;

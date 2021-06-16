@@ -6,7 +6,7 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution633 {
     /**
-     * 方法一：
+     * 0 <= c <= 2^31 - 1
      */
     public boolean judgeSquareSum(int c) {
         if (c <= 1) {

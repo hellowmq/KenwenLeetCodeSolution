@@ -42,4 +42,11 @@ public class Solution1736UnitTest {
         String expected = "23:45";
         Assert.assertEquals(expected, mTestSolution.maximumTime(time));
     }
+
+    @Test
+    public void testMaximumTime_Case5() {
+        String time = "?9:45";
+        String expected = "19:45";
+        Assert.assertEquals(expected, mTestSolution.maximumTime(time));
+    }
 }

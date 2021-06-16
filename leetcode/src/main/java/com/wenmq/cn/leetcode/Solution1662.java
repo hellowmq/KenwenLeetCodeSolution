@@ -39,9 +39,6 @@ public class Solution1662 {
      * 对于只有开头不同的超长字符串尤为严重
      */
     public boolean arrayStringsAreEqual2(String[] word1, String[] word2) {
-        if (word1[0].charAt(0) != word2[0].charAt(0)) {
-            return false;
-        }
         StringBuilder str1 = new StringBuilder();
         StringBuilder str2 = new StringBuilder();
         for (String str : word1) {

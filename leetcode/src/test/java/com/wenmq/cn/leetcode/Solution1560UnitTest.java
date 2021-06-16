@@ -60,4 +60,18 @@ public class Solution1560UnitTest {
         List<Integer> expected = Arrays.asList(integers);
         Assert.assertEquals(expected.toString(), actual.toString());
     }
+
+    @Test
+    public void testMostVisited_Case4() {
+        int n = 7;
+        int[] rounds = new int[]{
+                7, 1, 3, 5, 6
+        };
+        List<Integer> actual = mTestSolution.mostVisited(n, rounds);
+        Integer[] integers = {
+                1, 2, 3, 4, 5, 6, 7
+        };
+        List<Integer> expected = Arrays.asList(integers);
+        Assert.assertEquals(expected.toString(), actual.toString());
+    }
 }

@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.wenmq.cn.tools.ArrayTools.copyOfMatrix;
+import com.wenmq.cn.tools.ArrayTools;
 
 public class Solution354UnitTest {
 
@@ -23,15 +23,36 @@ public class Solution354UnitTest {
                 {5, 4}, {6, 4}, {6, 7}, {2, 3}
         };
         final int expect = 3;
-        Assert.assertEquals(expect, mTestSolution.maxEnvelopes(copyOfMatrix(envelopes)));
-        Assert.assertEquals(expect, mTestSolution.maxEnvelopes2(copyOfMatrix(envelopes)));
+        assertMoreSolution(envelopes, expect);
+    }
+
+    @Test
+    public void testMaxEnvelopes_Case3() {
+        int[][] envelopes = new int[][]{
+                {5, 4}, {6, 4}, {2, 3}, {6, 1}
+        };
+        final int expect = 2;
+        assertMoreSolution(envelopes, expect);
+    }
+
+    @Test
+    public void testMaxEnvelopes_Case2() {
+        int[][] envelopes = new int[][]{
+                {1, 1}, {1, 1}, {1, 1},
+        };
+        final int expect = 1;
+        assertMoreSolution(envelopes, expect);
     }
 
     @Test
     public void testMaxEnvelopes2_CaseNull() {
         int[][] envelopes = new int[][]{};
         final int expect = 0;
-        Assert.assertEquals(expect, mTestSolution.maxEnvelopes(copyOfMatrix(envelopes)));
-        Assert.assertEquals(expect, mTestSolution.maxEnvelopes2(copyOfMatrix(envelopes)));
+        assertMoreSolution(envelopes, expect);
+    }
+
+    private void assertMoreSolution(int[][] envelopes, int expect) {
+        Assert.assertEquals(expect, mTestSolution.maxEnvelopes(ArrayTools.copyOfMatrix(envelopes)));
+        Assert.assertEquals(expect, mTestSolution.maxEnvelopes2(ArrayTools.copyOfMatrix(envelopes)));
     }
 }

@@ -23,7 +23,7 @@ public class Solution1710 {
                 truckSize -= box[0];
             } else {
                 count += truckSize * box[1];
-                return count;
+                break;
             }
         }
         return count;

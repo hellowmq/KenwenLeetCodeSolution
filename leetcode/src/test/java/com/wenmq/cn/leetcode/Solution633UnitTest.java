@@ -51,6 +51,13 @@ public class Solution633UnitTest {
         assertMoreSolution(c, expected);
     }
 
+    @Test
+    public void testJudgeSquareSum_Case6() {
+        int c = 149;
+        final boolean expected = true;
+        assertMoreSolution(c, expected);
+    }
+
     private void assertMoreSolution(int c, boolean expected) {
         Assert.assertEquals(expected, mTestSolution.judgeSquareSum(c));
         Assert.assertEquals(expected, mTestSolution.judgeSquareSum2(c));
