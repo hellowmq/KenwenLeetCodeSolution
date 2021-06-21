@@ -1,4 +1,4 @@
 include ':app'
-rootProject.name='My Application'
+rootProject.name='Kenwen Leetcode Solution'
 include ':code'
 include ':leetcode'
