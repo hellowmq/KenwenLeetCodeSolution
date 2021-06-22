@@ -1,18 +1,17 @@
-package com.wenmq.cn.leetcode;
+package com.wenmq.cn.codinginterviews;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class Solution191UnitTest {
+public class CISolution15UnitTest {
 
-    private static final String TAG = "com.wenmq.cn.leetcode.Solution191";
-    private Solution191 mTestSolution;
-
+    private static final String TAG = "com.wenmq.cn.codinginterviews.CISolution15";
+    private CISolution15 mTestSolution;
 
     @Before
     public void setUp() throws Exception {
-        mTestSolution = new Solution191();
+        mTestSolution = new CISolution15();
     }
 
     @Test
