@@ -44,7 +44,6 @@ public class Solution1796 {
             if (c > '9') {
                 continue;
             }
-            System.out.println("c= " + c + " second= " + second + " max= " + max);
             if (c > max) {
                 second = max;
                 max = c;
