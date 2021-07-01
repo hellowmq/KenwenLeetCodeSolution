@@ -20,20 +20,25 @@ public class Solution551UnitTest {
     public void testCheckRecord_Case1() {
         String s = "PPALLP";
         final boolean expected = true;
-        Assert.assertEquals(expected, mTestSolution.checkRecord(s));
+        assertMoreSolution(s, expected);
     }
 
     @Test
     public void testCheckRecord_Case2() {
         String s = "PPALLL";
         final boolean expected = false;
-        Assert.assertEquals(expected, mTestSolution.checkRecord(s));
+        assertMoreSolution(s, expected);
     }
 
     @Test
     public void testCheckRecord_Case3() {
         String s = "AAAA";
         final boolean expected = false;
+        assertMoreSolution(s, expected);
+    }
+
+    private void assertMoreSolution(String s, boolean expected) {
         Assert.assertEquals(expected, mTestSolution.checkRecord(s));
+        Assert.assertEquals(expected, mTestSolution.checkRecord2(s));
     }
 }

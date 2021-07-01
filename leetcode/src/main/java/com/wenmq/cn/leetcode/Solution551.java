@@ -18,4 +18,8 @@ public class Solution551 {
         return !s.contains("LLL");
     }
 
+    public boolean checkRecord2(String s) {
+        return s.indexOf('A') == s.lastIndexOf('A') & !s.contains("LLL");
+    }
+
 }
