@@ -1,8 +1,8 @@
 package com.wenmq.cn.leetcode;
 
 /**
- * Q
- * https://leetcode-cn.com/problemset/all/
+ * Q520
+ * https://leetcode-cn.com/problems/detect-capital/
  */
 public class Solution520 {
     /**
