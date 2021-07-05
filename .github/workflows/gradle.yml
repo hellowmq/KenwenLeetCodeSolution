@@ -25,5 +25,7 @@ jobs:
       run: chmod +x gradlew
 #    - name: Build with Gradle
 #      run: ./gradlew build
-    - name: Run with Test
-      run: ./gradlew test
+    - name: Run with code Test
+      run: ./gradlew :code:test
+    - name: Run with LeetCode Test
+      run: ./gradlew :leetcode:test
