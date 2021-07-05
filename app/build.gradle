@@ -1,12 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdkVersion 19
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 //        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -27,24 +26,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
-//    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.android.material:material:1.4.0'
 //    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
 //    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.contrarywind:Android-PickerView:4.1.9'
-    implementation 'com.contrarywind:wheelview:4.1.0'
-
-//    implementation 'com.wenmq.anno:MsgProcessor:0.0.1'
-//    annotationProcessor "com.wenmq.anno:MsgProcessor:0.0.1"
-
-//    implementation 'com.wenmq.clickanno:click-api:0.0.1'
-//    implementation 'com.wenmq.clickanno:click-anno:0.0.1'
-//    annotationProcessor 'com.wenmq.clickanno:click-compiler:0.0.1'
-    implementation 'com.squareup.okhttp3:okhttp:3.5.0'
-
 
     // Required -- JUnit 4 framework
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
 }
