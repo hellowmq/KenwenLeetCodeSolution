@@ -25,7 +25,7 @@ public class Solution709 {
     public String toLowerCase3(String s) {
         char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i++) {
-            if (chars[i] >= 'a' && chars[i] <= 'z') {
+            if (chars[i] >= 'A' && chars[i] <= 'Z') {
                 chars[i] |= 0x20;
             }
         }
