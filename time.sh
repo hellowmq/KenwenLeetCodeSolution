@@ -13,7 +13,7 @@ echo "Show Time"
 date "+%Y-%m-%d %H:%M:%S"
 echo "------------------------------------"
 
-# Check Network
-echo "Check Network"
-ssh -T git@github.com
-echo "------------------------------------"
+## Check Network
+#echo "Check Network"
+#ssh -T git@github.com
+#echo "------------------------------------"
