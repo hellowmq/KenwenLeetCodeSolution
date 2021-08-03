@@ -13,19 +13,13 @@ public class CISolution52 {
      * codingInterview 一般带有非常多的边界条件检查
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB == null) {
-            return null;
+        ListNode h1 = headA;
+        ListNode h2 = headB;
+        while (h1 != h2) {
+            h1 = h1 == null ? headB : h1.next;
+            h2 = h2 == null ? headA : h2.next;
         }
-        ListNode nodeA = headA;
-        ListNode nodeB = headB;
-        while (nodeA != nodeB) {
-            nodeA = nodeA.next != null ? nodeA.next : headB;
-            nodeB = nodeB.next != null ? nodeB.next : headA;
-            if (nodeA == headB && nodeB == headA) {
-                return null;
-            }
-        }
-        return nodeA;
+        return h1;
     }
 
     /**

@@ -80,6 +80,19 @@ public class CISolution52Test {
         Assert.assertNull(result);
     }
 
+    @Test
+    public void testGetIntersectionNode_Case5() {
+        int intersectVal = 3;
+        ListNode commonLink = generateList(new int[]{3});
+        ListNode listA = commonLink;
+        ListNode listB = generateList(new int[]{2});
+        connectListNode(listB, commonLink);
+
+        ListNode result = mTestSolution.getIntersectionNode(listA, listB);
+
+        Assert.assertEquals(intersectVal, result.val);
+    }
+
 
     public ListNode generateList(int[] list) {
         if (list == null || list.length == 0) {
