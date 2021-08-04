@@ -11,7 +11,7 @@ public class Solution228 {
     /**
      * 0 <= nums.length <= 20
      * -2^31 <= nums[i] <= 2^31 - 1
-     * nums 中的所有值都 互不相同
+     * nums 中的所有值都互不相同
      * nums 按升序排列
      */
     public List<String> summaryRanges(int[] nums) {
