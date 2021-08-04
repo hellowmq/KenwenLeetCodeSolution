@@ -13,7 +13,7 @@ public class Solution496 {
     /**
      * 1 <= nums1.length <= nums2.length <= 1000
      * 0 <= nums1[i], nums2[i] <= 10^4
-     * nums1和nums2中所有整数 互不相同
+     * nums1 和 nums2 中所有整数 互不相同
      * nums1 中的所有整数同样出现在 nums2 中
      * 单调栈，O(M + N) 时间空间复杂度
      */

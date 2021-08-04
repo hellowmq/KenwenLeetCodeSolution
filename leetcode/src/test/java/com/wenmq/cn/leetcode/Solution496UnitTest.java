@@ -27,7 +27,7 @@ public class Solution496UnitTest {
         int[] expected = new int[]{
                 -1, 3, -1
         };
-        extracted(nums1, nums2, expected);
+        assertMoreSolution(nums1, nums2, expected);
     }
 
     @Test
@@ -41,10 +41,10 @@ public class Solution496UnitTest {
         int[] expected = new int[]{
                 3, -1
         };
-        extracted(nums1, nums2, expected);
+        assertMoreSolution(nums1, nums2, expected);
     }
 
-    private void extracted(int[] nums1, int[] nums2, int[] expected) {
+    private void assertMoreSolution(int[] nums1, int[] nums2, int[] expected) {
         Assert.assertArrayEquals(expected, mTestSolution.nextGreaterElement(nums1, nums2));
         Assert.assertArrayEquals(expected, mTestSolution.nextGreaterElement2(nums1, nums2));
     }
