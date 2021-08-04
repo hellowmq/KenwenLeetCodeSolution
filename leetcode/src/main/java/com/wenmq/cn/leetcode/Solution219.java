@@ -1,6 +1,5 @@
 package com.wenmq.cn.leetcode;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,10 +14,11 @@ public class Solution219 {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
-            if (i - map.getOrDefault(nums[i], -k - 1) <= k) {
+            if (i - map.getOrDefault(nums[i], -k - 1) > k) {
+                map.put(nums[i], i);
+            } else {
                 return true;
             }
-            map.put(nums[i], i);
         }
         return false;
     }
@@ -44,10 +44,11 @@ public class Solution219 {
         if (nums.length < 100) {
             Map<Integer, Integer> map = new HashMap<>(nums.length);
             for (int i = 0; i < nums.length; i++) {
-                if (i - map.getOrDefault(nums[i], -k - 1) <= k) {
+                if (i - map.getOrDefault(nums[i], -k - 1) > k) {
+                    map.put(nums[i], i);
+                } else {
                     return true;
                 }
-                map.put(nums[i], i);
             }
             return false;
         }
@@ -56,12 +57,11 @@ public class Solution219 {
         int[] map = new int[max - min + 2];
         for (int i = 0; i < nums.length; ++i) {
             int num = nums[i] - min;
-            if (map[num] != 0) {
-                if (Math.abs(i - map[num]) < k) {
-                    return true;
-                }
+            if (map[num] == 0 || Math.abs(i - map[num]) >= k) {
+                map[num] = i + 1;
+            } else {
+                return true;
             }
-            map[num] = i + 1;
         }
         return false;
     }
