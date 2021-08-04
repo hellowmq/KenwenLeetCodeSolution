@@ -1,8 +1,9 @@
 package com.wenmq.cn.leetcode;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/xor-operation-in-an-array/" >
  * Q1486
- * https://leetcode-cn.com/problems/xor-operation-in-an-array/
+ * </a>
  */
 public class Solution1486 {
     /**
