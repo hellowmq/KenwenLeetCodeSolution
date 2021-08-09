@@ -8,7 +8,7 @@ public class Solution374 {
 
     /**
      * Forward declaration of guess API.
-     * <p>
+     *
      * num your guess
      * * -1 if num is lower than the guess number
      * * 1 if num is higher than the guess number
@@ -36,7 +36,7 @@ public class Solution374 {
     }
 
     static class GuessGame {
-        private Comparable<Integer> mGuessAble;
+        Comparable<Integer> mGuessAble;
 
         void setGuessAble(Comparable<Integer> guessAble) {
             mGuessAble = guessAble;

@@ -48,4 +48,14 @@ public class Solution374UnitTest {
         mTestSolution.setGuessAble(pick);
         Assert.assertEquals(result, mTestSolution.guessNumber(n));
     }
+
+
+    @Test
+    public void testGuessNumber_CaseERROR() {
+        int n = 0;
+        int pick = 1;
+        int result = 1;
+        mTestSolution.setGuessAble(pick);
+        Assert.assertEquals(result, mTestSolution.guessNumber(n));
+    }
 }
