@@ -5,6 +5,7 @@ package com.wenmq.cn.leetcode;
  * https://leetcode-cn.com/problems/sum-of-left-leaves/
  */
 public class Solution404 {
+
     /**
      * 递归
      */
@@ -12,13 +13,15 @@ public class Solution404 {
         if (root == null) {
             return 0;
         }
+        int leftLeaves = sumOfLeftLeaves(root.right);
         if (root.left != null && root.left.left == root.left.right) {
-            return sumOfLeftLeaves(root.right) + root.left.val;
+            return leftLeaves + root.left.val;
+        } else {
+            return leftLeaves + sumOfLeftLeaves(root.left);
         }
-        return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
     }
 
-    public static class TreeNode {
+    static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;

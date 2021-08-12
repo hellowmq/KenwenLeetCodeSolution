@@ -1,19 +1,18 @@
 package com.wenmq.cn.leetcode;
 
+import static com.wenmq.cn.leetcode.Solution404.TreeNode;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.wenmq.cn.leetcode.Solution404.*;
-import static org.junit.Assert.*;
-
 public class Solution404UnitTest {
 
-    private Solution404 mTestSolutoin;
+    private Solution404 mTestSolution;
 
     @Before
     public void setUp() throws Exception {
-        mTestSolutoin = new Solution404();
+        mTestSolution = new Solution404();
     }
 
     @Test
@@ -23,8 +22,9 @@ public class Solution404UnitTest {
         };
         TreeNode treeNode = buildTreeNode(list);
         int expected = 24;
-        Assert.assertEquals(expected, mTestSolutoin.sumOfLeftLeaves(treeNode));
+        Assert.assertEquals(expected, mTestSolution.sumOfLeftLeaves(treeNode));
     }
+
     @Test
     public void sumOfLeftLeaves_Case2() {
         Integer[] list = new Integer[]{
@@ -32,9 +32,8 @@ public class Solution404UnitTest {
         };
         TreeNode treeNode = buildTreeNode(list);
         int expected = 0;
-        Assert.assertEquals(expected, mTestSolutoin.sumOfLeftLeaves(treeNode));
+        Assert.assertEquals(expected, mTestSolution.sumOfLeftLeaves(treeNode));
     }
-
 
     private TreeNode buildTreeNode(Integer[] list) {
         return buildTreeNode(list, 0);
