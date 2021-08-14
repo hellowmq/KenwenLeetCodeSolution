@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Q1051
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/height-checker/
  */
 public class Solution1051 {
     /**
@@ -44,6 +44,5 @@ public class Solution1051 {
         }
         return sum;
     }
-
 
 }

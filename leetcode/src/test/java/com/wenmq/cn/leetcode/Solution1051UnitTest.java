@@ -67,7 +67,7 @@ public class Solution1051UnitTest {
                 25, 63, 77, 24, 76,
                 44
         };
-        int expected = 0;
+        int expected = 95;
         assertMoreSolution(heights, expected);
     }
 
