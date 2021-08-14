@@ -2,7 +2,7 @@ package com.wenmq.cn.leetcode;
 
 /**
  * Q1071
- * https://leetcode-cn.com/problemset/all/
+ * https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/
  */
 public class Solution1071 {
     /**
@@ -15,8 +15,7 @@ public class Solution1071 {
         int len2 = str2.length();
         int maxCommonLength = gcd(len1, len2);
         String sub = str2.substring(0, maxCommonLength);
-        return dividedBy(str1, sub) && dividedBy(str2, sub)
-                ? sub : "";
+        return dividedBy(str1, sub) && dividedBy(str2, sub) ? sub : "";
     }
 
     private static boolean dividedBy(String big, String small) {
