@@ -21,5 +21,22 @@ public class Solution27 {
         return index;
     }
 
+    /**
+     * 由于不要求处理后数据的有序性
+     * 使用从尾向前遍历的指针
+     */
+    public int removeElement2(int[] nums, int val) {
+        int slow = nums.length - 1;
+        int fast = slow;
+        while (fast >= 0) {
+            if (nums[fast] == val) {
+                nums[fast] = nums[slow--];
+            }
+            fast--;
+        }
+        return ++slow;
+
+    }
+
 
 }
