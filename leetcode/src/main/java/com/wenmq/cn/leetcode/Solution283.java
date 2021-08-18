@@ -26,4 +26,19 @@ public class Solution283 {
         }
     }
 
+    public void moveZeroes2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int indexOfNotZero = 0;
+        for (int n : nums) {
+            if (n != 0) {
+                nums[indexOfNotZero++] = n;
+            }
+        }
+        while (indexOfNotZero < nums.length) {
+            nums[indexOfNotZero++] = 0;
+        }
+    }
+
 }

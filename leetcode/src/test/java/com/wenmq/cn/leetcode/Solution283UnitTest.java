@@ -3,6 +3,7 @@ package com.wenmq.cn.leetcode;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Arrays;
 
 public class Solution283UnitTest {
 
@@ -18,34 +19,52 @@ public class Solution283UnitTest {
 
     @Test
     public void testMoveZeroes_Case1() {
-        int[] array = {0, 1, 0, 3, 12};
-        int[] expected = new int[]{1, 3, 12, 0, 0};
-        mTestSolution.moveZeroes(array);
-        Assert.assertArrayEquals(expected, array);
+        int[] array = {
+                0, 1, 0, 3, 12
+        };
+        int[] expected = new int[]{
+                1, 3, 12, 0, 0
+        };
+        assertMoreSolution(array, expected);
     }
 
     @Test
     public void testMoveZeroes_Case2() {
-        int[] array = {0};
-        mTestSolution.moveZeroes(array);
-        int[] expected = new int[]{0};
-        Assert.assertArrayEquals(expected, array);
+        int[] array = {
+                0
+        };
+        int[] expected = new int[]{
+                0
+        };
+        assertMoreSolution(array, expected);
     }
-
 
     @Test
     public void testMoveZeroes_Case3() {
-        int[] array = {1, 0};
-        mTestSolution.moveZeroes(array);
-        int[] expected = new int[]{1, 0};
-        Assert.assertArrayEquals(expected, array);
+        int[] array = {
+                1, 0
+        };
+        int[] expected = new int[]{
+                1, 0
+        };
+        assertMoreSolution(array, expected);
     }
 
     @Test
     public void testMoveZeroes_Case4() {
-        int[] array = {};
-        mTestSolution.moveZeroes(array);
-        int[] expected = new int[]{};
-        Assert.assertArrayEquals(expected, array);
+        int[] array = {
+        };
+        int[] expected = new int[]{
+        };
+        assertMoreSolution(array, expected);
+    }
+
+    private void assertMoreSolution(int[] array, int[] expected) {
+        int[] testArray1 = Arrays.copyOf(array, array.length);
+        mTestSolution.moveZeroes(testArray1);
+        Assert.assertArrayEquals(expected, testArray1);
+        int[] testArray2 = Arrays.copyOf(array, array.length);
+        mTestSolution.moveZeroes2(testArray2);
+        Assert.assertArrayEquals(expected, testArray2);
     }
 }
