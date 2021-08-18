@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class Solution1260 {
     /**
-     * m == grid.length
-     * n == grid[i].length
+     * m == grid.length
+     * n == grid[i].length
      * 1 <= m <= 50
      * 1 <= n <= 50
      * -1000 <= grid[i][j] <= 1000

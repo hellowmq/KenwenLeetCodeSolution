@@ -6,8 +6,8 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1672 {
     /**
-     * m == accounts.length
-     * n == accounts[i].length
+     * m == accounts.length
+     * n == accounts[i].length
      * 1 <= m, n <= 50
      * 1 <= accounts[i][j] <= 100
      */

@@ -6,7 +6,7 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution1310 {
     /**
-     * 1 <= arr.length <= 3 * 10^4
+     * 1 <= arr.length <= 3 * 10^4
      * 1 <= arr[i] <= 10^9
      * 1 <= queries.length <= 3 * 10^4
      * queries[i].length == 2

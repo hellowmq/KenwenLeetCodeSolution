@@ -9,7 +9,7 @@ public class Solution1275 {
      * 1 <= moves.length <= 9
      * moves[i].length == 2
      * 0 <= moves[i][j] <= 2
-     * moves 里没有重复的元素。
+     * moves 里没有重复的元素。
      * moves 遵循井字棋的规则。
      */
     @SuppressWarnings("SpellCheckingInspection")
