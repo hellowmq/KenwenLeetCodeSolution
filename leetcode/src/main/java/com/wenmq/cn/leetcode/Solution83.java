@@ -6,7 +6,7 @@ package com.wenmq.cn.leetcode;
  */
 public class Solution83 {
 
-    public static class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
@@ -27,6 +27,18 @@ public class Solution83 {
             } else {
                 cur = next;
                 next = next.next;
+            }
+        }
+        return head;
+    }
+
+    public ListNode deleteDuplicates2(ListNode head) {
+        ListNode node = head;
+        while (node != null && node.next != null) {
+            if (node.next.val == node.val) {
+                node.next = node.next.next;
+            } else {
+                node = node.next;
             }
         }
         return head;
