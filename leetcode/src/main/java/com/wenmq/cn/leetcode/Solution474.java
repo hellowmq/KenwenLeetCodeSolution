@@ -8,7 +8,7 @@ public class Solution474 {
     /**
      * 1 <= strs.length <= 600
      * 1 <= strs[i].length <= 100
-     * strs[i] 仅由 '0' 和 '1' 组成
+     * strs[i] 仅由 '0' 和 '1' 组成
      * 1 <= m, n <= 100
      */
     public int findMaxForm(String[] strs, int m, int n) {
