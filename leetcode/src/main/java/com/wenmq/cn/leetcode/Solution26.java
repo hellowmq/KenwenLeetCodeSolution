@@ -28,13 +28,14 @@ public class Solution26 {
      * while loop
      */
     public int removeDuplicates2(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
         int left = 0;
         int right = 0;
         while (right < nums.length) {
-            if (nums[right] != nums[left]) {
-                if (left++ != right) {
-                    nums[left] = nums[right];
-                }
+            if (nums[right] != nums[left] && left++ != right) {
+                nums[left] = nums[right];
             }
             right++;
         }
