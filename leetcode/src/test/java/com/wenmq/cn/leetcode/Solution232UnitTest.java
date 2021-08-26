@@ -9,7 +9,6 @@ public class Solution232UnitTest {
     private static final String TAG = "com.wenmq.cn.leetcode.Solution232";
     private Solution232 mTestSolution;
 
-
     @Before
     public void setUp() throws Exception {
         mTestSolution = new Solution232();
@@ -17,7 +16,11 @@ public class Solution232UnitTest {
 
     @Test
     public void testMyQueue_Case1() {
-        Solution232.MyQueue testQueue = new Solution232.MyQueue();
+        testCase1(new Solution232.MyQueue());
+        testCase1(new Solution232.MyQueue2());
+    }
+
+    private void testCase1(Solution232.MyAbstractQueue testQueue) {
         testQueue.push(1);
         testQueue.push(2);
         final int expectedPeek = 1;
@@ -30,7 +33,11 @@ public class Solution232UnitTest {
 
     @Test
     public void testMyQueue_Case2() {
-        Solution232.MyQueue testQueue = new Solution232.MyQueue();
+        testCase2(new Solution232.MyQueue());
+        testCase2(new Solution232.MyQueue2());
+    }
+
+    private void testCase2(Solution232.MyAbstractQueue testQueue) {
         testQueue.push(1);
         testQueue.push(2);
         testQueue.pop();
