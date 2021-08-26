@@ -1,8 +1,9 @@
 package com.wenmq.cn.leetcode;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/">
  * Q876
- * https://leetcode-cn.com/problems/middle-of-the-linked-list/
+ * </a>
  */
 public class Solution876 {
     /**
