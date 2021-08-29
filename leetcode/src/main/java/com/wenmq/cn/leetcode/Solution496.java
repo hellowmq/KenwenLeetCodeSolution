@@ -6,8 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * <a href="https://leetcode-cn.com/problems/next-greater-element-i/">
  * Q496
- * https://leetcode-cn.com/problems/next-greater-element-i/
+ * </a>
  */
 public class Solution496 {
     /**
