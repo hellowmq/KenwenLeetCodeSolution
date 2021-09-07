@@ -24,11 +24,9 @@ public class Solution1957 {
                 pre = cur;
                 count = 1;
                 sb.append(cur);
-            } else {
-                if (count < 2) {
-                    count++;
-                    sb.append(cur);
-                }
+            } else if (count < 2) {
+                count++;
+                sb.append(cur);
             }
         }
         return sb.toString();
