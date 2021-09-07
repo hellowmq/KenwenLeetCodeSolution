@@ -17,25 +17,25 @@ public class Solution1935UnitTest {
 
     @Test
     public void testCanBeTypedWords_Case1() {
-      String text = "hello world";
-      String brokenLetters = "ad";
-      int expected = 1;
+        String text = "hello world";
+        String brokenLetters = "ad";
+        int expected = 1;
         assertMoreSolution(text, brokenLetters, expected);
     }
 
     @Test
     public void testCanBeTypedWords_Case2() {
-      String text = "leet code";
-      String brokenLetters = "lt";
-      int expected = 1;
+        String text = "leet code";
+        String brokenLetters = "lt";
+        int expected = 1;
         assertMoreSolution(text, brokenLetters, expected);
     }
 
     @Test
     public void testCanBeTypedWords_Case3() {
-      String text = "leet code";
-      String brokenLetters = "e";
-      int expected = 0;
+        String text = "leet code";
+        String brokenLetters = "e";
+        int expected = 0;
         assertMoreSolution(text, brokenLetters, expected);
     }
 
