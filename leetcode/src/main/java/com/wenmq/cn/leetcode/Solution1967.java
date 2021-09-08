@@ -4,6 +4,7 @@ package com.wenmq.cn.leetcode;
  * <a href="https://leetcode-cn.com/problems/number-of-strings-that-appear-as-substrings-in-word/">
  * Q1967
  * </a>
+ * TODO: Add KMP solution.
  */
 public class Solution1967 {
     /**
