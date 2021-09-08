@@ -23,9 +23,7 @@ public class Solution560UnitTest {
         };
         int k = 2;
         int expected = 2;
-        Assert.assertEquals(expected, mTestSolution.subarraySum(nums, k));
-        Assert.assertEquals(expected, mTestSolution.subarraySum2(nums, k));
-        Assert.assertEquals(expected, mTestSolution.subarraySum3(nums, k));
+        assertMoreSolution(nums, k, expected);
     }
 
     @Test
@@ -35,6 +33,10 @@ public class Solution560UnitTest {
         };
         int k = 1;
         int expected = 1;
+        assertMoreSolution(nums, k, expected);
+    }
+
+    private void assertMoreSolution(int[] nums, int k, int expected) {
         Assert.assertEquals(expected, mTestSolution.subarraySum(nums, k));
         Assert.assertEquals(expected, mTestSolution.subarraySum2(nums, k));
         Assert.assertEquals(expected, mTestSolution.subarraySum3(nums, k));
