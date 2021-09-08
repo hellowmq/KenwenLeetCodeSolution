@@ -17,12 +17,13 @@ public class Solution1941 {
         }
         int firstCount = 0;
         for (int count : set) {
-            if (count != 0) {
-                if (firstCount == 0) {
-                    firstCount = count;
-                } else if (firstCount != count) {
-                    return false;
-                }
+            if (count == 0) {
+                continue;
+            }
+            if (firstCount == 0) {
+                firstCount = count;
+            } else if (firstCount != count) {
+                return false;
             }
         }
         return true;
@@ -39,12 +40,13 @@ public class Solution1941 {
         }
         int firstCount = 0;
         for (int count : set) {
-            if (count != 0) {
-                if (firstCount == 0) {
-                    firstCount = count;
-                } else if (firstCount != count) {
-                    return false;
-                }
+            if (count == 0) {
+                continue;
+            }
+            if (firstCount == 0) {
+                firstCount = count;
+            } else if (firstCount != count) {
+                return false;
             }
         }
         return true;
