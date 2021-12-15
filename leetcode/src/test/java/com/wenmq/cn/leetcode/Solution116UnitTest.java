@@ -34,7 +34,6 @@ public class Solution116UnitTest {
             Node lineCur = cur;
             while (lineCur != null) {
                 Assert.assertEquals((int) expectedList[index++], lineCur.val);
-                System.out.println(expectedList[index]);
                 lineCur = lineCur.next;
             }
             index++;
